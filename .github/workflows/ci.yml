@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Unit + integration tests
+        run: python -m pytest -q
+
+      # No network and no LLM here: everything below runs from the committed, text-free snapshot
+      # (reviews_meta.csv + frozen labels). The LLM labels were produced once, locally, and are frozen.
+      - name: Label quality recomputed from committed labels
+        run: python scripts/evaluate_labels.py --check
+
+      - name: Every SQL query equals its pandas re-implementation; metrics.json is current
+        run: python scripts/compute_metrics.py --check
+
+      - name: Every number in README.md / REPORT.md matches the results files
+        run: python scripts/check_numbers.py --check
+
+      - name: Dashboard is current
+        run: python scripts/build_dashboard.py --check

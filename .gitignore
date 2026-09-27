@@ -1,0 +1,7 @@
+# Full review text stays local (see README "Data & privacy")
+data/raw/
+data/work/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mutation_backup/

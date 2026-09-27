@@ -1,0 +1,235 @@
+{
+ "snapshot_file": "snapshot_2026-09-27.json",
+ "snapshot_sha256": "45a1776c56452d98ff3a19a817e8d2ed0cbdf230be597cb697523dcf91ea7813",
+ "fetched_at": "2026-09-27T12:25:31+00:00",
+ "app_id": "1662451643",
+ "n_raw": 2572,
+ "n_clean": 2572,
+ "dropped": {
+  "duplicate": 0,
+  "empty": 0,
+  "bad_rating": 0
+ },
+ "by_storefront": {
+  "ae": {
+   "n": 500,
+   "first": "2026-05-30",
+   "last": "2026-09-25"
+  },
+  "bh": {
+   "n": 165,
+   "first": "2025-08-25",
+   "last": "2026-09-25"
+  },
+  "hk": {
+   "n": 500,
+   "first": "2025-04-05",
+   "last": "2026-09-25"
+  },
+  "kw": {
+   "n": 434,
+   "first": "2025-07-07",
+   "last": "2026-09-25"
+  },
+  "om": {
+   "n": 10,
+   "first": "2024-10-11",
+   "last": "2026-09-24"
+  },
+  "qa": {
+   "n": 463,
+   "first": "2024-12-24",
+   "last": "2026-09-26"
+  },
+  "sa": {
+   "n": 500,
+   "first": "2026-07-30",
+   "last": "2026-09-26"
+  }
+ },
+ "pull_runs": 4,
+ "lookups": {
+  "sa": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 659110,
+   "averageUserRating": 4.68022,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2024-09-01T07:00:00Z"
+  },
+  "kw": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 4063,
+   "averageUserRating": 3.99385,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2024-09-14T07:00:00Z"
+  },
+  "ae": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 10321,
+   "averageUserRating": 3.49249,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2024-09-14T07:00:00Z"
+  },
+  "qa": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 1938,
+   "averageUserRating": 3.14603,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2024-09-14T07:00:00Z"
+  },
+  "bh": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 1992,
+   "averageUserRating": 4.1742,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2024-09-14T07:00:00Z"
+  },
+  "om": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 239,
+   "averageUserRating": 4.4728,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2024-09-14T07:00:00Z"
+  },
+  "hk": {
+   "trackId": 1662451643,
+   "trackName": "Keeta - \u5916\u8ce3\u9001\u905e\u53ca\u81ea\u53d6",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "userRatingCount": 134709,
+   "averageUserRating": 4.73908,
+   "version": "3.12.401",
+   "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+   "releaseDate": "2023-05-20T07:00:00Z"
+  }
+ },
+ "page_coverage": {
+  "ae": {
+   "pages_obtained": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "pages_never_obtained": []
+  },
+  "bh": {
+   "pages_obtained": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "pages_never_obtained": []
+  },
+  "hk": {
+   "pages_obtained": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "pages_never_obtained": []
+  },
+  "kw": {
+   "pages_obtained": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "pages_never_obtained": []
+  },
+  "om": {
+   "pages_obtained": [
+    1
+   ],
+   "pages_never_obtained": []
+  },
+  "qa": {
+   "pages_obtained": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "pages_never_obtained": []
+  },
+  "sa": {
+   "pages_obtained": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "pages_never_obtained": []
+  }
+ }
+}

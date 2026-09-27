@@ -1,0 +1,105 @@
+# Issue taxonomy for food-delivery app reviews (multi-label, topic-based).
+#
+# A label marks that the review TALKS ABOUT the topic, in either direction ("fast delivery" and
+# "2 hours late" are both delivery_time). Pain points are read by restricting to 1-2 star reviews.
+# `other` is assigned if and only if no other label applies.
+#
+# keywords: used only by the rule baseline (keeta_voc/rules.py).
+#   en: regex fragments, matched case-insensitively with word boundaries on both sides
+#   ar: substrings, matched on Arabic-normalised text (no diacritics/tatweel, unified alef/ya/ta marbuta)
+#   zh: substrings (Hong Kong reviews are mostly Traditional Chinese / Cantonese)
+version: 1
+labels:
+  delivery_time:
+    definition: Delivery speed, lateness, long waits or ETA accuracy (fast or slow).
+    keywords:
+      en: [late, lateness, delay, delays, delayed, slow, slowly, fast, quick, quickly, speed, "on time", eta,
+           wait, waited, waiting, "took (?:so )?(?:long|forever)", "long time", "\\d+\\s*(?:min|mins|minutes|hours?|hrs?)",
+           "an hour", "(?:one|two|three) hours?", "arrived early", "ages"]
+      ar: [تاخير, تاخر, متاخر, متاخره, بطيء, بطء, بطي, انتظار, انتظرت, ننتظر, ساعه, ساعتين, ساعات, دقيقه, دقايق, دقائق,
+           سريع, سرعه, بسرعه, بالوقت, وقت التوصيل, المده, تاخرو]
+      zh: [遲, 延誤, 延遲, 好慢, 太慢, 慢, 等咗, 等了, 等左, 準時, 好快, 超快, 很快, 分鐘, 個鐘, 小時, 送餐時間, 預計時間]
+  order_fulfilment:
+    definition: Missing or wrong items, order never arrived, or order cancelled by the merchant/platform.
+    keywords:
+      en: [missing, "wrong (?:order|item|items|food|meal|dish)", incorrect, incomplete, forgot, forgotten,
+           "never (?:arrived|came|received|delivered)", "not (?:delivered|received)", "didn'?t (?:receive|arrive|get my)",
+           "did not (?:receive|arrive|get)", "never got", cancel, "cancell?ed", "cancell?ation", "left out"]
+      ar: [ناقص, ناقصه, نقص, غلط, خطا بالطلب, طلب خطا, ما وصل, ماوصل, لم يصل, لم يتم التوصيل, ما جاني, ماجاني, ما استلمت,
+           لم استلم, ما وصلني, ماوصلني, الغاء, الغو, الغي, انلغى, كنسل, ملغي, نسو]
+      zh: [漏, 送錯, 錯單, 少咗, 少了, 冇收到, 沒收到, 未收到, 收唔到, 取消, 冇送到, 無送到, 沒送到, 唔見咗]
+  food_quality:
+    definition: Condition or quality of the food itself (cold, spilled, taste, freshness, portion, hygiene).
+    keywords:
+      en: [cold, spilled, spill, spilt, soggy, stale, taste, tasted, tasteless, "food quality", "quality of (?:the )?food",
+           raw, burnt, burned, hygiene, portion, portions, fresh, rotten, "melted", undercooked, delicious]
+      ar: [بارد, بارده, برد الاكل, طعم, طعمه, جوده الاكل, منسكب, انسكب, خربان, خربانه, بايت, نيء, محروق, الكميه, كميه,
+           لذيذ, طازج, معفن, ريحه]
+      zh: [凍晒, 凍咗, 凍了, 倒瀉, 瀉晒, 難食, 好食, 味道, 食物質素, 份量, 變壞, 唔新鮮, 餿, 變質, 好味]
+  rider_behavior:
+    definition: The courier/rider - conduct, communication, following instructions, finding the address.
+    keywords:
+      en: [driver, drivers, rider, riders, courier, couriers, "delivery (?:guy|man|men|boy|person|agent|staff)",
+           deliveryman, captain, rude]
+      ar: [مندوب, المندوب, مناديب, المناديب, سائق, السائق, السواق, الدليفري, دليفري, الكابتن, كابتن, الموصل, عامل التوصيل]
+      zh: [車手, 騎手, 外賣員, 送餐員, 速遞員, 送貨員, 外賣仔, 車手態度]
+  merchant_availability:
+    definition: Restaurant/store selection, menu or item availability, stores closed, service-area coverage.
+    keywords:
+      en: [selection, variety, "(?:more|few|limited|no) (?:restaurants|options|choices|stores|shops)", "not available",
+           unavailable, "out of stock", "sold out", closed, coverage, "my area", "(?:your|the) area", menu, menus]
+      ar: [مطاعم قليله, خيارات, تنوع, غير متوفر, مو متوفر, مب متوفر, ما يتوفر, مغلق, مسكر, منطقتي, تغطيه, المنيو, منيو,
+           قائمه الطعام, المطاعم قليله, ما فيه مطاعم]
+      zh: [選擇少, 選擇多, 多選擇, 唔夠選擇, 冇貨, 售罄, 賣晒, 關門, 休息中, 送餐範圍, 範圍, 餐廳少, 多餐廳, 選擇]
+  pricing_promos:
+    definition: Prices, delivery/service fees, discounts, coupons, promo codes, offers, value for money.
+    keywords:
+      en: [price, prices, pricing, expensive, cheap, cheaper, fee, fees, "delivery charge", discount, discounts, coupon,
+           coupons, promo, promos, "promo code", offer, offers, voucher, vouchers, deal, deals, "free delivery",
+           cashback, overpriced, cost, costs, sar, kd, aed, qar, hkd, "riyals?", "dinars?", "dirhams?"]
+      ar: [سعر, اسعار, الاسعار, غالي, غاليه, رخيص, رخيصه, رسوم, مجاني, مجانا, خصم, خصومات, كوبون, كوبونات, كود خصم, عرض, عروض,
+           تخفيض, تخفيضات, ريال, دينار, درهم]
+      zh: [貴, 好平, 幾平, 平過, 平啲, 價錢, 價格, 運費, 送餐費, 服務費, 優惠, 折扣, 優惠券, 券, 免運, 回贈, 著數, 抵食, 減價]
+  payment_refund:
+    definition: Payment failures, wrong charges, refunds, wallet/credits, compensation.
+    keywords:
+      en: [refund, refunds, refunded, payment, payments, "pay(?:ing)?", paid, charged, "charged twice", card, wallet,
+           "money back", "my money", compensation, compensate, "apple pay", credit, credits]
+      ar: [استرجاع, استرداد, ارجاع المبلغ, المبلغ, فلوسي, فلوس, الدفع, دفعت, ادفع, البطاقه, بطاقه, انخصم, تعويض, محفظه,
+           رصيد, ابل باي]
+      zh: [退款, 退錢, 付款, 俾錢, 扣錢, 扣款, 信用卡, 賠償, 支付, 八達通, 付錢, 退返, 回水]
+  customer_service:
+    definition: Customer support - responsiveness, quality of help, complaint handling, chat/agents.
+    keywords:
+      en: ["customer (?:service|support|care)", support, "live chat", chat, agent, agents, complaint, complaints,
+           complain, complained, "no (?:response|reply)", helpline, "help center", "contact(?:ed)?"]
+      ar: [خدمه العملاء, الدعم, الشكوى, شكوى, اشتكيت, شكوه, المحادثه, التواصل, تواصلت, موظف, الموظف, خدمه عملاء]
+      zh: [客服, 投訴, 聯絡, 回覆, 真人, 客戶服務]
+  app_ux:
+    definition: The app itself - bugs, crashes, login/OTP, updates, address/map/location entry, UI, language, notifications, tracking screen.
+    keywords:
+      en: [bug, bugs, buggy, crash, crashes, crashed, crashing, glitch, glitches, error, errors, "doesn'?t work",
+           "not working", "won'?t (?:open|load)", login, "log in", "sign (?:in|up)", otp, "verification code", update,
+           updated, loading, freeze, freezes, interface, ui, ux, map, gps, address, language, notification,
+           notifications, "user friendly", "easy to use"]
+      ar: [خلل, يعلق, معلق, تعليق, ما يفتح, مايفتح, لا يعمل, ما يشتغل, مايشتغل, تحديث, التحديث, تسجيل الدخول, رمز التحقق,
+           كود التحقق, الخريطه, العنوان, الواجهه, اشعارات, الاشعارات, ينهنق, سهل الاستخدام, سهوله الاستخدام, اللغه, تطبيق سيء,
+           خطا في التطبيق]
+      zh: [閃退, 當機, 死機, 錯誤, 更新, 登入, 登錄, 驗證碼, 地址, 地圖, 介面, 界面, 版面, 通知, 帳戶, 賬戶, 卡住, 用唔到,
+           開唔到, 定位, 好難用, 易用, 系統]
+  positive_praise:
+    definition: Overall praise or satisfaction with Keeta (not merely a polite word inside a complaint).
+    keywords:
+      en: [great, excellent, amazing, love, loved, best, good, nice, perfect, awesome, fantastic, recommend,
+           recommended, "thank(?:s| you)", "well done", wonderful, satisfied, happy, outstanding, superb]
+      ar: [ممتاز, ممتازه, رائع, رائعه, جميل, حلو, زين, رهيب, خرافي, افضل, احسن, شكرا, يعطيكم العافيه, جيد, جيده, تمام,
+           انصح, عجيب, مبدع, كفو]
+      zh: [好好, 好用, 方便, 讚, 推介, 推薦, 唔錯, 不錯, 滿意, 感謝, 多謝, 優秀, 一流, 正呀, 好正]
+  other:
+    definition: None of the above labels applies (e.g. unrelated text, emoji only, too vague).
+    keywords: {}
+negation:
+  # Tokens that cancel a positive_praise hit when they appear shortly before it.
+  en: ["not", "no", "never", "n't", "isn't", "wasn't", "don't", "hardly"]
+  ar: ["مو", "مب", "مش", "غير", "ليس", "ليست", "ما", "لا"]
+  zh: ["唔", "不", "冇", "無", "沒"]

@@ -1,0 +1,4413 @@
+{
+ "app_id": "1662451643",
+ "runs": [
+  {
+   "fetched_at": "2026-09-27T11:49:21+00:00",
+   "lookups": {
+    "sa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 659110,
+     "averageUserRating": 4.68022,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-01T07:00:00Z"
+    },
+    "kw": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 4063,
+     "averageUserRating": 3.99385,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "ae": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 10321,
+     "averageUserRating": 3.49249,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "qa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1938,
+     "averageUserRating": 3.14603,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "bh": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1992,
+     "averageUserRating": 4.1742,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "om": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 239,
+     "averageUserRating": 4.4728,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "hk": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - 外賣送遞及自取",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 134709,
+     "averageUserRating": 4.73908,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2023-05-20T07:00:00Z"
+    }
+   },
+   "requests": [
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "gap": true
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "gap": true
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 34,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "gap": true
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "gap": true
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "gap": true
+    },
+    {
+     "storefront": "ae",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "gap": true
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "gap": true
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "gap": true
+    },
+    {
+     "storefront": "qa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "gap": true
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "gap": true
+    },
+    {
+     "storefront": "qa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "gap": true
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "gap": true
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 15,
+     "error": null
+    },
+    {
+     "storefront": "om",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "om",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "om",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 10,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "gap": true
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "gap": true
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "gap": true
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    }
+   ]
+  },
+  {
+   "fetched_at": "2026-09-27T12:07:12+00:00",
+   "lookups": {
+    "sa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 659110,
+     "averageUserRating": 4.68022,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-01T07:00:00Z"
+    },
+    "kw": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 4063,
+     "averageUserRating": 3.99385,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "ae": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 10321,
+     "averageUserRating": 3.49249,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "qa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1938,
+     "averageUserRating": 3.14603,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "bh": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1992,
+     "averageUserRating": 4.1742,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "om": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 239,
+     "averageUserRating": 4.4728,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "hk": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - 外賣送遞及自取",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 134709,
+     "averageUserRating": 4.73908,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2023-05-20T07:00:00Z"
+    }
+   },
+   "requests": [
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "gap": true
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "gap": true
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "gap": true
+    },
+    {
+     "storefront": "kw",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 34,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "gap": true
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 7,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "gap": true
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 15,
+     "error": null
+    },
+    {
+     "storefront": "om",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 10,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 10,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    }
+   ]
+  },
+  {
+   "fetched_at": "2026-09-27T12:19:14+00:00",
+   "lookups": {
+    "sa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 659110,
+     "averageUserRating": 4.68022,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-01T07:00:00Z"
+    },
+    "kw": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 4063,
+     "averageUserRating": 3.99385,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "ae": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 10321,
+     "averageUserRating": 3.49249,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "qa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1938,
+     "averageUserRating": 3.14603,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "bh": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1992,
+     "averageUserRating": 4.1742,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "om": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 239,
+     "averageUserRating": 4.4728,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "hk": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - 外賣送遞及自取",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 134709,
+     "averageUserRating": 4.73908,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2023-05-20T07:00:00Z"
+    }
+   },
+   "requests": [
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "gap": true
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 6,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 4,
+     "variant": "xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 34,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 13,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 15,
+     "error": null
+    },
+    {
+     "storefront": "om",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 10,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    }
+   ]
+  },
+  {
+   "fetched_at": "2026-09-27T12:25:31+00:00",
+   "lookups": {
+    "sa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 659110,
+     "averageUserRating": 4.68022,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-01T07:00:00Z"
+    },
+    "kw": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 4063,
+     "averageUserRating": 3.99385,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "ae": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 10321,
+     "averageUserRating": 3.49249,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "qa": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1938,
+     "averageUserRating": 3.14603,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "bh": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 1992,
+     "averageUserRating": 4.1742,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "om": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - Food Delivery",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 239,
+     "averageUserRating": 4.4728,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2024-09-14T07:00:00Z"
+    },
+    "hk": {
+     "trackId": 1662451643,
+     "trackName": "Keeta - 外賣送遞及自取",
+     "sellerName": "Kangaroo Limited",
+     "artistName": "Kangaroo Limited",
+     "bundleId": "com.sankuai.sailor.ifooddelivery",
+     "primaryGenreName": "Food & Drink",
+     "userRatingCount": 134709,
+     "averageUserRating": 4.73908,
+     "version": "3.12.401",
+     "currentVersionReleaseDate": "2026-09-18T18:40:05Z",
+     "releaseDate": "2023-05-20T07:00:00Z"
+    }
+   },
+   "requests": [
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 1,
+     "attempt": 3,
+     "variant": "json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "sa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "kw",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 34,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 8,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "ae",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 1,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "qa",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 13,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "bh",
+     "page": 4,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 15,
+     "error": null
+    },
+    {
+     "storefront": "om",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 10,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 1,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 2,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 3,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 4,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 5,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 6,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 7,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 8,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 0,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 9,
+     "attempt": 2,
+     "variant": "sortby=mostrecent/xml",
+     "status": 200,
+     "n": 50,
+     "error": null
+    },
+    {
+     "storefront": "hk",
+     "page": 10,
+     "attempt": 1,
+     "variant": "sortby=mostrecent/json",
+     "status": 200,
+     "n": 50,
+     "error": null
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "checked_at": "2026-09-27T12:30:36+00:00",
+ "apps": [
+  {
+   "lookup": "https://itunes.apple.com/lookup?id=1662451643&country=sa",
+   "why": "the app analysed",
+   "trackId": 1662451643,
+   "trackName": "Keeta - Food Delivery",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "artistId": 1662451645,
+   "bundleId": "com.sankuai.sailor.ifooddelivery",
+   "primaryGenreName": "Food & Drink",
+   "sellerUrl": "https://www.keeta-global.com",
+   "releaseDate": "2024-09-01T07:00:00Z"
+  },
+  {
+   "lookup": "https://itunes.apple.com/lookup?id=1673738231&country=sa",
+   "why": "Keeta Rider (courier app), same seller",
+   "trackId": 1673738231,
+   "trackName": "Keeta Rider",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "artistId": 1662451645,
+   "bundleId": "com.sankuai.sailor.icourier",
+   "primaryGenreName": "Utilities",
+   "sellerUrl": "https://courier.keeta-global.com/#/",
+   "releaseDate": "2024-08-01T07:00:00Z"
+  },
+  {
+   "lookup": "https://itunes.apple.com/lookup?id=6464556493&country=sa",
+   "why": "Keeta Partner (merchant app), same seller",
+   "trackId": 6464556493,
+   "trackName": "Keeta Partner",
+   "sellerName": "Kangaroo Limited",
+   "artistName": "Kangaroo Limited",
+   "artistId": 1662451645,
+   "bundleId": "com.sankuai.sailor.ipartner",
+   "primaryGenreName": "Business",
+   "sellerUrl": "https://merchant.mykeeta.com/web/joinin",
+   "releaseDate": "2024-08-22T07:00:00Z"
+  },
+  {
+   "lookup": "https://itunes.apple.com/lookup?id=737310995&country=hk",
+   "why": "Meituan's own food-delivery app, for comparison of the bundle-id namespace",
+   "trackId": 737310995,
+   "trackName": "美团外卖",
+   "sellerName": "Sankuai Technology Co., Ltd.",
+   "artistName": "美团",
+   "artistId": 423084032,
+   "bundleId": "com.meituan.itakeaway",
+   "primaryGenreName": "Food & Drink",
+   "sellerUrl": "http://waimai.meituan.com",
+   "releaseDate": "2013-11-20T02:20:34Z"
+  }
+ ],
+ "reading": "All three Keeta apps are published by 'Kangaroo Limited' under the bundle-id namespace 'com.sankuai.sailor.*'. 'com.sankuai' is the namespace of Sankuai (the Meituan group's operating company), and Meituan's own food-delivery app is sold by 'Sankuai Technology Co., Ltd.'. This is circumstantial store metadata, recorded as evidence that app id 1662451643 is the Meituan-group Keeta food-delivery app; it is not a statement from Keeta or Meituan."
+}
