@@ -23,10 +23,12 @@ from keeta_voc.dataset import DERIVED_DIR, LABEL_DIR, RESULTS_DIR, read_csv, rea
 from keeta_voc.db import connect, run  # noqa: E402
 from keeta_voc.frames import assert_frames_equal  # noqa: E402
 from keeta_voc.jsoncmp import assert_close  # noqa: E402
-from keeta_voc.stats import bootstrap_ranking, wilson  # noqa: E402
+from keeta_voc.taxonomy import label_names  # noqa: E402
+from keeta_voc.stats import bootstrap_ranking, newcombe_diff, wilson  # noqa: E402
 
 OUT = RESULTS_DIR / "metrics.json"
 MIN_VERSION_N = 10
+RECENT_MIN_N = 30
 METHODS = ("rules", "llm")
 
 
@@ -61,6 +63,8 @@ def sql_and_pandas(reviews: pd.DataFrame, labels: dict) -> dict:
             "by_version": (run(con, "by_version", method=m, min_n=MIN_VERSION_N),
                            metrics_pd.by_version(reviews, lab, MIN_VERSION_N)),
             "month_trend": (run(con, "month_trend", method=m), metrics_pd.month_trend(reviews, lab)),
+            "cooccurrence": (run(con, "cooccurrence", method=m), metrics_pd.cooccurrence(reviews, lab)),
+            "region_band": (run(con, "region_band", method=m), metrics_pd.region_band(reviews, lab)),
         }
         for name, (s, p) in per.items():
             assert_frames_equal(s, p, f"{m}/{name}")
@@ -86,6 +90,35 @@ def pain_point_intervals(reviews: pd.DataFrame, lab: dict, pain: pd.DataFrame) -
     return out
 
 
+def recent_change(reviews: pd.DataFrame, lab: dict, min_n: int = RECENT_MIN_N) -> dict:
+    """Per storefront: latest calendar month in the data vs the three months before it.
+
+    Compares the share of 1-2 star reviews and the share of reviews mentioning each label,
+    with Newcombe 95% intervals for the difference. Storefronts where either period has fewer
+    than `min_n` reviews are skipped (listed with the reason)."""
+    out = {}
+    labelled = reviews[reviews["review_key"].map(lambda k: bool(lab.get(k)))]
+    for sf, g in labelled.groupby("storefront"):
+        months = sorted(g["month"].unique())
+        recent, base_months = months[-1], months[-4:-1]
+        a, b = g[g["month"] == recent], g[g["month"].isin(base_months)]
+        entry = {"recent_month": recent, "base_months": list(base_months), "n_recent": int(len(a)),
+                 "n_base": int(len(b))}
+        if len(a) < min_n or len(b) < min_n:
+            entry["skipped"] = f"fewer than {min_n} reviews in one period"
+            out[sf] = entry
+            continue
+
+        def cmp(ka, kb):
+            return {"recent": ka / len(a), "base": kb / len(b), "diff": ka / len(a) - kb / len(b),
+                    "diff_ci": list(newcombe_diff(ka, len(a), kb, len(b))), "k_recent": int(ka), "k_base": int(kb)}
+        entry["negative"] = cmp(int((a["rating"] <= 2).sum()), int((b["rating"] <= 2).sum()))
+        entry["labels"] = {n: cmp(sum(n in lab[k] for k in a["review_key"]), sum(n in lab[k] for k in b["review_key"]))
+                           for n in label_names()}
+        out[sf] = entry
+    return out
+
+
 def records(df: pd.DataFrame) -> list:
     return json.loads(df.to_json(orient="records"))
 
@@ -100,12 +133,14 @@ def compute() -> dict:
         "primary_method": prim,
         "secondary_method": other,
         "min_version_n": MIN_VERSION_N,
+        "recent_min_n": RECENT_MIN_N,
         "n_reviews": int(len(reviews)),
         "overview": records(frames["overview"]),
         "language_mix": records(frames["language_mix"]),
         "methods": {m: {k: records(v) for k, v in frames[m].items()} for m in METHODS},
         "pain_point_intervals": {m: pain_point_intervals(reviews, labels[m], frames[m]["pain_points"])
                                  for m in METHODS},
+        "recent_change": {m: recent_change(reviews, labels[m]) for m in METHODS},
         "sql_equals_pandas": True,
     }
     return res
@@ -120,7 +155,7 @@ def main():
         assert_close(json.loads(OUT.read_text(encoding="utf-8")), fresh, "metrics")
         print("metrics.json matches a fresh computation; every SQL query equals its pandas re-implementation")
         return
-    OUT.write_text(json.dumps(fresh, indent=1, ensure_ascii=False), encoding="utf-8")
+    OUT.write_text(json.dumps(fresh, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
     print(f"wrote {OUT}; primary method = {fresh['primary_method']}")
 
 

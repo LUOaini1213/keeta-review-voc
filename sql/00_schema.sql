@@ -2,6 +2,7 @@
 CREATE TABLE reviews (
     review_key   TEXT PRIMARY KEY,
     storefront   TEXT NOT NULL,
+    region       TEXT NOT NULL,   -- gulf / hk (derived from storefront)
     rating       INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 5),
     app_version  TEXT NOT NULL,
     review_date  TEXT NOT NULL,   -- YYYY-MM-DD (UTC)

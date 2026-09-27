@@ -2,7 +2,7 @@ import math
 
 import numpy as np
 
-from keeta_voc.stats import bootstrap_ranking, wilson
+from keeta_voc.stats import bootstrap_ranking, newcombe_diff, wilson
 
 
 def test_wilson_known_value():
@@ -35,3 +35,11 @@ def test_bootstrap_ranking_tie_is_uncertain():
     out = bootstrap_ranking(X, ["a", "b"], n_boot=500, seed=2)
     assert 0.3 < out["a"]["p_rank1"] < 0.8 and 0.3 < out["b"]["p_rank1"] < 0.8
     assert out["a"]["rank_ci"] == [1, 2]
+
+
+def test_newcombe_known_value():
+    # Newcombe (1998) example 1: 56/70 vs 48/80 -> difference 0.2, 95% CI (0.0524, 0.3339)
+    lo, hi = newcombe_diff(56, 70, 48, 80)
+    assert math.isclose(lo, 0.0524, abs_tol=5e-4) and math.isclose(hi, 0.3339, abs_tol=5e-4)
+    lo, hi = newcombe_diff(10, 20, 10, 20)
+    assert lo < 0 < hi and math.isclose(lo, -hi)

@@ -56,10 +56,10 @@ def main():
     reviews = dedupe(all_reviews)
     snap = {"app_id": APP_ID, "fetched_at": fetched_at, "source": "Apple customer-reviews RSS (public)",
             "reviews": reviews}
-    snap_path.write_text(json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
+    snap_path.write_text(json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
     runs.append({"fetched_at": fetched_at, "lookups": lookups, "requests": log.requests})
     log_path.parent.mkdir(parents=True, exist_ok=True)
-    log_path.write_text(json.dumps({"app_id": APP_ID, "runs": runs}, ensure_ascii=False, indent=1), encoding="utf-8")
+    log_path.write_text(json.dumps({"app_id": APP_ID, "runs": runs}, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
     print(f"total unique reviews in {snap_path.name}: {len(reviews)}")
 
 

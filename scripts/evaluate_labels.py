@@ -36,6 +36,7 @@ def compute() -> dict:
     L = to_matrix(keys, llm, names)
     out = {
         "n_reference": len(keys),
+        "n_boot": N_BOOT,
         "labels": list(names),
         "reference_label_counts": {n: int(Y[:, j].sum()) for j, n in enumerate(names)},
         "rules": evaluate(Y, R, names, n_boot=N_BOOT, seed=0),
@@ -66,7 +67,7 @@ def main():
         print("label_quality.json matches a fresh computation")
         return
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(fresh, indent=1, ensure_ascii=False), encoding="utf-8")
+    OUT.write_text(json.dumps(fresh, indent=1, ensure_ascii=False), encoding="utf-8", newline="\n")
     print(f"wrote {OUT}")
     for m in ("rules", "llm"):
         o = fresh[m]["overall"]

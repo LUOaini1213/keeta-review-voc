@@ -41,3 +41,14 @@ def bootstrap_ranking(X: np.ndarray, names: list[str], n_boot: int = 2000, seed:
                         int(np.quantile(ranks[:, j], 0.975, method="higher"))],
         }
     return out
+
+
+def newcombe_diff(k1: int, n1: int, k2: int, n2: int, z: float = 1.959963984540054) -> tuple[float, float]:
+    """95% CI for p1 - p2 (Newcombe's hybrid score method, from two Wilson intervals)."""
+    p1, p2 = k1 / n1, k2 / n2
+    l1, u1 = wilson(k1, n1, z)
+    l2, u2 = wilson(k2, n2, z)
+    d = p1 - p2
+    lo = d - math.sqrt((p1 - l1) ** 2 + (u2 - p2) ** 2)
+    hi = d + math.sqrt((u1 - p1) ** 2 + (p2 - l2) ** 2)
+    return (lo, hi)

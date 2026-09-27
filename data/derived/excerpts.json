@@ -1,0 +1,83 @@
+[
+ {
+  "id": "cs_refund",
+  "review_key": "f3df51789c2fc975",
+  "storefront": "om",
+  "rating": 1,
+  "review_date": "2026-01-26",
+  "excerpt": "Haven't received my refund yet, it's been 3 days and no proper response from the customer service!",
+  "gloss": null
+ },
+ {
+  "id": "missing_items",
+  "review_key": "47037b92aca0c74c",
+  "storefront": "sa",
+  "rating": 1,
+  "review_date": "2026-08-06",
+  "excerpt": "طلبت أربعة أصناف، ولم يصلني سوى صنف واحد",
+  "gloss": "I ordered four items and only one arrived"
+ },
+ {
+  "id": "eta_pushed",
+  "review_key": "62fef1370e1d76b0",
+  "storefront": "ae",
+  "rating": 3,
+  "review_date": "2026-06-10",
+  "excerpt": "They just keep pushing your delivery schedule further",
+  "gloss": null
+ },
+ {
+  "id": "eta_edited",
+  "review_key": "3207519f00e7b5f6",
+  "storefront": "sa",
+  "rating": 3,
+  "review_date": "2026-09-08",
+  "excerpt": "بعد مايتأخر التوصيل تحصل الوقت الي كان موجود متعدل وزايد ومايجيك تعويض",
+  "gloss": "once the delivery is late you find the promised time has been edited upwards, and no compensation comes"
+ },
+ {
+  "id": "cancel_10aed",
+  "review_key": "0f31924ddd1ba5fb",
+  "storefront": "ae",
+  "rating": 1,
+  "review_date": "2026-09-02",
+  "excerpt": "sorry we can’t cancel the order we will refund you 10 AED",
+  "gloss": null
+ },
+ {
+  "id": "proof_of_delivery",
+  "review_key": "5c071c1ac37006b6",
+  "storefront": "om",
+  "rating": 1,
+  "review_date": "2026-09-24",
+  "excerpt": "مندوب جاب طلبيه صورها مع الباب وسرقها",
+  "gloss": "a courier brought the order, photographed it at the door and took it away"
+ },
+ {
+  "id": "daily_coupon",
+  "review_key": "6b7f1e1df8977a7f",
+  "storefront": "qa",
+  "rating": 5,
+  "review_date": "2025-11-19",
+  "excerpt": "Love the daily coupon. Really saves a lot and makes me want to order.",
+  "gloss": null
+ },
+ {
+  "id": "no_cash",
+  "review_key": "1ee0c35cc16288d7",
+  "storefront": "kw",
+  "rating": 2,
+  "review_date": "2026-03-20",
+  "excerpt": "لا يوجد دفع كاش فقط كي نت",
+  "gloss": "no cash payment, only KNET (debit card)"
+ },
+ {
+  "id": "hk_wrong_food",
+  "review_key": "630bff9019bfa2d7",
+  "storefront": "hk",
+  "rating": 1,
+  "review_date": "2025-11-07",
+  "excerpt": "送錯食物,但拒絕退錢",
+  "gloss": "wrong food delivered, but they refused a refund"
+ }
+]

@@ -91,7 +91,7 @@ for (const sf of Object.keys(DATA.pain)) {
   const card = document.createElement("div"); card.className = "card";
   const nneg = rows.length ? rows[0][1].n_negative : 0;
   card.innerHTML = `<h3>${DATA.names[sf] || sf}</h3><div class="n">n = ${nneg} reviews rated 1&ndash;2&#9733;</div>`;
-  const W = 340, L = 128, R = 44, rowH = 22, H = rows.length * rowH + 18;
+  const W = 380, L = 164, R = 44, rowH = 22, H = rows.length * rowH + 18;
   const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `Pain points, ${sf}` }, card);
   const x = (v) => L + v * (W - L - R);
   for (const t of [0, 0.25, 0.5, 0.75, 1]) { el("line", { x1: x(t), x2: x(t), y1: 0, y2: H - 16, class: "gl" }, svg);

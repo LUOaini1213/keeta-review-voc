@@ -59,7 +59,7 @@ def main():
         manifest["pull_runs"] = len(runs)
         manifest["lookups"] = runs[-1]["lookups"]
         manifest["page_coverage"] = page_coverage(runs)
-    (DERIVED_DIR / "snapshot_manifest.json").write_text(json.dumps(manifest, indent=1), encoding="utf-8")
+    (DERIVED_DIR / "snapshot_manifest.json").write_text(json.dumps(manifest, indent=1), encoding="utf-8", newline="\n")
     print(json.dumps(manifest, indent=1))
     print("wrote", (WORK_DIR / "reviews_full.csv").relative_to(ROOT), "and data/derived/reviews_meta.csv")
 

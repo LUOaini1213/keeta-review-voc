@@ -1,0 +1,163 @@
+# keeta-review-voc
+
+AI-assisted, reproducible voice-of-customer (VOC) analysis of public App Store reviews of **Keeta**
+(the food-delivery app, App Store id {{man.app_id}}) in the Gulf markets, with Hong Kong as a comparison.
+
+> Personal project built 2026-09 by Wenjie Luo, using public reviews only.
+> **Not affiliated with Keeta or Meituan. No internal data.** Nothing here measures or claims a
+> business impact for Keeta.
+
+**Read the findings: [REPORT.md](REPORT.md)** · interactive view: [docs/dashboard.html](docs/dashboard.html)
+(download and open locally; single self-contained file).
+
+## What it does
+
+```
+Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  (the only network step)
+  → frozen snapshot, reviewer identity dropped  ── data/raw/ (local) + data/derived/ (committed, text-free)
+  → clean + language tag (en / ar / zh / other) ── keeta_voc/text.py
+  → issue labels, two methods                   ── rules: keeta_voc/rules.py   LLM: keeta_voc/llm.py
+  → scored against a blind reference set        ── scripts/evaluate_labels.py
+  → SQLite + committed SQL (sql/*.sql)          ── scripts/compute_metrics.py  (each query re-implemented in pandas and compared)
+  → REPORT.md / README.md / dashboard           ── every number rendered from results/ and checked in CI
+```
+
+## Data and privacy
+
+- **Source:** Apple's public customer-reviews RSS feed (JSON and XML variants of the same feed), no
+  login, throttled requests. Google Play and anything behind a login were deliberately not used.
+- **App identity:** the store lookup lists the seller as "Kangaroo Limited" with bundle id
+  `com.sankuai.sailor.ifooddelivery`; the Keeta rider and merchant apps share that seller, and
+  `com.sankuai` is the Meituan group's namespace (Meituan's own delivery app is sold by
+  "Sankuai Technology Co., Ltd."). Evidence: [data/derived/app_identity.json](data/derived/app_identity.json).
+- **Storefronts:** Saudi Arabia, Kuwait, UAE, Qatar, Bahrain, Oman and Hong Kong all returned data.
+  The feed serves at most 10 pages × 50 reviews per storefront and often answers with empty pages,
+  so the snapshot is the union of {{man.pull_runs}} pulls on {{snapshot_date}} (every request is logged in
+  `data/derived/pull_log_*.json`). In total {{m.n_reviews|int}} reviews.
+- **Privacy:** reviewer names, profile URLs and Apple review ids are never written to disk. Each review
+  is keyed by the first 16 hex characters of SHA-256("storefront:review id").
+- **What is committed and what is not.** Review texts belong to their authors and are subject to Apple's
+  terms, so the full texts are **not** in this repository. The repo commits a text-free table
+  (`data/derived/reviews_meta.csv`: key, storefront, rating, app version, date, language, length and a
+  hash of the text), the labels of every method, the SHA-256 of the local snapshot file, and only the
+  {{n_quotes}} short excerpts quoted in the report (`data/derived/excerpts.json`). Everything downstream of
+  labelling (label quality, all SQL metrics, the docs) is reproducible from these files, and CI does
+  exactly that. Re-running the text-dependent steps needs a fresh pull (see Reproduce).
+
+## Method
+
+- **Taxonomy** (`keeta_voc/taxonomy.yaml`): {{n_labels}} topic labels for food-delivery ops:
+  delivery time, order fulfilment, food quality, rider behaviour, merchant/menu availability, pricing &
+  promos, payment & refunds, customer service, app bugs & UX, positive praise, and `other`
+  (only when nothing else applies). Multi-label; a label means the topic is discussed, positive or negative.
+- **Method 1, rules:** English regexes with word boundaries, Arabic keywords matched after normalisation
+  (hamza/alef, ta marbuta, diacritics), Traditional Chinese / Cantonese keywords, and a small negation
+  window for praise.
+- **Method 2, local LLM:** qwen2.5:3b through Ollama on CPU, temperature 0, output constrained by a
+  JSON schema whose enum is the taxonomy, then validated again in Python. Invalid outputs are recorded
+  and scored as "no label", never dropped. Every prompt and response is logged
+  (`data/labels/llm_log.jsonl`; the review text inside each prompt is kept only in the local log).
+- **Reference set:** a seeded sample of {{q.n_reference}} reviews stratified by storefront × rating band.
+  **These reference labels are AI-assisted labels made in the author's workflow** (the AI coding
+  assistant used to build the project labelled each review under [a written guide](docs/labeling_guide.md),
+  seeing only the text, without ratings or either method's output). They are not independent human
+  annotation and not "ground truth". They were committed before either method was scored.
+- **Scores:** per-label precision / recall / F1 and Cohen's κ with {{boot}}-resample bootstrap intervals,
+  plus a paired bootstrap of the F1 difference between methods.
+- **Primary labeler** (rule fixed before scoring, in `scripts/compute_metrics.py`): whichever method has the
+  higher micro-F1 on the reference set. Result: **{{prim}}**. The other method's tables are kept in
+  `results/metrics.json` for comparison.
+- **Metrics:** SQL in [`sql/`](sql) (issue share by storefront, by rating, by app version, by month;
+  pain-point ranking among 1–2★ reviews; co-occurrence), each checked against an independent pandas
+  implementation. Intervals: Wilson and bootstrap for shares, Newcombe for differences.
+
+## Results
+
+### Label quality (reference set, n = {{q.n_reference}})
+
+{{table:quality}}
+
+**The local LLM scored {{words.llm_vs_rules}} than the keyword rules** (micro-F1 {{qo.llm.micro_f1|f2}} vs
+{{qo.rules.micro_f1|f2}}; difference {{diff.micro_f1.diff|f2}}, 95% CI {{diff.micro_f1.ci|ci_f2}}).
+It was clearly worse on: {{words.llm_losses}}. It was clearly better on: {{words.llm_wins}}.
+The language detector agreed with the reference language tag on {{lang.accuracy|pct1}} of the
+{{lang.n}} reference reviews.
+
+### Markets
+
+{{table:overview}}
+
+### Top pain points (share of 1–2★ reviews, primary labeler)
+
+{{table:pain}}
+
+See [REPORT.md](REPORT.md) for what the complaints are about, what changed, and recommendations.
+
+## Limitations (这不是什么)
+
+- Not Keeta or Meituan data, and not a measure of customer satisfaction: written reviews are a
+  self-selected, complaint-heavy sample ({{neg_range|rng_pct0}} are 1–2★ where the
+  store-wide average is {{store_avg_range|rng_f2}}★).
+- Only the latest 500 reviews per storefront are available, so each market covers a different window;
+  Oman ({{ov.om.n_reviews}} reviews) and Bahrain ({{ov.bh.n_reviews}}) are small.
+- Labels have errors (see the table); shares inherit them. Per-label reference support is small for
+  some labels, so their intervals are wide.
+- The reference labels are AI-assisted, by the same assistant that wrote the rule keywords: agreement
+  partly measures consistency between the two, which may favour the rules over the LLM.
+- Only a 3B-parameter local model on CPU was tried as the LLM labeler; a larger model or few-shot
+  prompting may do better. That was not tested here.
+- No causal claims: the UAE change in the latest month is described, not explained.
+
+## Reproduce
+
+From the committed, text-free data (what CI runs; no network, no LLM):
+
+```bash
+pip install -r requirements.txt
+python -m pytest -q
+python scripts/evaluate_labels.py --check && python scripts/compute_metrics.py --check && python scripts/check_numbers.py --check
+```
+
+Full re-run from a fresh pull (needs network; Apple only serves the latest reviews, so the numbers
+will differ from this snapshot; the LLM step needs [Ollama](https://ollama.com) with `qwen2.5:3b`):
+
+```bash
+python scripts/fetch_reviews.py && python scripts/fetch_reviews.py --merge   # repeat --merge until no page gaps
+python scripts/build_dataset.py && python scripts/label_rules.py
+python scripts/make_reference_sample.py      # then label data/work/reference_worksheet.jsonl -> data/labels/reference.csv
+python scripts/label_llm.py --reference-first
+python scripts/evaluate_labels.py && python scripts/compute_metrics.py && python scripts/make_excerpts.py
+python scripts/check_numbers.py --write && python scripts/build_dashboard.py
+```
+
+Test-suite strength is checked by mutation testing (`python scripts/mutation_check.py`): see
+[MUTATION.md](MUTATION.md).
+
+## 中文摘要
+
+用公开的 App Store 评论（{{m.n_reviews|int}} 条，沙特/科威特/阿联酋/卡塔尔/巴林/阿曼 + 香港对照，快照
+{{snapshot_date}}）做的 Keeta 用户之声分析，个人项目，与 Keeta/美团无关，不含任何内部数据。
+
+- 书面评论几乎都是投诉：各市场 1–2★ 占 {{neg_range|rng_pct0}}，而商店总评分均值为
+  {{store_avg_range|rng_f2}}★，所以这些评论只能回答"哪里出了问题"。
+- 客服在 {{ranked.n}} 个样本足够的市场中的 {{rank1.customer_service.n}} 个是 1–2★ 评论里最常被提到的话题；
+  海湾地区提到客服的差评中，{{cooc.gulf.customer_service.payment_refund.share_b_given_a|pct0}} 同时提到支付/退款，
+  问题核心是出错后的补救（退款被拒、只退钱包、只给小额券）。
+- 阿联酋例外：配送时效（{{pain.ae.delivery_time.share|pct0}}）与客服（{{pain.ae.customer_service.share|pct0}}）并列第一；
+  最近一个月 1–2★ 占比从 {{recent.ae.negative.base|pct0}} 降到 {{recent.ae.negative.recent|pct0}}，同时价格/优惠相关好评增加，原因无法从数据判断。
+- 方法：关键词规则 vs 本地 LLM（qwen2.5:3b）两种打标，在 {{q.n_reference}} 条参考集上规则更好
+  （micro-F1 {{qo.rules.micro_f1|f2}} vs {{qo.llm.micro_f1|f2}}），因此主结果用规则；参考标注是 AI 辅助标注，
+  不是独立人工标注。所有指标用 SQL 计算并与 pandas 逐项对拍，文档里每个数字由脚本从结果文件生成并在 CI 校验。
+
+## Layout
+
+```
+keeta_voc/   package: fetch, text/language, taxonomy, rules, llm, evaluate, db, metrics_pd, stats, render, facts
+sql/         schema + every metric query
+scripts/     pipeline steps, --check modes, mutation_check.py
+data/        derived/ (text-free, committed) · labels/ (all methods + reference) · raw/ work/ (local only)
+results/     label_quality.json, metrics.json
+docs/        templates for README/REPORT, labelling guide, dashboard.html
+```
+
+License: MIT for code and the author's labels and write-ups. Review texts belong to their authors.

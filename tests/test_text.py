@@ -43,6 +43,8 @@ def test_detect_language_majority_script_wins():
     assert detect_language("good app but the delivery is slow جيد") == "en"
     # four Han characters (weight 3 each) outweigh four Latin letters
     assert detect_language("好用 好快 okay") == "zh"
+    # two Han characters (weight 3 each = 6) still outweigh four Latin letters; unweighted they would not
+    assert detect_language("好快 okay") == "zh"
 
 
 def test_review_date_converts_to_utc():

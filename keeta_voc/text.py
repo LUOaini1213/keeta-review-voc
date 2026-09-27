@@ -4,12 +4,12 @@ from __future__ import annotations
 import re
 import unicodedata
 
-_ZERO_WIDTH = re.compile("[​-‏‪-‮⁦-⁩﻿]")
+_ZERO_WIDTH = re.compile("[\u200b-\u200f\u202a-\u202e\u2066-\u2069\ufeff]")
 _WS = re.compile(r"\s+")
-_AR_DIACRITICS = re.compile("[ؐ-ًؚ-ٰٟۖ-ۭ]")
-_AR_MAP = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ٱ": "ا",
-                         "ى": "ي", "ة": "ه", "ؤ": "و", "ئ": "ي",
-                         "ـ": None})
+_AR_DIACRITICS = re.compile("[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed]")
+_AR_MAP = str.maketrans({"\u0623": "\u0627", "\u0625": "\u0627", "\u0622": "\u0627", "\u0671": "\u0627",
+                         "\u0649": "\u064a", "\u0629": "\u0647", "\u0624": "\u0648", "\u0626": "\u064a",
+                         "\u0640": None})
 
 
 def clean_text(s: str | None) -> str:

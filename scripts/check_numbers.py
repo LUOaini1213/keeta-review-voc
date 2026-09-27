@@ -38,6 +38,9 @@ ALLOWED_LITERALS = {
     "500": "10 pages x 50 reviews = the feed's hard cap per storefront",
     "2000": "number of bootstrap resamples (a setting, not a result)",
     "0": "temperature 0 (a setting)",
+    "6": "list / section numbering",
+    "16": "length of the review key in hex characters (a setting)",
+    "256": "name of the hash function SHA-256",
 }
 
 

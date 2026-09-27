@@ -48,6 +48,8 @@ def test_label_queries(data, method):
     assert_frames_equal(run(con, "by_version", method=method, min_n=30), metrics_pd.by_version(reviews, lab, 30),
                         "version")
     assert_frames_equal(run(con, "month_trend", method=method), metrics_pd.month_trend(reviews, lab), "month")
+    assert_frames_equal(run(con, "cooccurrence", method=method), metrics_pd.cooccurrence(reviews, lab), "cooc")
+    assert_frames_equal(run(con, "region_band", method=method), metrics_pd.region_band(reviews, lab), "band")
 
 
 def test_hand_computed_case():
@@ -79,6 +81,15 @@ def test_hand_computed_case():
     assert (r1["n_reviews"], r1["n_label"]) == (1, 1)
     trend = run(con, "month_trend", method="m")
     assert sorted(set(trend["month"])) == ["2026-08", "2026-09"]
+    co = run(con, "cooccurrence", method="m")
+    # of the 2 negative reviews mentioning delivery_time, 1 also mentions customer_service
+    row = co[(co["label_a"] == "delivery_time") & (co["label_b"] == "customer_service")].iloc[0]
+    assert (row["region"], row["n_a"], row["n_ab"], row["share_b_given_a"]) == ("gulf", 2, 1, 0.5)
+    row = co[(co["label_a"] == "customer_service") & (co["label_b"] == "delivery_time")].iloc[0]
+    assert (row["n_a"], row["n_ab"], row["share_b_given_a"]) == (1, 1, 1.0)
+    band = run(con, "region_band", method="m")
+    pos = band[(band["band"] == "pos") & (band["label"] == "positive_praise")].iloc[0]
+    assert (pos["region"], pos["n_reviews"], pos["n_label"]) == ("gulf", 1, 1)
 
 
 def test_frame_check_can_fail():

@@ -59,6 +59,58 @@ def build_context() -> dict:
     ctx["qo"] = {meth: q[meth]["overall"] for meth in ("rules", "llm")}
     ctx["diff"] = q["llm_minus_rules"]
     ctx["min_neg"] = MIN_STOREFRONT_NEG
+
+    # storefronts with enough 1-2 star reviews to rank, and where each issue ranks first
+    ranked = [sf for sf in pains[prim] if pains[prim][sf]["top"][0]["n_negative"] >= MIN_STOREFRONT_NEG]
+    ctx["ranked"] = {"n": len(ranked), "names": ", ".join(STOREFRONT_NAMES[s] for s in ranked)}
+    firsts = {}
+    for sf in ranked:
+        for row in pains[prim][sf]["top"]:
+            if row["rank"] == 1:
+                firsts.setdefault(row["label"], []).append(sf)
+    ctx["rank1"] = {lab: {"n": len(v), "names": ", ".join(STOREFRONT_NAMES[s] for s in v)} for lab, v in firsts.items()}
+    cs = [pains[prim][sf]["customer_service"]["share"] for sf in ranked if sf in GULF]
+    ctx["cs_gulf_range"] = [min(cs), max(cs)]
+    negs = [ov[s]["share_negative"] for s in ranked]
+    ctx["neg_range"] = [min(negs), max(negs)]
+    avg = [man["lookups"][s]["averageUserRating"] for s in ranked]
+    ctx["store_avg_range"] = [min(avg), max(avg)]
+    means = [ov[s]["mean_rating"] for s in ranked]
+    ctx["written_mean_range"] = [min(means), max(means)]
+
+    # region x band shares, co-occurrence, per-version rows, recent change
+    band = {}
+    for r in m["methods"][prim]["region_band"]:
+        band.setdefault(r["region"], {}).setdefault(r["band"], {})[r["label"]] = r
+    ctx["band"] = band
+    cooc = {}
+    for r in m["methods"][prim]["cooccurrence"]:
+        cooc.setdefault(r["region"], {}).setdefault(r["label_a"], {})[r["label_b"]] = r
+    ctx["cooc"] = cooc
+    ver = {}
+    for r in m["methods"][prim]["by_version"]:
+        ver.setdefault(r["storefront"], {}).setdefault(r["app_version"].replace(".", "_"), r)
+    ctx["ver"] = ver
+    ctx["recent"] = m["recent_change"][prim]
+    ctx["lang"] = q["language_detection"]
+    ctx["snapshot_date"] = man["fetched_at"][:10]
+    ctx["n_labels"] = len(q["labels"])
+    ctx["boot"] = q["n_boot"]
+    ctx["n_quotes"] = len(build_quotes())
+    f1s = [(v["f1"], lab) for lab, v in q["rules"]["per_label"].items() if v["f1"] is not None]
+    lo, hi = min(f1s), max(f1s)
+    ctx["rules_f1_min"] = {"f1": lo[0], "title": LABEL_TITLES[lo[1]]}
+    ctx["rules_f1_max"] = {"f1": hi[0], "title": LABEL_TITLES[hi[1]]}
+    wins = [LABEL_TITLES[lab] for lab in q["labels"] if (q["llm_minus_rules"][lab]["ci"][0] or 0) > 0]
+    losses = [LABEL_TITLES[lab] for lab in q["labels"] if (q["llm_minus_rules"][lab]["ci"][1] or 0) < 0]
+    clear_cs = [pains[prim][sf]["customer_service"]["p_rank1"] for sf in ranked
+                if pains[prim][sf]["customer_service"]["rank"] == 1 and sf in GULF]
+    ctx["cs_rank1_gulf_pmin"] = min(clear_cs) if clear_cs else None
+    ctx["words"] = {
+        "llm_vs_rules": "lower" if q["llm"]["overall"]["micro_f1"] < q["rules"]["overall"]["micro_f1"] else "higher",
+        "llm_wins": ", ".join(wins) if wins else "none",
+        "llm_losses": ", ".join(losses) if losses else "none",
+    }
     return ctx
 
 
@@ -81,9 +133,10 @@ def table_overview():
         mix = ", ".join(f"{k} {v}" for k, v in sorted(lang[sf].items(), key=lambda kv: -kv[1]))
         rows.append([f"{STOREFRONT_NAMES[sf]} (`{sf}`)", o["n_reviews"], f"{o['first_date']} → {o['last_date']}",
                      f"{o['mean_rating']:.2f}", _fmt_pct(o["share_negative"]), mix,
-                     f"{man['lookups'][sf]['userRatingCount']:,}"])
-    return _table(["Storefront", "Reviews (n)", "Date range", "Mean ★", "1–2★ share", "Language mix",
-                   "All-time ratings on store"], rows, ["---", "---:", "---", "---:", "---:", "---", "---:"])
+                     f"{man['lookups'][sf]['userRatingCount']:,}", f"{man['lookups'][sf]['averageUserRating']:.2f}"])
+    return _table(["Storefront", "Written reviews (n)", "Date range", "Mean ★", "1–2★ share", "Language mix",
+                   "All ratings on store (n)", "Store average ★"], rows,
+                  ["---", "---:", "---", "---:", "---:", "---", "---:", "---:"])
 
 
 def table_quality():
@@ -126,8 +179,47 @@ def table_pain(method=None, min_neg=MIN_STOREFRONT_NEG, top=3):
                   ["---", "---:", "---", "---", "---:"])
 
 
+def table_cooc(region="gulf", label_a="customer_service"):
+    ctx = build_context()
+    rows = []
+    for lab_b, r in sorted(ctx["cooc"][region][label_a].items(), key=lambda kv: -kv[1]["share_b_given_a"]):
+        rows.append([LABEL_TITLES[lab_b], f"{r['n_ab']} / {r['n_a']}", _fmt_pct(r["share_b_given_a"])])
+    return _table([f"Also mentions ({LABEL_TITLES[label_a]} complaints, {STOREFRONT_NAMES.get(region, region)})",
+                   "Reviews", "Share"], rows, ["---", "---:", "---:"])
+
+
+def table_recent(sf="ae"):
+    ctx = build_context()
+    e = ctx["recent"][sf]
+    rows = [["1–2★ reviews", _fmt_pct(e["negative"]["base"]), _fmt_pct(e["negative"]["recent"]),
+             f"{100 * e['negative']['diff']:+.0f} pp [{100 * e['negative']['diff_ci'][0]:+.0f}, "
+             f"{100 * e['negative']['diff_ci'][1]:+.0f}]"]]
+    for lab, v in e["labels"].items():
+        if v["diff_ci"][0] > 0 or v["diff_ci"][1] < 0:
+            rows.append([f"mentions {LABEL_TITLES[lab]}", _fmt_pct(v["base"]), _fmt_pct(v["recent"]),
+                         f"{100 * v['diff']:+.0f} pp [{100 * v['diff_ci'][0]:+.0f}, {100 * v['diff_ci'][1]:+.0f}]"])
+    base = ", ".join(e["base_months"])
+    return _table(["Share of written reviews", f"{base} (n = {e['n_base']})", f"{e['recent_month']} (n = {e['n_recent']})",
+                   "Difference [95% CI]"], rows, ["---", "---:", "---:", "---"])
+
+
+def table_versions(sf="ae"):
+    m = load_results()["metrics"]
+    prim = m["primary_method"]
+    seen, rows = set(), []
+    recs = [r for r in m["methods"][prim]["by_version"] if r["storefront"] == sf]
+    key = lambda v: tuple(int(x) for x in v.split("."))  # noqa: E731
+    for r in sorted(recs, key=lambda r: key(r["app_version"])):
+        if r["app_version"] in seen:
+            continue
+        seen.add(r["app_version"])
+        rows.append([r["app_version"], r["n_reviews"], f"{r['mean_rating']:.2f}", _fmt_pct(r["share_negative"])])
+    return _table(["App version", "Reviews", "Mean ★", "1–2★ share"], rows, ["---", "---:", "---:", "---:"])
+
+
 def build_tables() -> dict:
     return {"overview": table_overview, "quality": table_quality, "pain": table_pain,
+            "cooc_gulf_cs": table_cooc, "recent_ae": table_recent, "versions_ae": table_versions,
             "pain_secondary": lambda: table_pain(load_results()["metrics"]["secondary_method"])}
 
 

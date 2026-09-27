@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import pandas as pd
 
+from .db import region_of
 from .taxonomy import label_names
 
 NOT_PAIN = ("positive_praise", "other")
@@ -85,3 +86,35 @@ def language_mix(reviews):
     out = reviews.groupby(["storefront", "lang"]).size().rename("n_reviews").reset_index()
     out["share"] = out["n_reviews"] / out.groupby("storefront")["n_reviews"].transform("sum")
     return out.sort_values(["storefront", "n_reviews", "lang"], ascending=[True, False, True]).reset_index(drop=True)
+
+
+def _band(r: int) -> str:
+    return "neg" if r <= 2 else ("mid" if r == 3 else "pos")
+
+
+def cooccurrence(reviews, lab):
+    _, long = _long(reviews, lab)
+    long = long[(long["rating"] <= 2) & ~long["label"].isin(NOT_PAIN)].copy()
+    long["region"] = long["storefront"].map(region_of)
+    order = {n: i for i, n in enumerate(label_names())}
+    n_a = long.groupby(["region", "label"]).size().rename("n_a").reset_index().rename(columns={"label": "label_a"})
+    pairs = long[["review_key", "region", "label"]].merge(long[["review_key", "label"]], on="review_key",
+                                                           suffixes=("_a", "_b"))
+    pairs = pairs[pairs["label_a"] != pairs["label_b"]]
+    n_ab = pairs.groupby(["region", "label_a", "label_b"]).size().rename("n_ab").reset_index()
+    issues = [n for n in label_names() if n not in NOT_PAIN]
+    grid = n_a.merge(pd.DataFrame({"label_b": issues}), how="cross")
+    grid = grid[grid["label_a"] != grid["label_b"]]
+    out = grid.merge(n_ab, on=["region", "label_a", "label_b"], how="left").fillna({"n_ab": 0})
+    out["n_ab"] = out["n_ab"].astype(int)
+    out["share_b_given_a"] = out["n_ab"] / out["n_a"]
+    out["oa"], out["ob"] = out["label_a"].map(order), out["label_b"].map(order)
+    out = out.sort_values(["region", "oa", "ob"]).reset_index(drop=True)
+    return out[["region", "label_a", "label_b", "n_a", "n_ab", "share_b_given_a"]]
+
+
+def region_band(reviews, lab):
+    base, long = _long(reviews, lab)
+    base = base.assign(region=base["storefront"].map(region_of), band=base["rating"].map(_band))
+    long = long.assign(region=long["storefront"].map(region_of), band=long["rating"].map(_band))
+    return _shares(base, long, ["region", "band"])[["region", "band", "label", "n_reviews", "n_label", "share"]]

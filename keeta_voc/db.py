@@ -17,8 +17,14 @@ QUERIES = {
     "by_version": "05_by_version.sql",
     "month_trend": "06_month_trend.sql",
     "language_mix": "07_language_mix.sql",
+    "cooccurrence": "08_cooccurrence.sql",
+    "region_band": "09_region_band.sql",
 }
-REVIEW_COLS = ["review_key", "storefront", "rating", "app_version", "review_date", "month", "lang", "n_chars"]
+REVIEW_COLS = ["review_key", "storefront", "region", "rating", "app_version", "review_date", "month", "lang", "n_chars"]
+
+
+def region_of(storefront: str) -> str:
+    return "hk" if storefront == "hk" else "gulf"
 
 
 def connect(reviews: pd.DataFrame, labels: dict[str, dict[str, list[str] | None]]) -> sqlite3.Connection:
@@ -26,6 +32,7 @@ def connect(reviews: pd.DataFrame, labels: dict[str, dict[str, list[str] | None]
     con = sqlite3.connect(":memory:")
     con.executescript((SQL_DIR / "00_schema.sql").read_text(encoding="utf-8"))
     con.executemany("INSERT INTO taxonomy VALUES (?, ?)", [(n, i) for i, n in enumerate(label_names())])
+    reviews = reviews.assign(region=reviews["storefront"].map(region_of))
     rows = reviews[REVIEW_COLS].astype({"rating": int, "n_chars": int}).itertuples(index=False, name=None)
     con.executemany(f"INSERT INTO reviews VALUES ({','.join('?' * len(REVIEW_COLS))})", list(rows))
     known = set(reviews["review_key"])

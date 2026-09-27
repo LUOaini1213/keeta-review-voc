@@ -1,0 +1,150 @@
+# Keeta App Store reviews: what customers complain about (Gulf + Hong Kong)
+
+*Voice-of-customer readout from {{m.n_reviews|int}} public App Store reviews, snapshot {{snapshot_date}}.
+Personal project built 2026-09 by Wenjie Luo from public data only. Not affiliated with Keeta or
+Meituan; no internal data. Every number below is generated from `results/` and checked in CI.*
+
+## TL;DR
+
+1. **The written-review channel is a complaint channel.** In the {{ranked.n}} storefronts with enough
+   data, {{neg_range|rng_pct0}} of written reviews are 1–2★ (mean
+   {{written_mean_range|rng_f2}}★), while the same app's all-ratings store
+   average is {{store_avg_range|rng_f2}}★. Read these reviews as a list of
+   *what goes wrong*, not as a satisfaction score.
+2. **Customer service is the most-mentioned topic in 1–2★ reviews in {{rank1.customer_service.n}} of
+   {{ranked.n}} markets** ({{rank1.customer_service.names}}); in the Gulf markets it appears in
+   {{cs_gulf_range|rng_pct0}} of complaints.
+3. **It is mostly failed service recovery.** Of Gulf complaints that mention customer service,
+   {{cooc.gulf.customer_service.payment_refund.share_b_given_a|pct0}} also mention payment/refunds,
+   {{cooc.gulf.customer_service.delivery_time.share_b_given_a|pct0}} delivery time and
+   {{cooc.gulf.customer_service.order_fulfilment.share_b_given_a|pct0}} a missing/wrong/undelivered order.
+4. **UAE is different:** delivery time ({{pain.ae.delivery_time.share|pct0}}) and customer service
+   ({{pain.ae.customer_service.share|pct0}}) are statistically tied at the top, and rider behaviour is
+   raised in {{pain.ae.rider_behavior.share|pct0}} of complaints (Gulf-wide:
+   {{band.gulf.neg.rider_behavior.share|pct0}}).
+5. **UAE, {{recent.ae.recent_month}}:** the 1–2★ share of written reviews fell to
+   {{recent.ae.negative.recent|pct0}} from {{recent.ae.negative.base|pct0}} in the previous three months,
+   while mentions of prices/promos rose to {{recent.ae.labels.pricing_promos.recent|pct0}}
+   (from {{recent.ae.labels.pricing_promos.base|pct0}}). This data cannot say why (see below).
+6. **Hong Kong** (comparison market): pricing & promos is the second-most-mentioned complaint topic
+   ({{pain.hk.pricing_promos.share|pct0}} of 1–2★ reviews).
+
+Method note: labels come from a keyword/rule labeler, which scored **higher** than a local LLM
+(qwen2.5:3b) against a {{q.n_reference}}-review reference set (micro-F1
+{{qo.rules.micro_f1|f2}} vs {{qo.llm.micro_f1|f2}}). Details and caveats at the end.
+
+## 1. Market snapshot
+
+{{table:overview}}
+
+Oman has only {{ov.om.n_reviews}} written reviews in the feed and is not analysed on its own.
+Date ranges differ by market because Apple's feed only serves the latest 500 reviews: in Saudi
+Arabia those cover about two months, in Qatar more than a year.
+
+## 2. Top pain points per market
+
+Share of each market's 1–2★ reviews that mention the issue; 95% bootstrap intervals
+({{q.n_boot}} resamples); *P(rank 1)* = how often the issue came out on top across resamples.
+
+{{table:pain}}
+
+Reading: customer service leads everywhere except the UAE; in the other Gulf markets its
+P(rank 1) is at least {{cs_rank1_gulf_pmin|floor2}}. In the UAE, delivery time and customer service swap
+places across resamples (P(rank 1) counts ties for both, so the column can sum to more than 1). The second place is contested between
+payment/refunds, delivery time and order fulfilment, whose intervals overlap.
+
+## 3. What a customer-service complaint is about
+
+Gulf 1–2★ reviews that mention customer service, and what else they mention:
+
+{{table:cooc_gulf_cs}}
+
+The typical story is a chain: something goes wrong with the order (late, missing items, never
+arrived), the customer contacts support, and the complaint is about the outcome: a refund refused,
+paid to the in-app wallet only, or replaced by a small voucher. Examples (short excerpts; Arabic and
+Chinese glossed by the author):
+
+- {{quote:cs_refund}}
+- {{quote:missing_items}}
+- {{quote:cancel_10aed}}
+- {{quote:hk_wrong_food}}
+
+Delivery-time complaints often question the ETA itself rather than lateness alone:
+
+- {{quote:eta_pushed}}
+- {{quote:eta_edited}}
+
+And a recurring rider-related claim is about proof of delivery:
+
+- {{quote:proof_of_delivery}}
+
+## 4. What changed: UAE
+
+The UAE is the only market with enough recent reviews to compare the latest month with the three
+before it (at least {{m.recent_min_n}} reviews in each period). Rows shown are those whose 95% interval excludes zero:
+
+{{table:recent_ae}}
+
+By app version (versions with at least {{m.min_version_n}} reviews):
+
+{{table:versions_ae}}
+
+The shift is concentrated in the {{recent.ae.recent_month}} reviews and the newest app versions, and it
+comes with more short 4–5★ reviews that praise prices and vouchers (the same theme as in 4–5★
+reviews elsewhere, e.g. {{quote:daily_coupon}}). This data cannot separate the possible causes: a product change in the
+newer versions, a promotion campaign, or a change in who is prompted to leave a review. In Saudi
+Arabia, the other market with enough recent volume, the 1–2★ share did not move
+({{recent.sa.negative.recent|pct0}} in {{recent.sa.recent_month}} vs {{recent.sa.negative.base|pct0}} before).
+
+## 5. Recommendations (each tied to a metric that would show whether it worked)
+
+These are hypotheses for an operations team to test, not claims of impact. Each names the review-based
+metric this pipeline already produces, plus the internal metric that would be the real test.
+
+1. **Refund missing/wrong items to the original payment method, fast, with a photo-based self-serve
+   flow.** Review metric: share of 1–2★ reviews mentioning payment/refunds (Gulf now
+   {{band.gulf.neg.payment_refund.share|pct0}}) and order fulfilment ({{band.gulf.neg.order_fulfilment.share|pct0}}).
+   Internal metric: time-to-refund and repeat contacts per order issue, compared between a pilot
+   market/cohort and a holdout.
+2. **Give first-line chat agents a bounded compensation budget so the first contact can close the
+   case.** Review metric: share of 1–2★ reviews mentioning customer service
+   (Gulf {{band.gulf.neg.customer_service.share|pct0}}). Internal metric: first-contact resolution rate and
+   post-chat CSAT, A/B by agent group.
+3. **Keep the promised ETA fixed for lateness compensation and show the reason for any revision.**
+   Review metric: delivery-time share of UAE 1–2★ reviews ({{pain.ae.delivery_time.share|pct0}}).
+   Internal metric: share of orders delivered after the *first* promised ETA, and ETA revisions per order.
+4. **Tighten proof of delivery for "left at the door" orders (geo-stamped photo plus customer
+   confirmation) in the UAE first.** Review metric: rider-behaviour share of UAE 1–2★ reviews
+   ({{pain.ae.rider_behavior.share|pct0}}). Internal metric: disputed-delivery rate and refunds for
+   "not received" claims.
+5. **Watch promo dependence.** Prices and vouchers are what 4–5★ reviewers praise
+   ({{band.gulf.pos.pricing_promos.share|pct0}} of Gulf 4–5★ reviews mention them), and the UAE
+   improvement came with a promo-heavy review mix. Internal metric: retention and order frequency of
+   promo-acquired users vs a holdout without the promotion.
+
+## 6. Limitations: what this is not
+
+- **Not Keeta data.** Public App Store reviews only (no Google Play, no in-app feedback, no order data).
+- **A self-selected sample.** People who write reviews skew angry (see the store average vs the
+  written-review mean above), so shares describe complaints, not the customer base.
+- **Only the latest 500 reviews per market**, so windows differ by market; small n for Bahrain
+  ({{ov.bh.n_reviews}}) and Oman ({{ov.om.n_reviews}}); month and version comparisons are only made where
+  n allows.
+- **Label errors.** The rule labeler's per-label F1 against the reference ranges from
+  {{rules_f1_min.f1|f2}} ({{rules_f1_min.title}}) to {{rules_f1_max.f1|f2}} ({{rules_f1_max.title}}); shares
+  inherit those errors. Low-support labels (merchant availability, n = {{q.rules.per_label.merchant_availability.support}}
+  in the reference) are the least reliable.
+- **The reference labels are AI-assisted** (see README): they were made by the same AI assistant that
+  wrote the rule keywords, so the comparison may favour the rules.
+- **Feed quirks.** Apple's feed returned empty pages at random; the snapshot is the union of
+  {{man.pull_runs}} pulls on {{snapshot_date}}, so a few reviews at page boundaries may be missing.
+
+## Appendix: label quality (reference set, n = {{q.n_reference}})
+
+{{table:quality}}
+
+The LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained) scored **{{words.llm_vs_rules}}**
+than the rules overall. Labels where the LLM was better with a 95% interval above zero:
+{{words.llm_wins}}. Labels where it was clearly worse: {{words.llm_losses}}. Its outputs are kept in
+`data/labels/llm.csv` and every prompt/response in `data/labels/llm_log.jsonl`
+({{q.llm_invalid_all}} invalid outputs out of {{q.llm_n_all}}, counted as "no label", not dropped).

@@ -9,6 +9,7 @@ Literal digits outside placeholders are audited by scripts/check_numbers.py.
 """
 from __future__ import annotations
 
+import math
 import re
 
 PLACEHOLDER = re.compile(r"\{\{\s*([^{}]+?)\s*\}\}")
@@ -46,6 +47,9 @@ FORMATS = {
     "ci_pct0": lambda v: "[" + _dash(f"{100 * v[0]:.0f}", f"{100 * v[1]:.0f}%") + "]",
     "ci_f2": lambda v: "[" + _dash(f"{v[0]:.2f}", f"{v[1]:.2f}") + "]",
     "ci_int": lambda v: _dash(f"{int(v[0])}", f"{int(v[1])}"),
+    "rng_pct0": lambda v: _dash(f"{100 * v[0]:.0f}", f"{100 * v[1]:.0f}%"),
+    "rng_f2": lambda v: _dash(f"{v[0]:.2f}", f"{v[1]:.2f}"),
+    "floor2": lambda v: f"{math.floor(100 * v + 1e-9) / 100:.2f}",
 }
 
 
