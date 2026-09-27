@@ -220,4 +220,4 @@ The LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained) scored **lower
 than the rules overall. Labels where the LLM was better with a 95% interval above zero:
 none. Labels where it was clearly worse: Rider behaviour, Merchant/menu availability, Payment & refunds. Its outputs are kept in
 `data/labels/llm.csv` and every prompt/response in `data/labels/llm_log.jsonl`
-(2 invalid outputs out of 182, counted as "no label", not dropped).
+(5 invalid outputs out of 638, counted as "no label", not dropped).

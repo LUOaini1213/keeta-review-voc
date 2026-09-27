@@ -55,7 +55,8 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
   window for praise.
 - **Method 2, local LLM:** qwen2.5:3b through Ollama on CPU, temperature 0, output constrained by a
   JSON schema whose enum is the taxonomy, then validated again in Python. Invalid outputs are recorded
-  and scored as "no label", never dropped. Every prompt and response is logged
+  and scored as "no label", never dropped ({{q.llm_invalid_all}} invalid outputs among {{q.llm_n_all|int}} LLM-labelled reviews;
+  the snapshot has {{m.n_reviews|int}}). Every prompt and response is logged
   (`data/labels/llm_log.jsonl`; the review text inside each prompt is kept only in the local log).
 - **Reference set:** a seeded sample of {{q.n_reference}} reviews stratified by storefront × rating band.
   **These reference labels are AI-assisted labels made in the author's workflow** (the AI coding

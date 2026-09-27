@@ -19154,79 +19154,79 @@
     {
      "storefront": "ae",
      "label": "delivery_time",
-     "n_reviews": 33,
-     "n_label": 11,
-     "share": 0.3333333333
+     "n_reviews": 486,
+     "n_label": 146,
+     "share": 0.3004115226
     },
     {
      "storefront": "ae",
      "label": "order_fulfilment",
-     "n_reviews": 33,
-     "n_label": 7,
-     "share": 0.2121212121
+     "n_reviews": 486,
+     "n_label": 108,
+     "share": 0.2222222222
     },
     {
      "storefront": "ae",
      "label": "food_quality",
-     "n_reviews": 33,
-     "n_label": 2,
-     "share": 0.0606060606
+     "n_reviews": 486,
+     "n_label": 41,
+     "share": 0.0843621399
     },
     {
      "storefront": "ae",
      "label": "rider_behavior",
-     "n_reviews": 33,
-     "n_label": 4,
-     "share": 0.1212121212
+     "n_reviews": 486,
+     "n_label": 80,
+     "share": 0.1646090535
     },
     {
      "storefront": "ae",
      "label": "merchant_availability",
-     "n_reviews": 33,
-     "n_label": 2,
-     "share": 0.0606060606
+     "n_reviews": 486,
+     "n_label": 59,
+     "share": 0.121399177
     },
     {
      "storefront": "ae",
      "label": "pricing_promos",
-     "n_reviews": 33,
-     "n_label": 3,
-     "share": 0.0909090909
+     "n_reviews": 486,
+     "n_label": 58,
+     "share": 0.1193415638
     },
     {
      "storefront": "ae",
      "label": "payment_refund",
-     "n_reviews": 33,
-     "n_label": 4,
-     "share": 0.1212121212
+     "n_reviews": 486,
+     "n_label": 67,
+     "share": 0.1378600823
     },
     {
      "storefront": "ae",
      "label": "customer_service",
-     "n_reviews": 33,
-     "n_label": 16,
-     "share": 0.4848484848
+     "n_reviews": 486,
+     "n_label": 281,
+     "share": 0.5781893004
     },
     {
      "storefront": "ae",
      "label": "app_ux",
-     "n_reviews": 33,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 486,
+     "n_label": 13,
+     "share": 0.0267489712
     },
     {
      "storefront": "ae",
      "label": "positive_praise",
-     "n_reviews": 33,
-     "n_label": 4,
-     "share": 0.1212121212
+     "n_reviews": 486,
+     "n_label": 59,
+     "share": 0.121399177
     },
     {
      "storefront": "ae",
      "label": "other",
-     "n_reviews": 33,
-     "n_label": 1,
-     "share": 0.0303030303
+     "n_reviews": 486,
+     "n_label": 16,
+     "share": 0.0329218107
     },
     {
      "storefront": "bh",
@@ -19695,156 +19695,156 @@
     {
      "rating": 1,
      "label": "delivery_time",
-     "n_reviews": 112,
-     "n_label": 17,
-     "share": 0.1517857143
+     "n_reviews": 497,
+     "n_label": 140,
+     "share": 0.2816901408
     },
     {
      "rating": 1,
      "label": "order_fulfilment",
-     "n_reviews": 112,
-     "n_label": 26,
-     "share": 0.2321428571
+     "n_reviews": 497,
+     "n_label": 125,
+     "share": 0.2515090543
     },
     {
      "rating": 1,
      "label": "food_quality",
-     "n_reviews": 112,
-     "n_label": 10,
-     "share": 0.0892857143
+     "n_reviews": 497,
+     "n_label": 47,
+     "share": 0.0945674044
     },
     {
      "rating": 1,
      "label": "rider_behavior",
-     "n_reviews": 112,
-     "n_label": 21,
-     "share": 0.1875
+     "n_reviews": 497,
+     "n_label": 95,
+     "share": 0.1911468813
     },
     {
      "rating": 1,
      "label": "merchant_availability",
-     "n_reviews": 112,
-     "n_label": 18,
-     "share": 0.1607142857
+     "n_reviews": 497,
+     "n_label": 68,
+     "share": 0.1368209256
     },
     {
      "rating": 1,
      "label": "pricing_promos",
-     "n_reviews": 112,
-     "n_label": 10,
-     "share": 0.0892857143
+     "n_reviews": 497,
+     "n_label": 43,
+     "share": 0.0865191147
     },
     {
      "rating": 1,
      "label": "payment_refund",
-     "n_reviews": 112,
-     "n_label": 23,
-     "share": 0.2053571429
+     "n_reviews": 497,
+     "n_label": 82,
+     "share": 0.1649899396
     },
     {
      "rating": 1,
      "label": "customer_service",
-     "n_reviews": 112,
-     "n_label": 67,
-     "share": 0.5982142857
+     "n_reviews": 497,
+     "n_label": 323,
+     "share": 0.6498993964
     },
     {
      "rating": 1,
      "label": "app_ux",
-     "n_reviews": 112,
-     "n_label": 2,
-     "share": 0.0178571429
+     "n_reviews": 497,
+     "n_label": 10,
+     "share": 0.0201207243
     },
     {
      "rating": 1,
      "label": "positive_praise",
-     "n_reviews": 112,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 497,
+     "n_label": 16,
+     "share": 0.032193159
     },
     {
      "rating": 1,
      "label": "other",
-     "n_reviews": 112,
-     "n_label": 6,
-     "share": 0.0535714286
+     "n_reviews": 497,
+     "n_label": 19,
+     "share": 0.0382293763
     },
     {
      "rating": 2,
      "label": "delivery_time",
-     "n_reviews": 3,
-     "n_label": 1,
-     "share": 0.3333333333
+     "n_reviews": 14,
+     "n_label": 4,
+     "share": 0.2857142857
     },
     {
      "rating": 2,
      "label": "order_fulfilment",
-     "n_reviews": 3,
+     "n_reviews": 14,
      "n_label": 0,
      "share": 0.0
     },
     {
      "rating": 2,
      "label": "food_quality",
-     "n_reviews": 3,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 14,
+     "n_label": 1,
+     "share": 0.0714285714
     },
     {
      "rating": 2,
      "label": "rider_behavior",
-     "n_reviews": 3,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 14,
+     "n_label": 2,
+     "share": 0.1428571429
     },
     {
      "rating": 2,
      "label": "merchant_availability",
-     "n_reviews": 3,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 14,
+     "n_label": 2,
+     "share": 0.1428571429
     },
     {
      "rating": 2,
      "label": "pricing_promos",
-     "n_reviews": 3,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 14,
+     "n_label": 3,
+     "share": 0.2142857143
     },
     {
      "rating": 2,
      "label": "payment_refund",
-     "n_reviews": 3,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 14,
+     "n_label": 1,
+     "share": 0.0714285714
     },
     {
      "rating": 2,
      "label": "customer_service",
-     "n_reviews": 3,
-     "n_label": 1,
-     "share": 0.3333333333
+     "n_reviews": 14,
+     "n_label": 6,
+     "share": 0.4285714286
     },
     {
      "rating": 2,
      "label": "app_ux",
-     "n_reviews": 3,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 14,
+     "n_label": 2,
+     "share": 0.1428571429
     },
     {
      "rating": 2,
      "label": "positive_praise",
-     "n_reviews": 3,
+     "n_reviews": 14,
      "n_label": 0,
      "share": 0.0
     },
     {
      "rating": 2,
      "label": "other",
-     "n_reviews": 3,
+     "n_reviews": 14,
      "n_label": 1,
-     "share": 0.3333333333
+     "share": 0.0714285714
     },
     {
      "rating": 3,
@@ -19926,230 +19926,230 @@
     {
      "rating": 4,
      "label": "delivery_time",
-     "n_reviews": 5,
+     "n_reviews": 11,
      "n_label": 1,
-     "share": 0.2
+     "share": 0.0909090909
     },
     {
      "rating": 4,
      "label": "order_fulfilment",
-     "n_reviews": 5,
-     "n_label": 1,
-     "share": 0.2
+     "n_reviews": 11,
+     "n_label": 2,
+     "share": 0.1818181818
     },
     {
      "rating": 4,
      "label": "food_quality",
-     "n_reviews": 5,
+     "n_reviews": 11,
      "n_label": 0,
      "share": 0.0
     },
     {
      "rating": 4,
      "label": "rider_behavior",
-     "n_reviews": 5,
+     "n_reviews": 11,
      "n_label": 0,
      "share": 0.0
     },
     {
      "rating": 4,
      "label": "merchant_availability",
-     "n_reviews": 5,
+     "n_reviews": 11,
      "n_label": 1,
-     "share": 0.2
+     "share": 0.0909090909
     },
     {
      "rating": 4,
      "label": "pricing_promos",
-     "n_reviews": 5,
-     "n_label": 1,
-     "share": 0.2
+     "n_reviews": 11,
+     "n_label": 2,
+     "share": 0.1818181818
     },
     {
      "rating": 4,
      "label": "payment_refund",
-     "n_reviews": 5,
-     "n_label": 2,
-     "share": 0.4
+     "n_reviews": 11,
+     "n_label": 4,
+     "share": 0.3636363636
     },
     {
      "rating": 4,
      "label": "customer_service",
-     "n_reviews": 5,
+     "n_reviews": 11,
      "n_label": 0,
      "share": 0.0
     },
     {
      "rating": 4,
      "label": "app_ux",
-     "n_reviews": 5,
+     "n_reviews": 11,
      "n_label": 1,
-     "share": 0.2
+     "share": 0.0909090909
     },
     {
      "rating": 4,
      "label": "positive_praise",
-     "n_reviews": 5,
-     "n_label": 1,
-     "share": 0.2
+     "n_reviews": 11,
+     "n_label": 2,
+     "share": 0.1818181818
     },
     {
      "rating": 4,
      "label": "other",
-     "n_reviews": 5,
-     "n_label": 1,
-     "share": 0.2
+     "n_reviews": 11,
+     "n_label": 2,
+     "share": 0.1818181818
     },
     {
      "rating": 5,
      "label": "delivery_time",
-     "n_reviews": 32,
-     "n_label": 7,
-     "share": 0.21875
+     "n_reviews": 83,
+     "n_label": 16,
+     "share": 0.1927710843
     },
     {
      "rating": 5,
      "label": "order_fulfilment",
-     "n_reviews": 32,
-     "n_label": 2,
-     "share": 0.0625
+     "n_reviews": 83,
+     "n_label": 3,
+     "share": 0.0361445783
     },
     {
      "rating": 5,
      "label": "food_quality",
-     "n_reviews": 32,
-     "n_label": 1,
-     "share": 0.03125
+     "n_reviews": 83,
+     "n_label": 2,
+     "share": 0.0240963855
     },
     {
      "rating": 5,
      "label": "rider_behavior",
-     "n_reviews": 32,
+     "n_reviews": 83,
      "n_label": 1,
-     "share": 0.03125
+     "share": 0.0120481928
     },
     {
      "rating": 5,
      "label": "merchant_availability",
-     "n_reviews": 32,
-     "n_label": 2,
-     "share": 0.0625
+     "n_reviews": 83,
+     "n_label": 7,
+     "share": 0.0843373494
     },
     {
      "rating": 5,
      "label": "pricing_promos",
-     "n_reviews": 32,
-     "n_label": 12,
-     "share": 0.375
+     "n_reviews": 83,
+     "n_label": 30,
+     "share": 0.3614457831
     },
     {
      "rating": 5,
      "label": "payment_refund",
-     "n_reviews": 32,
-     "n_label": 2,
-     "share": 0.0625
+     "n_reviews": 83,
+     "n_label": 3,
+     "share": 0.0361445783
     },
     {
      "rating": 5,
      "label": "customer_service",
-     "n_reviews": 32,
-     "n_label": 6,
-     "share": 0.1875
+     "n_reviews": 83,
+     "n_label": 10,
+     "share": 0.1204819277
     },
     {
      "rating": 5,
      "label": "app_ux",
-     "n_reviews": 32,
-     "n_label": 4,
-     "share": 0.125
+     "n_reviews": 83,
+     "n_label": 7,
+     "share": 0.0843373494
     },
     {
      "rating": 5,
      "label": "positive_praise",
-     "n_reviews": 32,
-     "n_label": 20,
-     "share": 0.625
+     "n_reviews": 83,
+     "n_label": 58,
+     "share": 0.6987951807
     },
     {
      "rating": 5,
      "label": "other",
-     "n_reviews": 32,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 83,
+     "n_label": 1,
+     "share": 0.0120481928
     }
    ],
    "pain_points": [
     {
      "storefront": "ae",
      "label": "customer_service",
-     "n_negative": 23,
-     "n_label": 13,
-     "share": 0.5652173913,
+     "n_negative": 419,
+     "n_label": 274,
+     "share": 0.6539379475,
      "rank": 1
     },
     {
      "storefront": "ae",
      "label": "delivery_time",
-     "n_negative": 23,
-     "n_label": 7,
-     "share": 0.3043478261,
+     "n_negative": 419,
+     "n_label": 133,
+     "share": 0.3174224344,
      "rank": 2
     },
     {
      "storefront": "ae",
      "label": "order_fulfilment",
-     "n_negative": 23,
-     "n_label": 6,
-     "share": 0.2608695652,
+     "n_negative": 419,
+     "n_label": 105,
+     "share": 0.2505966587,
      "rank": 3
     },
     {
      "storefront": "ae",
      "label": "rider_behavior",
-     "n_negative": 23,
-     "n_label": 4,
-     "share": 0.1739130435,
+     "n_negative": 419,
+     "n_label": 80,
+     "share": 0.1909307876,
      "rank": 4
     },
     {
      "storefront": "ae",
      "label": "payment_refund",
-     "n_negative": 23,
-     "n_label": 3,
-     "share": 0.1304347826,
+     "n_negative": 419,
+     "n_label": 63,
+     "share": 0.1503579952,
      "rank": 5
     },
     {
      "storefront": "ae",
-     "label": "food_quality",
-     "n_negative": 23,
-     "n_label": 2,
-     "share": 0.0869565217,
+     "label": "merchant_availability",
+     "n_negative": 419,
+     "n_label": 54,
+     "share": 0.1288782816,
      "rank": 6
     },
     {
      "storefront": "ae",
-     "label": "merchant_availability",
-     "n_negative": 23,
-     "n_label": 2,
-     "share": 0.0869565217,
-     "rank": 6
+     "label": "food_quality",
+     "n_negative": 419,
+     "n_label": 40,
+     "share": 0.0954653938,
+     "rank": 7
     },
     {
      "storefront": "ae",
      "label": "pricing_promos",
-     "n_negative": 23,
-     "n_label": 0,
-     "share": 0.0,
+     "n_negative": 419,
+     "n_label": 36,
+     "share": 0.0859188544,
      "rank": 8
     },
     {
      "storefront": "ae",
      "label": "app_ux",
-     "n_negative": 23,
-     "n_label": 0,
-     "share": 0.0,
-     "rank": 8
+     "n_negative": 419,
+     "n_label": 10,
+     "share": 0.0238663484,
+     "rank": 9
     },
     {
      "storefront": "bh",
@@ -20584,557 +20584,2098 @@
      "rank": 8
     }
    ],
-   "by_version": [],
-   "month_trend": [
+   "by_version": [
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
      "label": "delivery_time",
+     "n_label": 11,
+     "share": 0.22
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "order_fulfilment",
+     "n_label": 12,
+     "share": 0.24
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "food_quality",
+     "n_label": 3,
+     "share": 0.06
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "rider_behavior",
+     "n_label": 11,
+     "share": 0.22
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "merchant_availability",
+     "n_label": 12,
+     "share": 0.24
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "pricing_promos",
      "n_label": 2,
+     "share": 0.04
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "payment_refund",
+     "n_label": 7,
+     "share": 0.14
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "customer_service",
+     "n_label": 40,
+     "share": 0.8
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.02
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "positive_praise",
+     "n_label": 2,
+     "share": 0.04
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.200",
+     "n_reviews": 50,
+     "mean_rating": 1.1,
+     "share_negative": 0.98,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.02
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "delivery_time",
+     "n_label": 15,
+     "share": 0.3333333333
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "order_fulfilment",
+     "n_label": 5,
+     "share": 0.1111111111
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "food_quality",
+     "n_label": 4,
+     "share": 0.0888888889
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "rider_behavior",
+     "n_label": 3,
+     "share": 0.0666666667
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "merchant_availability",
+     "n_label": 3,
+     "share": 0.0666666667
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "pricing_promos",
+     "n_label": 3,
+     "share": 0.0666666667
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "payment_refund",
+     "n_label": 4,
+     "share": 0.0888888889
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "customer_service",
+     "n_label": 30,
      "share": 0.6666666667
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.0222222222
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "positive_praise",
+     "n_label": 1,
+     "share": 0.0222222222
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.10.400",
+     "n_reviews": 45,
+     "mean_rating": 1.2888888889,
+     "share_negative": 0.9333333333,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0222222222
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
+     "label": "delivery_time",
+     "n_label": 3,
+     "share": 0.1764705882
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "order_fulfilment",
-     "n_label": 1,
-     "share": 0.3333333333
+     "n_label": 3,
+     "share": 0.1764705882
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "food_quality",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 3,
+     "share": 0.1764705882
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "rider_behavior",
-     "n_label": 1,
-     "share": 0.3333333333
+     "n_label": 5,
+     "share": 0.2941176471
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "merchant_availability",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 4,
+     "share": 0.2352941176
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "pricing_promos",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 2,
+     "share": 0.1176470588
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "payment_refund",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 3,
+     "share": 0.1764705882
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "customer_service",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 9,
+     "share": 0.5294117647
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "app_ux",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
      "label": "positive_praise",
+     "n_label": 2,
+     "share": 0.1176470588
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.200",
+     "n_reviews": 17,
+     "mean_rating": 1.3529411765,
+     "share_negative": 0.9411764706,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0588235294
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "delivery_time",
+     "n_label": 12,
+     "share": 0.4444444444
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "order_fulfilment",
+     "n_label": 6,
+     "share": 0.2222222222
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "food_quality",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-05",
-     "n_reviews": 3,
-     "mean_rating": 1.0,
-     "share_negative": 1.0,
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "rider_behavior",
+     "n_label": 6,
+     "share": 0.2222222222
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "merchant_availability",
+     "n_label": 3,
+     "share": 0.1111111111
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "pricing_promos",
+     "n_label": 3,
+     "share": 0.1111111111
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "payment_refund",
+     "n_label": 4,
+     "share": 0.1481481481
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "customer_service",
+     "n_label": 18,
+     "share": 0.6666666667
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "app_ux",
+     "n_label": 0,
+     "share": 0.0
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
+     "label": "positive_praise",
+     "n_label": 3,
+     "share": 0.1111111111
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.300",
+     "n_reviews": 27,
+     "mean_rating": 1.4074074074,
+     "share_negative": 0.8888888889,
      "label": "other",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "delivery_time",
-     "n_label": 4,
-     "share": 0.3333333333
+     "n_label": 10,
+     "share": 0.1923076923
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "order_fulfilment",
-     "n_label": 4,
-     "share": 0.3333333333
+     "n_label": 10,
+     "share": 0.1923076923
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "food_quality",
-     "n_label": 1,
-     "share": 0.0833333333
+     "n_label": 2,
+     "share": 0.0384615385
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "rider_behavior",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 8,
+     "share": 0.1538461538
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "merchant_availability",
-     "n_label": 1,
-     "share": 0.0833333333
+     "n_label": 6,
+     "share": 0.1153846154
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "pricing_promos",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 10,
+     "share": 0.1923076923
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
      "label": "payment_refund",
-     "n_label": 3,
+     "n_label": 5,
+     "share": 0.0961538462
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
+     "label": "customer_service",
+     "n_label": 23,
+     "share": 0.4423076923
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.0192307692
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
+     "label": "positive_praise",
+     "n_label": 12,
+     "share": 0.2307692308
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.11.400",
+     "n_reviews": 52,
+     "mean_rating": 1.9230769231,
+     "share_negative": 0.7692307692,
+     "label": "other",
+     "n_label": 4,
+     "share": 0.0769230769
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
+     "label": "delivery_time",
+     "n_label": 13,
      "share": 0.25
     },
     {
      "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
-     "label": "customer_service",
-     "n_label": 8,
-     "share": 0.6666666667
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
-     "label": "app_ux",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
-     "label": "positive_praise",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-06",
-     "n_reviews": 12,
-     "mean_rating": 1.6666666667,
-     "share_negative": 0.75,
-     "label": "other",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
-     "label": "delivery_time",
-     "n_label": 2,
-     "share": 0.3333333333
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
      "label": "order_fulfilment",
-     "n_label": 1,
-     "share": 0.1666666667
+     "n_label": 7,
+     "share": 0.1346153846
     },
     {
      "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
      "label": "food_quality",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
-     "label": "rider_behavior",
-     "n_label": 2,
-     "share": 0.3333333333
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
-     "label": "merchant_availability",
-     "n_label": 1,
-     "share": 0.1666666667
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
-     "label": "pricing_promos",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
-     "label": "payment_refund",
-     "n_label": 1,
-     "share": 0.1666666667
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
-     "label": "customer_service",
      "n_label": 4,
-     "share": 0.6666666667
+     "share": 0.0769230769
     },
     {
      "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
+     "label": "rider_behavior",
+     "n_label": 6,
+     "share": 0.1153846154
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
+     "label": "merchant_availability",
+     "n_label": 7,
+     "share": 0.1346153846
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
+     "label": "pricing_promos",
+     "n_label": 17,
+     "share": 0.3269230769
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
+     "label": "payment_refund",
+     "n_label": 6,
+     "share": 0.1153846154
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
+     "label": "customer_service",
+     "n_label": 19,
+     "share": 0.3653846154
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
      "label": "app_ux",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 2,
+     "share": 0.0384615385
     },
     {
      "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
      "label": "positive_praise",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 20,
+     "share": 0.3846153846
     },
     {
      "storefront": "ae",
-     "month": "2026-07",
-     "n_reviews": 6,
-     "mean_rating": 1.5,
-     "share_negative": 0.8333333333,
+     "app_version": "3.12.200",
+     "n_reviews": 52,
+     "mean_rating": 2.9230769231,
+     "share_negative": 0.5192307692,
      "label": "other",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 3,
+     "share": 0.0576923077
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "delivery_time",
-     "n_label": 1,
-     "share": 0.2
+     "n_label": 2,
+     "share": 0.1538461538
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "order_fulfilment",
      "n_label": 1,
-     "share": 0.2
+     "share": 0.0769230769
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "food_quality",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
-     "label": "rider_behavior",
      "n_label": 1,
-     "share": 0.2
+     "share": 0.0769230769
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
+     "label": "rider_behavior",
+     "n_label": 2,
+     "share": 0.1538461538
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "merchant_availability",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "pricing_promos",
-     "n_label": 2,
-     "share": 0.4
+     "n_label": 3,
+     "share": 0.2307692308
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "payment_refund",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "customer_service",
      "n_label": 2,
-     "share": 0.4
+     "share": 0.1538461538
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "app_ux",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "positive_praise",
-     "n_label": 2,
-     "share": 0.4
+     "n_label": 5,
+     "share": 0.3846153846
     },
     {
      "storefront": "ae",
-     "month": "2026-08",
-     "n_reviews": 5,
-     "mean_rating": 2.6,
-     "share_negative": 0.6,
+     "app_version": "3.12.401",
+     "n_reviews": 13,
+     "mean_rating": 3.0,
+     "share_negative": 0.4615384615,
      "label": "other",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "delivery_time",
+     "n_label": 12,
+     "share": 0.3529411765
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "order_fulfilment",
+     "n_label": 9,
+     "share": 0.2647058824
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "food_quality",
+     "n_label": 2,
+     "share": 0.0588235294
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "rider_behavior",
+     "n_label": 10,
+     "share": 0.2941176471
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "merchant_availability",
+     "n_label": 4,
+     "share": 0.1176470588
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "pricing_promos",
+     "n_label": 2,
+     "share": 0.0588235294
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "payment_refund",
+     "n_label": 3,
+     "share": 0.0882352941
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "customer_service",
+     "n_label": 21,
+     "share": 0.6176470588
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "app_ux",
+     "n_label": 0,
+     "share": 0.0
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "positive_praise",
+     "n_label": 2,
+     "share": 0.0588235294
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.401",
+     "n_reviews": 34,
+     "mean_rating": 1.1176470588,
+     "share_negative": 0.9705882353,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0294117647
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "delivery_time",
+     "n_label": 10,
+     "share": 0.303030303
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "order_fulfilment",
+     "n_label": 10,
+     "share": 0.303030303
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "food_quality",
+     "n_label": 3,
+     "share": 0.0909090909
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "rider_behavior",
+     "n_label": 2,
+     "share": 0.0606060606
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "merchant_availability",
+     "n_label": 3,
+     "share": 0.0909090909
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "pricing_promos",
+     "n_label": 4,
+     "share": 0.1212121212
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "payment_refund",
+     "n_label": 6,
+     "share": 0.1818181818
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "customer_service",
+     "n_label": 19,
+     "share": 0.5757575758
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "app_ux",
+     "n_label": 3,
+     "share": 0.0909090909
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "positive_praise",
+     "n_label": 3,
+     "share": 0.0909090909
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.402",
+     "n_reviews": 33,
+     "mean_rating": 1.2424242424,
+     "share_negative": 0.9393939394,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0303030303
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "delivery_time",
+     "n_label": 10,
+     "share": 0.4347826087
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "order_fulfilment",
+     "n_label": 8,
+     "share": 0.347826087
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "food_quality",
+     "n_label": 2,
+     "share": 0.0869565217
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "rider_behavior",
+     "n_label": 1,
+     "share": 0.0434782609
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "merchant_availability",
+     "n_label": 3,
+     "share": 0.1304347826
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "pricing_promos",
+     "n_label": 2,
+     "share": 0.0869565217
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "payment_refund",
+     "n_label": 5,
+     "share": 0.2173913043
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "customer_service",
+     "n_label": 14,
+     "share": 0.6086956522
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.0434782609
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "positive_praise",
+     "n_label": 2,
+     "share": 0.0869565217
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.8.500",
+     "n_reviews": 23,
+     "mean_rating": 1.5217391304,
+     "share_negative": 0.8260869565,
+     "label": "other",
+     "n_label": 0,
+     "share": 0.0
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "delivery_time",
+     "n_label": 18,
+     "share": 0.3103448276
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "order_fulfilment",
+     "n_label": 18,
+     "share": 0.3103448276
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "food_quality",
+     "n_label": 6,
+     "share": 0.1034482759
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "rider_behavior",
+     "n_label": 11,
+     "share": 0.1896551724
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "merchant_availability",
+     "n_label": 7,
+     "share": 0.1206896552
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "pricing_promos",
+     "n_label": 4,
+     "share": 0.0689655172
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "payment_refund",
+     "n_label": 11,
+     "share": 0.1896551724
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "customer_service",
+     "n_label": 37,
+     "share": 0.6379310345
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "app_ux",
+     "n_label": 0,
+     "share": 0.0
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "positive_praise",
+     "n_label": 3,
+     "share": 0.0517241379
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.200",
+     "n_reviews": 58,
+     "mean_rating": 1.2413793103,
+     "share_negative": 0.9482758621,
+     "label": "other",
+     "n_label": 0,
+     "share": 0.0
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
      "label": "delivery_time",
      "n_label": 2,
-     "share": 0.2857142857
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
-     "label": "order_fulfilment",
-     "n_label": 0,
-     "share": 0.0
-    },
-    {
-     "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
-     "label": "food_quality",
-     "n_label": 1,
      "share": 0.1428571429
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "order_fulfilment",
+     "n_label": 3,
+     "share": 0.2142857143
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "food_quality",
+     "n_label": 2,
+     "share": 0.1428571429
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
      "label": "rider_behavior",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 1,
+     "share": 0.0714285714
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
      "label": "merchant_availability",
+     "n_label": 2,
+     "share": 0.1428571429
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "pricing_promos",
+     "n_label": 2,
+     "share": 0.1428571429
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "payment_refund",
+     "n_label": 2,
+     "share": 0.1428571429
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "customer_service",
+     "n_label": 10,
+     "share": 0.7142857143
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.0714285714
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "positive_praise",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "app_version": "3.9.300",
+     "n_reviews": 14,
+     "mean_rating": 1.0,
+     "share_negative": 1.0,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0714285714
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "delivery_time",
+     "n_label": 16,
+     "share": 0.4210526316
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "order_fulfilment",
+     "n_label": 10,
+     "share": 0.2631578947
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "food_quality",
+     "n_label": 5,
+     "share": 0.1315789474
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "rider_behavior",
+     "n_label": 10,
+     "share": 0.2631578947
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "merchant_availability",
+     "n_label": 4,
+     "share": 0.1052631579
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "pricing_promos",
+     "n_label": 2,
+     "share": 0.0526315789
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "payment_refund",
+     "n_label": 5,
+     "share": 0.1315789474
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "customer_service",
+     "n_label": 20,
+     "share": 0.5263157895
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "app_ux",
+     "n_label": 2,
+     "share": 0.0526315789
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "positive_praise",
+     "n_label": 1,
+     "share": 0.0263157895
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.400",
+     "n_reviews": 38,
+     "mean_rating": 1.2631578947,
+     "share_negative": 0.9473684211,
+     "label": "other",
+     "n_label": 2,
+     "share": 0.0526315789
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "delivery_time",
+     "n_label": 12,
+     "share": 0.4137931034
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "order_fulfilment",
+     "n_label": 5,
+     "share": 0.1724137931
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "food_quality",
+     "n_label": 3,
+     "share": 0.1034482759
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "rider_behavior",
+     "n_label": 4,
+     "share": 0.1379310345
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "merchant_availability",
+     "n_label": 1,
+     "share": 0.0344827586
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "pricing_promos",
+     "n_label": 2,
+     "share": 0.0689655172
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "payment_refund",
+     "n_label": 5,
+     "share": 0.1724137931
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "customer_service",
+     "n_label": 19,
+     "share": 0.6551724138
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.0344827586
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "positive_praise",
+     "n_label": 3,
+     "share": 0.1034482759
+    },
+    {
+     "storefront": "ae",
+     "app_version": "3.9.500",
+     "n_reviews": 29,
+     "mean_rating": 1.3103448276,
+     "share_negative": 0.8965517241,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0344827586
+    }
+   ],
+   "month_trend": [
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
+     "label": "delivery_time",
+     "n_label": 8,
+     "share": 0.380952381
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
+     "label": "order_fulfilment",
+     "n_label": 4,
+     "share": 0.1904761905
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
+     "label": "food_quality",
+     "n_label": 2,
+     "share": 0.0952380952
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
+     "label": "rider_behavior",
+     "n_label": 6,
+     "share": 0.2857142857
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
+     "label": "merchant_availability",
+     "n_label": 3,
+     "share": 0.1428571429
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
      "label": "pricing_promos",
      "n_label": 1,
-     "share": 0.1428571429
+     "share": 0.0476190476
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
      "label": "payment_refund",
-     "n_label": 0,
-     "share": 0.0
+     "n_label": 1,
+     "share": 0.0476190476
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
      "label": "customer_service",
-     "n_label": 2,
-     "share": 0.2857142857
+     "n_label": 12,
+     "share": 0.5714285714
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
      "label": "app_ux",
      "n_label": 0,
      "share": 0.0
     },
     {
      "storefront": "ae",
-     "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
      "label": "positive_praise",
      "n_label": 2,
-     "share": 0.2857142857
+     "share": 0.0952380952
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-05",
+     "n_reviews": 21,
+     "mean_rating": 1.1904761905,
+     "share_negative": 0.9523809524,
+     "label": "other",
+     "n_label": 1,
+     "share": 0.0476190476
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "delivery_time",
+     "n_label": 57,
+     "share": 0.3333333333
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "order_fulfilment",
+     "n_label": 52,
+     "share": 0.3040935673
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "food_quality",
+     "n_label": 18,
+     "share": 0.1052631579
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "rider_behavior",
+     "n_label": 29,
+     "share": 0.1695906433
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "merchant_availability",
+     "n_label": 20,
+     "share": 0.1169590643
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "pricing_promos",
+     "n_label": 14,
+     "share": 0.081871345
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "payment_refund",
+     "n_label": 29,
+     "share": 0.1695906433
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "customer_service",
+     "n_label": 103,
+     "share": 0.6023391813
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "app_ux",
+     "n_label": 6,
+     "share": 0.0350877193
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "positive_praise",
+     "n_label": 8,
+     "share": 0.0467836257
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-06",
+     "n_reviews": 171,
+     "mean_rating": 1.2514619883,
+     "share_negative": 0.9356725146,
+     "label": "other",
+     "n_label": 4,
+     "share": 0.0233918129
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "delivery_time",
+     "n_label": 33,
+     "share": 0.2972972973
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "order_fulfilment",
+     "n_label": 21,
+     "share": 0.1891891892
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "food_quality",
+     "n_label": 9,
+     "share": 0.0810810811
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "rider_behavior",
+     "n_label": 18,
+     "share": 0.1621621622
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "merchant_availability",
+     "n_label": 14,
+     "share": 0.1261261261
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "pricing_promos",
+     "n_label": 8,
+     "share": 0.0720720721
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "payment_refund",
+     "n_label": 14,
+     "share": 0.1261261261
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "customer_service",
+     "n_label": 81,
+     "share": 0.7297297297
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "app_ux",
+     "n_label": 3,
+     "share": 0.027027027
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "positive_praise",
+     "n_label": 7,
+     "share": 0.0630630631
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-07",
+     "n_reviews": 111,
+     "mean_rating": 1.2522522523,
+     "share_negative": 0.9369369369,
+     "label": "other",
+     "n_label": 2,
+     "share": 0.018018018
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "delivery_time",
+     "n_label": 30,
+     "share": 0.297029703
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "order_fulfilment",
+     "n_label": 20,
+     "share": 0.198019802
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "food_quality",
+     "n_label": 5,
+     "share": 0.0495049505
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "rider_behavior",
+     "n_label": 17,
+     "share": 0.1683168317
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "merchant_availability",
+     "n_label": 12,
+     "share": 0.1188118812
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "pricing_promos",
+     "n_label": 11,
+     "share": 0.1089108911
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "payment_refund",
+     "n_label": 15,
+     "share": 0.1485148515
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "customer_service",
+     "n_label": 59,
+     "share": 0.5841584158
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "app_ux",
+     "n_label": 1,
+     "share": 0.0099009901
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "positive_praise",
+     "n_label": 12,
+     "share": 0.1188118812
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-08",
+     "n_reviews": 101,
+     "mean_rating": 1.4059405941,
+     "share_negative": 0.900990099,
+     "label": "other",
+     "n_label": 4,
+     "share": 0.0396039604
     },
     {
      "storefront": "ae",
      "month": "2026-09",
-     "n_reviews": 7,
-     "mean_rating": 3.0,
-     "share_negative": 0.4285714286,
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "delivery_time",
+     "n_label": 18,
+     "share": 0.2195121951
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "order_fulfilment",
+     "n_label": 11,
+     "share": 0.1341463415
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "food_quality",
+     "n_label": 7,
+     "share": 0.0853658537
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "rider_behavior",
+     "n_label": 10,
+     "share": 0.1219512195
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "merchant_availability",
+     "n_label": 10,
+     "share": 0.1219512195
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "pricing_promos",
+     "n_label": 24,
+     "share": 0.2926829268
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "payment_refund",
+     "n_label": 8,
+     "share": 0.0975609756
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "customer_service",
+     "n_label": 26,
+     "share": 0.3170731707
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "app_ux",
+     "n_label": 3,
+     "share": 0.0365853659
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
+     "label": "positive_praise",
+     "n_label": 30,
+     "share": 0.3658536585
+    },
+    {
+     "storefront": "ae",
+     "month": "2026-09",
+     "n_reviews": 82,
+     "mean_rating": 2.8292682927,
+     "share_negative": 0.5365853659,
      "label": "other",
-     "n_label": 1,
-     "share": 0.1428571429
+     "n_label": 5,
+     "share": 0.0609756098
     },
     {
      "storefront": "bh",
@@ -27192,577 +28733,577 @@
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "order_fulfilment",
-     "n_a": 16,
-     "n_ab": 2,
-     "share_b_given_a": 0.125
+     "n_a": 142,
+     "n_ab": 26,
+     "share_b_given_a": 0.1830985915
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "food_quality",
-     "n_a": 16,
-     "n_ab": 2,
-     "share_b_given_a": 0.125
+     "n_a": 142,
+     "n_ab": 22,
+     "share_b_given_a": 0.1549295775
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "rider_behavior",
-     "n_a": 16,
-     "n_ab": 3,
-     "share_b_given_a": 0.1875
+     "n_a": 142,
+     "n_ab": 30,
+     "share_b_given_a": 0.2112676056
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "merchant_availability",
-     "n_a": 16,
-     "n_ab": 2,
-     "share_b_given_a": 0.125
+     "n_a": 142,
+     "n_ab": 22,
+     "share_b_given_a": 0.1549295775
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "pricing_promos",
-     "n_a": 16,
-     "n_ab": 1,
-     "share_b_given_a": 0.0625
+     "n_a": 142,
+     "n_ab": 9,
+     "share_b_given_a": 0.0633802817
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "payment_refund",
-     "n_a": 16,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
+     "n_a": 142,
+     "n_ab": 14,
+     "share_b_given_a": 0.0985915493
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "customer_service",
-     "n_a": 16,
-     "n_ab": 7,
-     "share_b_given_a": 0.4375
+     "n_a": 142,
+     "n_ab": 68,
+     "share_b_given_a": 0.4788732394
     },
     {
      "region": "gulf",
      "label_a": "delivery_time",
      "label_b": "app_ux",
-     "n_a": 16,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
+     "n_a": 142,
+     "n_ab": 3,
+     "share_b_given_a": 0.0211267606
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "delivery_time",
-     "n_a": 23,
-     "n_ab": 2,
-     "share_b_given_a": 0.0869565217
+     "n_a": 122,
+     "n_ab": 26,
+     "share_b_given_a": 0.2131147541
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "food_quality",
-     "n_a": 23,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
+     "n_a": 122,
+     "n_ab": 14,
+     "share_b_given_a": 0.1147540984
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "rider_behavior",
-     "n_a": 23,
-     "n_ab": 6,
-     "share_b_given_a": 0.2608695652
+     "n_a": 122,
+     "n_ab": 37,
+     "share_b_given_a": 0.3032786885
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "merchant_availability",
-     "n_a": 23,
-     "n_ab": 7,
-     "share_b_given_a": 0.3043478261
+     "n_a": 122,
+     "n_ab": 27,
+     "share_b_given_a": 0.2213114754
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "pricing_promos",
-     "n_a": 23,
-     "n_ab": 1,
-     "share_b_given_a": 0.0434782609
+     "n_a": 122,
+     "n_ab": 11,
+     "share_b_given_a": 0.0901639344
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "payment_refund",
-     "n_a": 23,
-     "n_ab": 7,
-     "share_b_given_a": 0.3043478261
+     "n_a": 122,
+     "n_ab": 33,
+     "share_b_given_a": 0.2704918033
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "customer_service",
-     "n_a": 23,
-     "n_ab": 16,
-     "share_b_given_a": 0.6956521739
+     "n_a": 122,
+     "n_ab": 92,
+     "share_b_given_a": 0.7540983607
     },
     {
      "region": "gulf",
      "label_a": "order_fulfilment",
      "label_b": "app_ux",
-     "n_a": 23,
+     "n_a": 122,
      "n_ab": 1,
-     "share_b_given_a": 0.0434782609
+     "share_b_given_a": 0.0081967213
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "delivery_time",
-     "n_a": 9,
-     "n_ab": 2,
-     "share_b_given_a": 0.2222222222
+     "n_a": 47,
+     "n_ab": 22,
+     "share_b_given_a": 0.4680851064
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "order_fulfilment",
-     "n_a": 9,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
+     "n_a": 47,
+     "n_ab": 14,
+     "share_b_given_a": 0.2978723404
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "rider_behavior",
-     "n_a": 9,
-     "n_ab": 2,
-     "share_b_given_a": 0.2222222222
+     "n_a": 47,
+     "n_ab": 15,
+     "share_b_given_a": 0.3191489362
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "merchant_availability",
-     "n_a": 9,
-     "n_ab": 2,
-     "share_b_given_a": 0.2222222222
+     "n_a": 47,
+     "n_ab": 13,
+     "share_b_given_a": 0.2765957447
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "pricing_promos",
-     "n_a": 9,
-     "n_ab": 1,
-     "share_b_given_a": 0.1111111111
+     "n_a": 47,
+     "n_ab": 9,
+     "share_b_given_a": 0.1914893617
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "payment_refund",
-     "n_a": 9,
-     "n_ab": 1,
-     "share_b_given_a": 0.1111111111
+     "n_a": 47,
+     "n_ab": 10,
+     "share_b_given_a": 0.2127659574
     },
     {
      "region": "gulf",
      "label_a": "food_quality",
      "label_b": "customer_service",
-     "n_a": 9,
-     "n_ab": 6,
+     "n_a": 47,
+     "n_ab": 28,
+     "share_b_given_a": 0.5957446809
+    },
+    {
+     "region": "gulf",
+     "label_a": "food_quality",
+     "label_b": "app_ux",
+     "n_a": 47,
+     "n_ab": 0,
+     "share_b_given_a": 0.0
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "delivery_time",
+     "n_a": 97,
+     "n_ab": 30,
+     "share_b_given_a": 0.3092783505
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "order_fulfilment",
+     "n_a": 97,
+     "n_ab": 37,
+     "share_b_given_a": 0.381443299
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "food_quality",
+     "n_a": 97,
+     "n_ab": 15,
+     "share_b_given_a": 0.1546391753
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "merchant_availability",
+     "n_a": 97,
+     "n_ab": 22,
+     "share_b_given_a": 0.2268041237
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "pricing_promos",
+     "n_a": 97,
+     "n_ab": 11,
+     "share_b_given_a": 0.1134020619
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "payment_refund",
+     "n_a": 97,
+     "n_ab": 11,
+     "share_b_given_a": 0.1134020619
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "customer_service",
+     "n_a": 97,
+     "n_ab": 51,
+     "share_b_given_a": 0.5257731959
+    },
+    {
+     "region": "gulf",
+     "label_a": "rider_behavior",
+     "label_b": "app_ux",
+     "n_a": 97,
+     "n_ab": 3,
+     "share_b_given_a": 0.0309278351
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "delivery_time",
+     "n_a": 68,
+     "n_ab": 22,
+     "share_b_given_a": 0.3235294118
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "order_fulfilment",
+     "n_a": 68,
+     "n_ab": 27,
+     "share_b_given_a": 0.3970588235
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "food_quality",
+     "n_a": 68,
+     "n_ab": 13,
+     "share_b_given_a": 0.1911764706
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "rider_behavior",
+     "n_a": 68,
+     "n_ab": 22,
+     "share_b_given_a": 0.3235294118
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "pricing_promos",
+     "n_a": 68,
+     "n_ab": 15,
+     "share_b_given_a": 0.2205882353
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "payment_refund",
+     "n_a": 68,
+     "n_ab": 22,
+     "share_b_given_a": 0.3235294118
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "customer_service",
+     "n_a": 68,
+     "n_ab": 46,
+     "share_b_given_a": 0.6764705882
+    },
+    {
+     "region": "gulf",
+     "label_a": "merchant_availability",
+     "label_b": "app_ux",
+     "n_a": 68,
+     "n_ab": 3,
+     "share_b_given_a": 0.0441176471
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "delivery_time",
+     "n_a": 41,
+     "n_ab": 9,
+     "share_b_given_a": 0.2195121951
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "order_fulfilment",
+     "n_a": 41,
+     "n_ab": 11,
+     "share_b_given_a": 0.2682926829
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "food_quality",
+     "n_a": 41,
+     "n_ab": 9,
+     "share_b_given_a": 0.2195121951
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "rider_behavior",
+     "n_a": 41,
+     "n_ab": 11,
+     "share_b_given_a": 0.2682926829
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "merchant_availability",
+     "n_a": 41,
+     "n_ab": 15,
+     "share_b_given_a": 0.3658536585
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "payment_refund",
+     "n_a": 41,
+     "n_ab": 3,
+     "share_b_given_a": 0.0731707317
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "customer_service",
+     "n_a": 41,
+     "n_ab": 24,
+     "share_b_given_a": 0.5853658537
+    },
+    {
+     "region": "gulf",
+     "label_a": "pricing_promos",
+     "label_b": "app_ux",
+     "n_a": 41,
+     "n_ab": 1,
+     "share_b_given_a": 0.0243902439
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "delivery_time",
+     "n_a": 79,
+     "n_ab": 14,
+     "share_b_given_a": 0.1772151899
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "order_fulfilment",
+     "n_a": 79,
+     "n_ab": 33,
+     "share_b_given_a": 0.417721519
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "food_quality",
+     "n_a": 79,
+     "n_ab": 10,
+     "share_b_given_a": 0.1265822785
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "rider_behavior",
+     "n_a": 79,
+     "n_ab": 11,
+     "share_b_given_a": 0.1392405063
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "merchant_availability",
+     "n_a": 79,
+     "n_ab": 22,
+     "share_b_given_a": 0.2784810127
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "pricing_promos",
+     "n_a": 79,
+     "n_ab": 3,
+     "share_b_given_a": 0.0379746835
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "customer_service",
+     "n_a": 79,
+     "n_ab": 43,
+     "share_b_given_a": 0.5443037975
+    },
+    {
+     "region": "gulf",
+     "label_a": "payment_refund",
+     "label_b": "app_ux",
+     "n_a": 79,
+     "n_ab": 2,
+     "share_b_given_a": 0.0253164557
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "delivery_time",
+     "n_a": 324,
+     "n_ab": 68,
+     "share_b_given_a": 0.2098765432
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "order_fulfilment",
+     "n_a": 324,
+     "n_ab": 92,
+     "share_b_given_a": 0.2839506173
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "food_quality",
+     "n_a": 324,
+     "n_ab": 28,
+     "share_b_given_a": 0.0864197531
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "rider_behavior",
+     "n_a": 324,
+     "n_ab": 51,
+     "share_b_given_a": 0.1574074074
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "merchant_availability",
+     "n_a": 324,
+     "n_ab": 46,
+     "share_b_given_a": 0.1419753086
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "pricing_promos",
+     "n_a": 324,
+     "n_ab": 24,
+     "share_b_given_a": 0.0740740741
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "payment_refund",
+     "n_a": 324,
+     "n_ab": 43,
+     "share_b_given_a": 0.1327160494
+    },
+    {
+     "region": "gulf",
+     "label_a": "customer_service",
+     "label_b": "app_ux",
+     "n_a": 324,
+     "n_ab": 8,
+     "share_b_given_a": 0.024691358
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "delivery_time",
+     "n_a": 12,
+     "n_ab": 3,
+     "share_b_given_a": 0.25
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "order_fulfilment",
+     "n_a": 12,
+     "n_ab": 1,
+     "share_b_given_a": 0.0833333333
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "food_quality",
+     "n_a": 12,
+     "n_ab": 0,
+     "share_b_given_a": 0.0
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "rider_behavior",
+     "n_a": 12,
+     "n_ab": 3,
+     "share_b_given_a": 0.25
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "merchant_availability",
+     "n_a": 12,
+     "n_ab": 3,
+     "share_b_given_a": 0.25
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "pricing_promos",
+     "n_a": 12,
+     "n_ab": 1,
+     "share_b_given_a": 0.0833333333
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "payment_refund",
+     "n_a": 12,
+     "n_ab": 2,
+     "share_b_given_a": 0.1666666667
+    },
+    {
+     "region": "gulf",
+     "label_a": "app_ux",
+     "label_b": "customer_service",
+     "n_a": 12,
+     "n_ab": 8,
      "share_b_given_a": 0.6666666667
-    },
-    {
-     "region": "gulf",
-     "label_a": "food_quality",
-     "label_b": "app_ux",
-     "n_a": 9,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "delivery_time",
-     "n_a": 21,
-     "n_ab": 3,
-     "share_b_given_a": 0.1428571429
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "order_fulfilment",
-     "n_a": 21,
-     "n_ab": 6,
-     "share_b_given_a": 0.2857142857
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "food_quality",
-     "n_a": 21,
-     "n_ab": 2,
-     "share_b_given_a": 0.0952380952
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "merchant_availability",
-     "n_a": 21,
-     "n_ab": 5,
-     "share_b_given_a": 0.2380952381
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "pricing_promos",
-     "n_a": 21,
-     "n_ab": 3,
-     "share_b_given_a": 0.1428571429
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "payment_refund",
-     "n_a": 21,
-     "n_ab": 3,
-     "share_b_given_a": 0.1428571429
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "customer_service",
-     "n_a": 21,
-     "n_ab": 11,
-     "share_b_given_a": 0.5238095238
-    },
-    {
-     "region": "gulf",
-     "label_a": "rider_behavior",
-     "label_b": "app_ux",
-     "n_a": 21,
-     "n_ab": 1,
-     "share_b_given_a": 0.0476190476
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "delivery_time",
-     "n_a": 16,
-     "n_ab": 2,
-     "share_b_given_a": 0.125
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "order_fulfilment",
-     "n_a": 16,
-     "n_ab": 7,
-     "share_b_given_a": 0.4375
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "food_quality",
-     "n_a": 16,
-     "n_ab": 2,
-     "share_b_given_a": 0.125
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "rider_behavior",
-     "n_a": 16,
-     "n_ab": 5,
-     "share_b_given_a": 0.3125
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "pricing_promos",
-     "n_a": 16,
-     "n_ab": 3,
-     "share_b_given_a": 0.1875
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "payment_refund",
-     "n_a": 16,
-     "n_ab": 6,
-     "share_b_given_a": 0.375
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "customer_service",
-     "n_a": 16,
-     "n_ab": 11,
-     "share_b_given_a": 0.6875
-    },
-    {
-     "region": "gulf",
-     "label_a": "merchant_availability",
-     "label_b": "app_ux",
-     "n_a": 16,
-     "n_ab": 1,
-     "share_b_given_a": 0.0625
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "delivery_time",
-     "n_a": 5,
-     "n_ab": 1,
-     "share_b_given_a": 0.2
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "order_fulfilment",
-     "n_a": 5,
-     "n_ab": 1,
-     "share_b_given_a": 0.2
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "food_quality",
-     "n_a": 5,
-     "n_ab": 1,
-     "share_b_given_a": 0.2
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "rider_behavior",
-     "n_a": 5,
-     "n_ab": 3,
-     "share_b_given_a": 0.6
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "merchant_availability",
-     "n_a": 5,
-     "n_ab": 3,
-     "share_b_given_a": 0.6
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "payment_refund",
-     "n_a": 5,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "customer_service",
-     "n_a": 5,
-     "n_ab": 2,
-     "share_b_given_a": 0.4
-    },
-    {
-     "region": "gulf",
-     "label_a": "pricing_promos",
-     "label_b": "app_ux",
-     "n_a": 5,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "delivery_time",
-     "n_a": 19,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "order_fulfilment",
-     "n_a": 19,
-     "n_ab": 7,
-     "share_b_given_a": 0.3684210526
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "food_quality",
-     "n_a": 19,
-     "n_ab": 1,
-     "share_b_given_a": 0.0526315789
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "rider_behavior",
-     "n_a": 19,
-     "n_ab": 3,
-     "share_b_given_a": 0.1578947368
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "merchant_availability",
-     "n_a": 19,
-     "n_ab": 6,
-     "share_b_given_a": 0.3157894737
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "pricing_promos",
-     "n_a": 19,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "customer_service",
-     "n_a": 19,
-     "n_ab": 11,
-     "share_b_given_a": 0.5789473684
-    },
-    {
-     "region": "gulf",
-     "label_a": "payment_refund",
-     "label_b": "app_ux",
-     "n_a": 19,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "delivery_time",
-     "n_a": 63,
-     "n_ab": 7,
-     "share_b_given_a": 0.1111111111
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "order_fulfilment",
-     "n_a": 63,
-     "n_ab": 16,
-     "share_b_given_a": 0.253968254
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "food_quality",
-     "n_a": 63,
-     "n_ab": 6,
-     "share_b_given_a": 0.0952380952
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "rider_behavior",
-     "n_a": 63,
-     "n_ab": 11,
-     "share_b_given_a": 0.1746031746
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "merchant_availability",
-     "n_a": 63,
-     "n_ab": 11,
-     "share_b_given_a": 0.1746031746
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "pricing_promos",
-     "n_a": 63,
-     "n_ab": 2,
-     "share_b_given_a": 0.0317460317
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "payment_refund",
-     "n_a": 63,
-     "n_ab": 11,
-     "share_b_given_a": 0.1746031746
-    },
-    {
-     "region": "gulf",
-     "label_a": "customer_service",
-     "label_b": "app_ux",
-     "n_a": 63,
-     "n_ab": 1,
-     "share_b_given_a": 0.0158730159
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "delivery_time",
-     "n_a": 2,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "order_fulfilment",
-     "n_a": 2,
-     "n_ab": 1,
-     "share_b_given_a": 0.5
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "food_quality",
-     "n_a": 2,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "rider_behavior",
-     "n_a": 2,
-     "n_ab": 1,
-     "share_b_given_a": 0.5
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "merchant_availability",
-     "n_a": 2,
-     "n_ab": 1,
-     "share_b_given_a": 0.5
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "pricing_promos",
-     "n_a": 2,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "payment_refund",
-     "n_a": 2,
-     "n_ab": 0,
-     "share_b_given_a": 0.0
-    },
-    {
-     "region": "gulf",
-     "label_a": "app_ux",
-     "label_b": "customer_service",
-     "n_a": 2,
-     "n_ab": 1,
-     "share_b_given_a": 0.5
     },
     {
      "region": "hk",
@@ -28306,177 +29847,177 @@
      "region": "gulf",
      "band": "neg",
      "label": "delivery_time",
-     "n_reviews": 97,
-     "n_label": 16,
-     "share": 0.1649484536
+     "n_reviews": 493,
+     "n_label": 142,
+     "share": 0.2880324544
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "order_fulfilment",
-     "n_reviews": 97,
-     "n_label": 23,
-     "share": 0.2371134021
+     "n_reviews": 493,
+     "n_label": 122,
+     "share": 0.247464503
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "food_quality",
-     "n_reviews": 97,
-     "n_label": 9,
-     "share": 0.0927835052
+     "n_reviews": 493,
+     "n_label": 47,
+     "share": 0.0953346856
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "rider_behavior",
-     "n_reviews": 97,
-     "n_label": 21,
-     "share": 0.2164948454
+     "n_reviews": 493,
+     "n_label": 97,
+     "share": 0.1967545639
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "merchant_availability",
-     "n_reviews": 97,
-     "n_label": 16,
-     "share": 0.1649484536
+     "n_reviews": 493,
+     "n_label": 68,
+     "share": 0.1379310345
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "pricing_promos",
-     "n_reviews": 97,
-     "n_label": 5,
-     "share": 0.0515463918
+     "n_reviews": 493,
+     "n_label": 41,
+     "share": 0.0831643002
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "payment_refund",
-     "n_reviews": 97,
-     "n_label": 19,
-     "share": 0.1958762887
+     "n_reviews": 493,
+     "n_label": 79,
+     "share": 0.1602434077
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "customer_service",
-     "n_reviews": 97,
-     "n_label": 63,
-     "share": 0.6494845361
+     "n_reviews": 493,
+     "n_label": 324,
+     "share": 0.6572008114
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "app_ux",
-     "n_reviews": 97,
-     "n_label": 2,
-     "share": 0.0206185567
+     "n_reviews": 493,
+     "n_label": 12,
+     "share": 0.0243407708
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "positive_praise",
-     "n_reviews": 97,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 493,
+     "n_label": 16,
+     "share": 0.0324543611
     },
     {
      "region": "gulf",
      "band": "neg",
      "label": "other",
-     "n_reviews": 97,
-     "n_label": 4,
-     "share": 0.0412371134
+     "n_reviews": 493,
+     "n_label": 17,
+     "share": 0.0344827586
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "delivery_time",
-     "n_reviews": 30,
-     "n_label": 7,
-     "share": 0.2333333333
+     "n_reviews": 87,
+     "n_label": 16,
+     "share": 0.183908046
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "order_fulfilment",
-     "n_reviews": 30,
-     "n_label": 3,
-     "share": 0.1
+     "n_reviews": 87,
+     "n_label": 5,
+     "share": 0.0574712644
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "food_quality",
-     "n_reviews": 30,
-     "n_label": 1,
-     "share": 0.0333333333
+     "n_reviews": 87,
+     "n_label": 2,
+     "share": 0.0229885057
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "rider_behavior",
-     "n_reviews": 30,
+     "n_reviews": 87,
      "n_label": 1,
-     "share": 0.0333333333
+     "share": 0.0114942529
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "merchant_availability",
-     "n_reviews": 30,
-     "n_label": 3,
-     "share": 0.1
+     "n_reviews": 87,
+     "n_label": 8,
+     "share": 0.091954023
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "pricing_promos",
-     "n_reviews": 30,
-     "n_label": 12,
-     "share": 0.4
+     "n_reviews": 87,
+     "n_label": 31,
+     "share": 0.3563218391
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "payment_refund",
-     "n_reviews": 30,
-     "n_label": 4,
-     "share": 0.1333333333
+     "n_reviews": 87,
+     "n_label": 7,
+     "share": 0.0804597701
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "customer_service",
-     "n_reviews": 30,
-     "n_label": 4,
-     "share": 0.1333333333
+     "n_reviews": 87,
+     "n_label": 8,
+     "share": 0.091954023
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "app_ux",
-     "n_reviews": 30,
-     "n_label": 5,
-     "share": 0.1666666667
+     "n_reviews": 87,
+     "n_label": 8,
+     "share": 0.091954023
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "positive_praise",
-     "n_reviews": 30,
-     "n_label": 19,
-     "share": 0.6333333333
+     "n_reviews": 87,
+     "n_label": 58,
+     "share": 0.6666666667
     },
     {
      "region": "gulf",
      "band": "pos",
      "label": "other",
-     "n_reviews": 30,
-     "n_label": 0,
-     "share": 0.0
+     "n_reviews": 87,
+     "n_label": 2,
+     "share": 0.0229885057
     },
     {
      "region": "hk",
@@ -29962,174 +31503,174 @@
   "llm": {
    "ae": {
     "customer_service": {
-     "n_label": 13,
-     "n_negative": 23,
-     "share": 0.5652173913043478,
+     "n_label": 274,
+     "n_negative": 419,
+     "share": 0.6539379474940334,
      "rank": 1,
      "wilson_ci": [
-      0.3681137508501646,
-      0.743653646743258
+      0.6071754726438392,
+      0.697903410490708
      ],
      "share_ci": [
-      0.34782608695652173,
-      0.782608695652174
+      0.60381861575179,
+      0.6992840095465394
      ],
-     "p_rank1": 0.9395,
+     "p_rank1": 1.0,
      "rank_ci": [
       1,
-      2
+      1
      ]
     },
     "delivery_time": {
-     "n_label": 7,
-     "n_negative": 23,
-     "share": 0.30434782608695654,
+     "n_label": 133,
+     "n_negative": 419,
+     "share": 0.31742243436754175,
      "rank": 2,
      "wilson_ci": [
-      0.15604024453214022,
-      0.508657562687592
+      0.274683738912504,
+      0.36347851597442843
      ],
      "share_ci": [
-      0.13043478260869565,
-      0.5217391304347826
+      0.2744630071599045,
+      0.360381861575179
      ],
-     "p_rank1": 0.0795,
+     "p_rank1": 0.0,
      "rank_ci": [
-      1,
-      5
+      2,
+      2
      ]
     },
     "order_fulfilment": {
-     "n_label": 6,
-     "n_negative": 23,
-     "share": 0.2608695652173913,
+     "n_label": 105,
+     "n_negative": 419,
+     "share": 0.25059665871121717,
      "rank": 3,
      "wilson_ci": [
-      0.12548616044986347,
-      0.4647000483742537
+      0.21149515374631644,
+      0.29422975652406835
      ],
      "share_ci": [
-      0.08695652173913043,
-      0.43478260869565216
-     ],
-     "p_rank1": 0.015,
-     "rank_ci": [
-      2,
-      5
-     ]
-    },
-    "rider_behavior": {
-     "n_label": 4,
-     "n_negative": 23,
-     "share": 0.17391304347826086,
-     "rank": 4,
-     "wilson_ci": [
-      0.06978653563062565,
-      0.3713764764022614
-     ],
-     "share_ci": [
-      0.043478260869565216,
-      0.34782608695652173
-     ],
-     "p_rank1": 0.005,
-     "rank_ci": [
-      2,
-      6
-     ]
-    },
-    "payment_refund": {
-     "n_label": 3,
-     "n_negative": 23,
-     "share": 0.13043478260869565,
-     "rank": 5,
-     "wilson_ci": [
-      0.04537659093631238,
-      0.32127482270095964
-     ],
-     "share_ci": [
-      0.0,
-      0.2608695652173913
+      0.2100238663484487,
+      0.2935560859188544
      ],
      "p_rank1": 0.0,
      "rank_ci": [
       3,
+      3
+     ]
+    },
+    "rider_behavior": {
+     "n_label": 80,
+     "n_negative": 419,
+     "share": 0.1909307875894988,
+     "rank": 4,
+     "wilson_ci": [
+      0.15617163221037517,
+      0.23130564893809208
+     ],
+     "share_ci": [
+      0.15274463007159905,
+      0.22911694510739858
+     ],
+     "p_rank1": 0.0,
+     "rank_ci": [
+      4,
+      5
+     ]
+    },
+    "payment_refund": {
+     "n_label": 63,
+     "n_negative": 419,
+     "share": 0.15035799522673032,
+     "rank": 5,
+     "wilson_ci": [
+      0.11931915795984568,
+      0.18774973538571768
+     ],
+     "share_ci": [
+      0.11694510739856802,
+      0.18615751789976134
+     ],
+     "p_rank1": 0.0,
+     "rank_ci": [
+      4,
+      6
+     ]
+    },
+    "merchant_availability": {
+     "n_label": 54,
+     "n_negative": 419,
+     "share": 0.1288782816229117,
+     "rank": 6,
+     "wilson_ci": [
+      0.10013580057361574,
+      0.1643639462880573
+     ],
+     "share_ci": [
+      0.09785202863961814,
+      0.15990453460620524
+     ],
+     "p_rank1": 0.0,
+     "rank_ci": [
+      5,
       7
      ]
     },
     "food_quality": {
-     "n_label": 2,
-     "n_negative": 23,
-     "share": 0.08695652173913043,
-     "rank": 6,
+     "n_label": 40,
+     "n_negative": 419,
+     "share": 0.0954653937947494,
+     "rank": 7,
      "wilson_ci": [
-      0.024180004484220363,
-      0.26795981075743663
+      0.07089162671403906,
+      0.12738944783936015
      ],
      "share_ci": [
-      0.0,
-      0.21739130434782608
-     ],
-     "p_rank1": 0.0,
-     "rank_ci": [
-      3,
-      7
-     ]
-    },
-    "merchant_availability": {
-     "n_label": 2,
-     "n_negative": 23,
-     "share": 0.08695652173913043,
-     "rank": 6,
-     "wilson_ci": [
-      0.024180004484220363,
-      0.26795981075743663
-     ],
-     "share_ci": [
-      0.0,
-      0.21739130434782608
-     ],
-     "p_rank1": 0.0,
-     "rank_ci": [
-      3,
-      7
-     ]
-    },
-    "pricing_promos": {
-     "n_label": 0,
-     "n_negative": 23,
-     "share": 0.0,
-     "rank": 8,
-     "wilson_ci": [
-      0.0,
-      0.14311661845042686
-     ],
-     "share_ci": [
-      0.0,
-      0.0
+      0.06921241050119331,
+      0.12410501193317422
      ],
      "p_rank1": 0.0,
      "rank_ci": [
       6,
+      8
+     ]
+    },
+    "pricing_promos": {
+     "n_label": 36,
+     "n_negative": 419,
+     "share": 0.08591885441527446,
+     "rank": 8,
+     "wilson_ci": [
+      0.06270577213569595,
+      0.11665568175819643
+     ],
+     "share_ci": [
+      0.059665871121718374,
+      0.11455847255369929
+     ],
+     "p_rank1": 0.0,
+     "rank_ci": [
+      7,
       8
      ]
     },
     "app_ux": {
-     "n_label": 0,
-     "n_negative": 23,
-     "share": 0.0,
-     "rank": 8,
+     "n_label": 10,
+     "n_negative": 419,
+     "share": 0.02386634844868735,
+     "rank": 9,
      "wilson_ci": [
-      0.0,
-      0.14311661845042686
+      0.013014385109482827,
+      0.04336953449761534
      ],
      "share_ci": [
-      0.0,
-      0.0
+      0.00954653937947494,
+      0.0405727923627685
      ],
      "p_rank1": 0.0,
      "rank_ci": [
-      6,
-      8
+      9,
+      9
      ]
     }
    },
@@ -31526,9 +33067,142 @@
      "2026-07",
      "2026-08"
     ],
-    "n_recent": 7,
-    "n_base": 23,
-    "skipped": "fewer than 30 reviews in one period"
+    "n_recent": 82,
+    "n_base": 383,
+    "negative": {
+     "recent": 0.5365853658536586,
+     "base": 0.9268929503916449,
+     "diff": -0.3903075845379863,
+     "diff_ci": [
+      -0.4996902564890198,
+      -0.28205161157089037
+     ],
+     "k_recent": 44,
+     "k_base": 355
+    },
+    "labels": {
+     "delivery_time": {
+      "recent": 0.21951219512195122,
+      "base": 0.3133159268929504,
+      "diff": -0.09380373177099918,
+      "diff_ci": [
+       -0.18367227536448832,
+       0.016534583221095883
+      ],
+      "k_recent": 18,
+      "k_base": 120
+     },
+     "order_fulfilment": {
+      "recent": 0.13414634146341464,
+      "base": 0.24281984334203655,
+      "diff": -0.1086735018786219,
+      "diff_ci": [
+       -0.18195749528613572,
+       -0.00980514915212903
+      ],
+      "k_recent": 11,
+      "k_base": 93
+     },
+     "food_quality": {
+      "recent": 0.08536585365853659,
+      "base": 0.0835509138381201,
+      "diff": 0.0018149398204164863,
+      "diff_ci": [
+       -0.05211734852975171,
+       0.085753885617535
+      ],
+      "k_recent": 7,
+      "k_base": 32
+     },
+     "rider_behavior": {
+      "recent": 0.12195121951219512,
+      "base": 0.1671018276762402,
+      "diff": -0.04515060816404509,
+      "diff_ci": [
+       -0.11300219716992937,
+       0.04936199995924091
+      ],
+      "k_recent": 10,
+      "k_base": 64
+     },
+     "merchant_availability": {
+      "recent": 0.12195121951219512,
+      "base": 0.12010443864229765,
+      "diff": 0.0018467808698974658,
+      "diff_ci": [
+       -0.0635526870353626,
+       0.09462217747402221
+      ],
+      "k_recent": 10,
+      "k_base": 46
+     },
+     "pricing_promos": {
+      "recent": 0.2926829268292683,
+      "base": 0.08616187989556136,
+      "diff": 0.20652104693370693,
+      "diff_ci": [
+       0.11330012559783367,
+       0.315213312394512
+      ],
+      "k_recent": 24,
+      "k_base": 33
+     },
+     "payment_refund": {
+      "recent": 0.0975609756097561,
+      "base": 0.1514360313315927,
+      "diff": -0.053875055721836596,
+      "diff_ci": [
+       -0.11539783316218233,
+       0.035524737613730165
+      ],
+      "k_recent": 8,
+      "k_base": 58
+     },
+     "customer_service": {
+      "recent": 0.3170731707317073,
+      "base": 0.6344647519582245,
+      "diff": -0.31739158122651717,
+      "diff_ci": [
+       -0.41930032462579087,
+       -0.1995940741041814
+      ],
+      "k_recent": 26,
+      "k_base": 243
+     },
+     "app_ux": {
+      "recent": 0.036585365853658534,
+      "base": 0.02610966057441253,
+      "diff": 0.010475705279246003,
+      "diff_ci": [
+       -0.02164809515108696,
+       0.07708329902046926
+      ],
+      "k_recent": 3,
+      "k_base": 10
+     },
+     "positive_praise": {
+      "recent": 0.36585365853658536,
+      "base": 0.07049608355091384,
+      "diff": 0.2953575749856715,
+      "diff_ci": [
+       0.19467667665804533,
+       0.40556820448107395
+      ],
+      "k_recent": 30,
+      "k_base": 27
+     },
+     "other": {
+      "recent": 0.06097560975609756,
+      "base": 0.02610966057441253,
+      "diff": 0.03486594918168503,
+      "diff_ci": [
+       -0.005797466132016961,
+       0.10975697921392857
+      ],
+      "k_recent": 5,
+      "k_base": 10
+     }
+    }
    },
    "bh": {
     "recent_month": "2026-09",

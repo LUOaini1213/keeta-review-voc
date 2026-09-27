@@ -752,11 +752,11 @@
   }
  },
  "llm_status_all": {
-  "bad_labels": 2,
-  "ok": 180
+  "bad_labels": 5,
+  "ok": 633
  },
- "llm_n_all": 182,
- "llm_invalid_all": 2,
+ "llm_n_all": 638,
+ "llm_invalid_all": 5,
  "llm_invalid_in_reference": 2,
  "language_detection": {
   "n": 180,
