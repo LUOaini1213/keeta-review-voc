@@ -48,6 +48,12 @@ def compute() -> dict:
     out["llm_n_all"] = len(llm_rows)
     out["llm_invalid_all"] = sum(v for k, v in status.items() if k != "ok")
     out["llm_invalid_in_reference"] = sum(1 for k in keys if llm.get(k) is None)
+    errors = collections.Counter()
+    for line in (LABEL_DIR / "llm_log.jsonl").read_text(encoding="utf-8").splitlines():
+        rec = json.loads(line)
+        if rec["status"] != "ok":
+            errors[f'{rec["status"]}: {rec["error"]}'] += 1
+    out["llm_errors_all"] = dict(sorted(errors.items()))
     # language detector vs the reference language tag
     meta = {r["review_key"]: r for r in read_csv(DERIVED_DIR / "reviews_meta.csv")}
     agree = [meta[r["review_key"]]["lang"] == r["lang"] for r in ref_rows]

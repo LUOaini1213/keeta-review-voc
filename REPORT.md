@@ -81,6 +81,9 @@ P(rank 1) is at least 0.99. In the UAE, delivery time and customer service swap
 places across resamples (P(rank 1) counts ties for both, so the column can sum to more than 1). The second place is contested between
 payment/refunds, delivery time and order fulfilment, whose intervals overlap.
 
+Sensitivity check with the other labeler (the local LLM, which scored lower on the reference set): the issue
+ranked first per market is Customer service: UAE, Bahrain, Hong Kong, Kuwait, Qatar, Saudi Arabia (a market with a tie is listed under both issues).
+
 ## 3. What a customer-service complaint is about
 
 Gulf 1–2★ reviews that mention customer service, and what else they mention:
@@ -96,7 +99,7 @@ Gulf 1–2★ reviews that mention customer service, and what else they mention:
 | App bugs & UX | 60 / 806 | 7% |
 | Merchant/menu availability | 16 / 806 | 2% |
 
-The typical story is a chain: something goes wrong with the order (late, missing items, never
+A common story is a chain: something goes wrong with the order (late, missing items, never
 arrived), the customer contacts support, and the complaint is about the outcome: a refund refused,
 paid to the in-app wallet only, or replaced by a small voucher. Examples (short excerpts; Arabic and
 Chinese glossed by the author):
@@ -106,12 +109,12 @@ Chinese glossed by the author):
 - “sorry we can’t cancel the order we will refund you 10 AED” (UAE, 1★)
 - “送錯食物,但拒絕退錢” — *wrong food delivered, but they refused a refund* (Hong Kong, 1★)
 
-Delivery-time complaints often question the ETA itself rather than lateness alone:
+Some delivery-time complaints question the ETA itself, not only the lateness:
 
 - “They just keep pushing your delivery schedule further” (UAE, 3★)
 - “بعد مايتأخر التوصيل تحصل الوقت الي كان موجود متعدل وزايد ومايجيك تعويض” — *once the delivery is late you find the promised time has been edited upwards, and no compensation comes* (Saudi Arabia, 3★)
 
-And a recurring rider-related claim is about proof of delivery:
+And several reviews make the same rider-related claim about proof of delivery:
 
 - “مندوب جاب طلبيه صورها مع الباب وسرقها” — *a courier brought the order, photographed it at the door and took it away* (Oman, 1★)
 
@@ -220,4 +223,5 @@ The LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained) scored **lower
 than the rules overall. Labels where the LLM was better with a 95% interval above zero:
 none. Labels where it was clearly worse: Rider behaviour, Merchant/menu availability, Payment & refunds. Its outputs are kept in
 `data/labels/llm.csv` and every prompt/response in `data/labels/llm_log.jsonl`
-(5 invalid outputs out of 638, counted as "no label", not dropped).
+(30 invalid outputs out of 2,572, counted as "no label", not dropped; by type:
+30 × bad_labels: 'other' combined with other labels).

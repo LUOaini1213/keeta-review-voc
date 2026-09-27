@@ -69,6 +69,17 @@ def build_context() -> dict:
             if row["rank"] == 1:
                 firsts.setdefault(row["label"], []).append(sf)
     ctx["rank1"] = {lab: {"n": len(v), "names": ", ".join(STOREFRONT_NAMES[s] for s in v)} for lab, v in firsts.items()}
+    sec = m["secondary_method"]
+    firsts_sec = {}
+    for sf in ranked:
+        for row in pains[sec][sf]["top"]:
+            if row["rank"] == 1:
+                firsts_sec.setdefault(row["label"], []).append(sf)
+    ctx["sec_name"] = "the local LLM" if sec == "llm" else "the keyword rules"
+    ctx["rank1_sec"] = {lab: {"n": len(v), "names": ", ".join(STOREFRONT_NAMES[s] for s in v)}
+                        for lab, v in firsts_sec.items()}
+    ctx["rank1_sec_summary"] = "; ".join(f"{LABEL_TITLES[lab]}: {v['names']}" for lab, v in sorted(
+        ctx["rank1_sec"].items(), key=lambda kv: -kv[1]["n"]))
     cs = [pains[prim][sf]["customer_service"]["share"] for sf in ranked if sf in GULF]
     ctx["cs_gulf_range"] = [min(cs), max(cs)]
     negs = [ov[s]["share_negative"] for s in ranked]
@@ -109,6 +120,7 @@ def build_context() -> dict:
     ctx["words"] = {
         "llm_vs_rules": "lower" if q["llm"]["overall"]["micro_f1"] < q["rules"]["overall"]["micro_f1"] else "higher",
         "llm_wins": ", ".join(wins) if wins else "none",
+        "llm_errors": "; ".join(f"{v} × {k}" for k, v in q["llm_errors_all"].items()) or "none",
         "llm_losses": ", ".join(losses) if losses else "none",
     }
     return ctx

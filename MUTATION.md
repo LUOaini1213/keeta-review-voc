@@ -5,12 +5,17 @@ the tests listed must pass on clean code and fail on the mutated code ("killed")
 Before the real mutations, the harness applies a behaviour-preserving edit (M0, a docstring change)
 and requires it to survive, so a harness that reports everything as killed would stop here.
 
-**26/27 killed.**
+**27/27 killed.**
+
+History: the first full run (2026-09-27) killed 26/27. M2 survived because the only test of
+the Han-character weighting used a string that is classified the same way with or without the
+weight (a tie broken alphabetically). A discriminating case was added to tests/test_text.py and
+the table below is the re-run.
 
 | id | file | injected bug | tests | result |
 |---|---|---|---|---|
 | M1 | `keeta_voc/text.py` | ta marbuta no longer normalised (Arabic keywords silently miss) | `tests/test_text.py tests/test_rules.py` | killed |
-| M2 | `keeta_voc/text.py` | Han characters weighted like single letters | `tests/test_text.py` | **SURVIVED** |
+| M2 | `keeta_voc/text.py` | Han characters weighted like single letters | `tests/test_text.py` | killed |
 | M3 | `keeta_voc/text.py` | any Latin-script text is called English | `tests/test_text.py` | killed |
 | M4 | `keeta_voc/text.py` | review date kept in Apple's local offset, not UTC | `tests/test_text.py` | killed |
 | M5 | `keeta_voc/rules.py` | English keywords match inside other words | `tests/test_rules.py` | killed |

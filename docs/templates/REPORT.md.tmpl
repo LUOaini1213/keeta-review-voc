@@ -53,13 +53,16 @@ P(rank 1) is at least {{cs_rank1_gulf_pmin|floor2}}. In the UAE, delivery time a
 places across resamples (P(rank 1) counts ties for both, so the column can sum to more than 1). The second place is contested between
 payment/refunds, delivery time and order fulfilment, whose intervals overlap.
 
+Sensitivity check with the other labeler ({{sec_name}}, which scored lower on the reference set): the issue
+ranked first per market is {{rank1_sec_summary}} (a market with a tie is listed under both issues).
+
 ## 3. What a customer-service complaint is about
 
 Gulf 1–2★ reviews that mention customer service, and what else they mention:
 
 {{table:cooc_gulf_cs}}
 
-The typical story is a chain: something goes wrong with the order (late, missing items, never
+A common story is a chain: something goes wrong with the order (late, missing items, never
 arrived), the customer contacts support, and the complaint is about the outcome: a refund refused,
 paid to the in-app wallet only, or replaced by a small voucher. Examples (short excerpts; Arabic and
 Chinese glossed by the author):
@@ -69,12 +72,12 @@ Chinese glossed by the author):
 - {{quote:cancel_10aed}}
 - {{quote:hk_wrong_food}}
 
-Delivery-time complaints often question the ETA itself rather than lateness alone:
+Some delivery-time complaints question the ETA itself, not only the lateness:
 
 - {{quote:eta_pushed}}
 - {{quote:eta_edited}}
 
-And a recurring rider-related claim is about proof of delivery:
+And several reviews make the same rider-related claim about proof of delivery:
 
 - {{quote:proof_of_delivery}}
 
@@ -147,4 +150,5 @@ The LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained) scored **{{wor
 than the rules overall. Labels where the LLM was better with a 95% interval above zero:
 {{words.llm_wins}}. Labels where it was clearly worse: {{words.llm_losses}}. Its outputs are kept in
 `data/labels/llm.csv` and every prompt/response in `data/labels/llm_log.jsonl`
-({{q.llm_invalid_all}} invalid outputs out of {{q.llm_n_all}}, counted as "no label", not dropped).
+({{q.llm_invalid_all}} invalid outputs out of {{q.llm_n_all|int}}, counted as "no label", not dropped; by type:
+{{words.llm_errors}}).

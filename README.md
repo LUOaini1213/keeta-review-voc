@@ -55,7 +55,7 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
   window for praise.
 - **Method 2, local LLM:** qwen2.5:3b through Ollama on CPU, temperature 0, output constrained by a
   JSON schema whose enum is the taxonomy, then validated again in Python. Invalid outputs are recorded
-  and scored as "no label", never dropped (5 invalid outputs among 638 LLM-labelled reviews;
+  and scored as "no label", never dropped (30 invalid outputs among 2,572 LLM-labelled reviews;
   the snapshot has 2,572). Every prompt and response is logged
   (`data/labels/llm_log.jsonl`; the review text inside each prompt is kept only in the local log).
 - **Reference set:** a seeded sample of 180 reviews stratified by storefront × rating band.
@@ -92,7 +92,7 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
 | **Micro-F1, all labels** | 180 |  | **0.81** [0.78–0.84] |  |  | **0.70** [0.66–0.74] |  | -0.11 [-0.16, -0.07] |
 
 **The local LLM scored lower than the keyword rules** (micro-F1 0.70 vs
-0.81; difference -0.11, 95% CI [-0.16–-0.07]).
+0.81; difference -0.11, 95% CI [-0.16, -0.07]).
 It was clearly worse on: Rider behaviour, Merchant/menu availability, Payment & refunds. It was clearly better on: none.
 The language detector agreed with the reference language tag on 98.9% of the
 180 reference reviews.

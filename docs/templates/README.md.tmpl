@@ -79,7 +79,7 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
 {{table:quality}}
 
 **The local LLM scored {{words.llm_vs_rules}} than the keyword rules** (micro-F1 {{qo.llm.micro_f1|f2}} vs
-{{qo.rules.micro_f1|f2}}; difference {{diff.micro_f1.diff|f2}}, 95% CI {{diff.micro_f1.ci|ci_f2}}).
+{{qo.rules.micro_f1|f2}}; difference {{diff.micro_f1.diff|f2}}, 95% CI {{diff.micro_f1.ci|ci_signed2}}).
 It was clearly worse on: {{words.llm_losses}}. It was clearly better on: {{words.llm_wins}}.
 The language detector agreed with the reference language tag on {{lang.accuracy|pct1}} of the
 {{lang.n}} reference reviews.
