@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from .dataset import keyed_rows, validate_predictions
 from .taxonomy import label_names
 
 SQL_DIR = Path(__file__).resolve().parents[1] / "sql"
@@ -29,16 +30,17 @@ def region_of(storefront: str) -> str:
 
 def connect(reviews: pd.DataFrame, labels: dict[str, dict[str, list[str] | None]]) -> sqlite3.Connection:
     """reviews: DataFrame with REVIEW_COLS; labels: {method: {review_key: [labels] or None}}."""
+    known = keyed_rows(reviews.to_dict("records"), "reviews")
+    labels = {method: validate_predictions(lab, known, f"{method} labels") for method, lab in labels.items()}
     con = sqlite3.connect(":memory:")
     con.executescript((SQL_DIR / "00_schema.sql").read_text(encoding="utf-8"))
     con.executemany("INSERT INTO taxonomy VALUES (?, ?)", [(n, i) for i, n in enumerate(label_names())])
     reviews = reviews.assign(region=reviews["storefront"].map(region_of))
     rows = reviews[REVIEW_COLS].astype({"rating": int, "n_chars": int}).itertuples(index=False, name=None)
     con.executemany(f"INSERT INTO reviews VALUES ({','.join('?' * len(REVIEW_COLS))})", list(rows))
-    known = set(reviews["review_key"])
     for method, lab in labels.items():
         con.executemany("INSERT INTO labels VALUES (?, ?, ?)",
-                        [(k, method, x) for k, xs in lab.items() if xs and k in known for x in xs])
+                        [(k, method, x) for k, xs in lab.items() if xs for x in xs])
     con.commit()
     return con
 

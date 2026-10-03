@@ -11,7 +11,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from keeta_voc.dataset import DERIVED_DIR, LABEL_DIR, RESULTS_DIR, read_csv, read_labels  # noqa: E402
+from keeta_voc.dataset import (DERIVED_DIR, LABEL_DIR, RESULTS_DIR, labels_from_rows, read_csv,  # noqa: E402
+                               read_keyed_csv, read_labels, require_cohort)
 from keeta_voc.evaluate import evaluate, paired_diff, to_matrix  # noqa: E402
 from keeta_voc.jsoncmp import assert_close  # noqa: E402
 from keeta_voc.taxonomy import label_names, validate_labels  # noqa: E402
@@ -21,15 +22,17 @@ N_BOOT = 2000
 
 
 def compute() -> dict:
-    ref_rows = read_csv(LABEL_DIR / "reference.csv")
+    meta = read_keyed_csv(DERIVED_DIR / "reviews_meta.csv")
+    ref_rows = list(read_keyed_csv(LABEL_DIR / "reference.csv").values())
     ref = {r["review_key"]: validate_labels(r["labels"].split("|")) for r in ref_rows}
     keys = sorted(ref)
-    sample = {r["review_key"] for r in read_csv(LABEL_DIR / "reference_sample.csv")}
-    if set(keys) != sample:
-        raise SystemExit("reference.csv does not cover exactly the drawn reference sample")
-    rules = read_labels(LABEL_DIR / "rules.csv")
+    sample = read_keyed_csv(LABEL_DIR / "reference_sample.csv")
+    require_cohort(keys, sample, "reference.csv vs reference_sample.csv")
+    if not keys or not set(keys) <= meta.keys():
+        raise ValueError("reference cohort must be nonempty and contained in reviews_meta.csv")
+    rules = read_labels(LABEL_DIR / "rules.csv", expected_keys=meta)
     llm_rows = read_csv(LABEL_DIR / "llm.csv")
-    llm = {r["review_key"]: (r["labels"].split("|") if r["labels"] else None) for r in llm_rows}
+    llm = labels_from_rows(llm_rows, "llm.csv", expected_keys=meta)
     names = label_names()
     Y = to_matrix(keys, ref, names)
     R = to_matrix(keys, rules, names)
@@ -55,7 +58,6 @@ def compute() -> dict:
             errors[f'{rec["status"]}: {rec["error"]}'] += 1
     out["llm_errors_all"] = dict(sorted(errors.items()))
     # language detector vs the reference language tag
-    meta = {r["review_key"]: r for r in read_csv(DERIVED_DIR / "reviews_meta.csv")}
     agree = [meta[r["review_key"]]["lang"] == r["lang"] for r in ref_rows]
     confusion = collections.Counter(f'{r["lang"]}->{meta[r["review_key"]]["lang"]}' for r in ref_rows)
     out["language_detection"] = {"n": len(agree), "accuracy": sum(agree) / len(agree),

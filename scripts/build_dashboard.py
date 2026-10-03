@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from keeta_voc.facts import LABEL_TITLES, STOREFRONT_NAMES, load_results  # noqa: E402
+from keeta_voc.facts import LABEL_TITLES, MIN_STOREFRONT_NEG, STOREFRONT_NAMES, load_results  # noqa: E402
 
 OUT = ROOT / "docs" / "dashboard.html"
 
@@ -38,7 +38,7 @@ p.sub { color: var(--ink2); margin: 0 0 16px; }
 .tile { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px; }
 .tile .k { color:var(--ink2); font-size:12px; } .tile .v { font-size:22px; font-weight:600; font-variant-numeric: tabular-nums; }
 .tile .s { color:var(--muted); font-size:12px; }
-.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 16px; }
 .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px; min-width:0; }
 .card h3 { font-size:14px; margin:0 0 2px; } .card .n { color:var(--ink2); font-size:12px; margin-bottom:6px; }
 svg { display:block; width:100%; height:auto; overflow:visible; }
@@ -91,6 +91,11 @@ for (const sf of Object.keys(DATA.pain)) {
   const card = document.createElement("div"); card.className = "card";
   const nneg = rows.length ? rows[0][1].n_negative : 0;
   card.innerHTML = `<h3>${DATA.names[sf] || sf}</h3><div class="n">n = ${nneg} reviews rated 1&ndash;2&#9733;</div>`;
+  if (nneg < DATA.min_negative) {
+    const note = document.createElement("p"); note.className = "note";
+    note.textContent = `Too few 1–2★ reviews to rank (< ${DATA.min_negative}). No ranking or intervals shown.`;
+    card.appendChild(note); $("pain").appendChild(card); continue;
+  }
   const W = 380, L = 164, R = 44, rowH = 22, H = rows.length * rowH + 18;
   const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, role: "img", "aria-label": `Pain points, ${sf}` }, card);
   const x = (v) => L + v * (W - L - R);
@@ -132,6 +137,7 @@ def payload() -> dict:
     return {
         "n_reviews": m["n_reviews"], "fetched_at": man["fetched_at"][:10], "primary": prim,
         "overview": m["overview"], "pain": m["pain_point_intervals"][prim],
+        "min_negative": MIN_STOREFRONT_NEG,
         "names": STOREFRONT_NAMES, "titles": LABEL_TITLES,
         "quality": {k: q[k] for k in ("labels", "n_reference", "rules", "llm")},
     }

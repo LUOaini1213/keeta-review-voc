@@ -40614,12 +40614,12 @@
    "om": {
     "recent_month": "2026-09",
     "base_months": [
-     "2025-10",
-     "2026-01",
-     "2026-02"
+     "2026-06",
+     "2026-07",
+     "2026-08"
     ],
     "n_recent": 2,
-    "n_base": 5,
+    "n_base": 0,
     "skipped": "fewer than 30 reviews in one period"
    },
    "qa": {
@@ -40636,6 +40636,7 @@
    "sa": {
     "recent_month": "2026-09",
     "base_months": [
+     "2026-06",
      "2026-07",
      "2026-08"
     ],
@@ -40958,12 +40959,12 @@
    "om": {
     "recent_month": "2026-09",
     "base_months": [
-     "2025-10",
-     "2026-01",
-     "2026-02"
+     "2026-06",
+     "2026-07",
+     "2026-08"
     ],
     "n_recent": 2,
-    "n_base": 5,
+    "n_base": 0,
     "skipped": "fewer than 30 reviews in one period"
    },
    "qa": {
@@ -40980,6 +40981,7 @@
    "sa": {
     "recent_month": "2026-09",
     "base_months": [
+     "2026-06",
      "2026-07",
      "2026-08"
     ],

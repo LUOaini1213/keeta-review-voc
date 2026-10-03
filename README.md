@@ -66,7 +66,9 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
 - **Scores:** per-label precision / recall / F1 and Cohen's κ with 2000-resample bootstrap intervals,
   plus a paired bootstrap of the F1 difference between methods.
 - **Primary labeler** (rule fixed before scoring, in `scripts/compute_metrics.py`): whichever method has the
-  higher micro-F1 on the reference set. Result: **rules**. The other method's tables are kept in
+  higher micro-F1 on the reference set; an exact tie selects rules without establishing a winner.
+  The stored primary method is **rules**. Missing estimates do not establish superiority.
+  The other method's tables are kept in
   `results/metrics.json` for comparison.
 - **Metrics:** SQL in [`sql/`](sql) (issue share by storefront, by rating, by app version, by month;
   pain-point ranking among 1–2★ reviews; co-occurrence), each checked against an independent pandas
@@ -91,9 +93,10 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
 | Other | 17 | 0.67 / 0.71 | 0.69 [0.48–0.84] | 0.65 | 0.75 / 0.35 | 0.48 [0.19–0.70] | 0.45 | -0.21 [-0.44, +0.00] |
 | **Micro-F1, all labels** | 180 |  | **0.81** [0.78–0.84] |  |  | **0.70** [0.66–0.74] |  | -0.11 [-0.16, -0.07] |
 
-**The local LLM scored lower than the keyword rules** (micro-F1 0.70 vs
-0.81; difference -0.11, 95% CI [-0.16, -0.07]).
-It was clearly worse on: Rider behaviour, Merchant/menu availability, Payment & refunds. It was clearly better on: none.
+Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1.
+
+Labels with a paired 95% F1-difference interval wholly below zero: Rider behaviour, Merchant/menu availability, Payment & refunds;
+wholly above zero: none. These per-label intervals are unadjusted for multiple comparisons.
 The language detector agreed with the reference language tag on 98.9% of the
 180 reference reviews.
 
@@ -158,7 +161,15 @@ From the committed, text-free data (what CI runs; no network, no LLM):
 pip install -r requirements.txt
 python -m pytest -q
 python scripts/evaluate_labels.py --check && python scripts/compute_metrics.py --check && python scripts/check_numbers.py --check
+python scripts/build_dashboard.py --check
 ```
+
+The reporting tests also execute the generated dashboard JavaScript with Node.js. CI runs on
+Windows and Linux with Python and Node installed. Input cohorts must have unique review keys;
+both methods must cover every metadata row, using explicit invalid predictions where necessary.
+Non-ok labels are scored as no prediction even if a residual label field is present. Recent
+comparisons use the latest observed calendar month and its three preceding calendar months,
+including months with no reviews.
 
 Full re-run from a fresh pull (needs network; Apple only serves the latest reviews, so the numbers
 will differ from this snapshot; the LLM step needs [Ollama](https://ollama.com) with `qwen2.5:3b`):
@@ -172,24 +183,37 @@ python scripts/evaluate_labels.py && python scripts/compute_metrics.py && python
 python scripts/check_numbers.py --write && python scripts/build_dashboard.py
 ```
 
+LLM resumption matches the review key and the complete request: model tag, generation options,
+response schema, system prompt and submitted review text. Matching invalid predictions are
+retained without automatic retries. Conflicting attempts for the same identity are rejected;
+exact duplicate records may be reused. Private request messages remain in `data/work/`.
+
+Legacy logs lack enough information to verify every request parameter. They remain intact and
+are not silently reused. `--new-run` explicitly permits new attempts for legacy records; it does
+not retry verified matches. An interrupted, unterminated final log line is preserved separately
+before recovery; corruption elsewhere stops the run. Partial `--limit` runs report incomplete
+status, return a nonzero exit code and leave previous exports unchanged. `--finalise-only` publishes
+only when every current review has a verified matching attempt. A model tag is not a weight digest:
+replacing weights behind the same tag cannot be detected by this cache.
+
 Test-suite strength is checked by mutation testing (`python scripts/mutation_check.py`): see
-[MUTATION.md](MUTATION.md).
+[MUTATION.md](MUTATION.md). Mutations run in isolated copies. Only test failures count as kills;
+syntax, collection, fixture, runner and timeout errors fail the check. Each run saves JUnit,
+stdout/stderr and a source-hashed manifest under `mutation-artifacts/`; CI uploads the evidence.
 
 ## 中文摘要
 
 用公开的 App Store 评论（2,572 条，沙特/科威特/阿联酋/卡塔尔/巴林/阿曼 + 香港对照，快照
 2026-09-27）做的 Keeta 用户之声分析，个人项目，与 Keeta/美团无关，不含任何内部数据。
 
-- 书面评论几乎都是投诉：各市场 1–2★ 占 76–91%，而商店总评分均值为
-  3.15–4.74★，所以这些评论只能回答"哪里出了问题"。
+- 书面评论是自选择样本：样本足够的市场中 1–2★ 占 76–91%，商店总评分均值为
+  3.15–4.74★；这些评论不能代表全部用户满意度。
 - 客服在 6 个样本足够的市场中的 5 个是 1–2★ 评论里最常被提到的话题；
   海湾地区提到客服的差评中，34% 同时提到支付/退款，
-  问题核心是出错后的补救（退款被拒、只退钱包、只给小额券）。
-- 阿联酋例外：配送时效（45%）与客服（44%）并列第一；
-  最近一个月 1–2★ 占比从 93% 降到 56%，同时价格/优惠相关好评增加，原因无法从数据判断。
-- 方法：关键词规则 vs 本地 LLM（qwen2.5:3b）两种打标，在 180 条参考集上规则更好
-  （micro-F1 0.81 vs 0.70），因此主结果用规则；参考标注是 AI 辅助标注，
-  不是独立人工标注。所有指标用 SQL 计算并与 pandas 逐项对拍，文档里每个数字由脚本从结果文件生成并在 CI 校验。
+  这些是话题共现，不能直接推断因果关系。
+- 各市场排名与月度变化见报告；不足样本门槛时不排名、不比较，区间包含零也不表示两组等效。
+- 方法：参考集 n = 180，micro-F1：规则 0.81、LLM 0.70。规则点估计更高。配对差异的 95% 区间为 [-0.16, -0.07]，不含零。主结果记录使用：rules。参考标注是 AI 辅助标注，不是独立人工标注。
+  所有指标用 SQL 计算并与 pandas 逐项对拍，文档数字由脚本从结果文件生成并在 CI 校验。
 
 ## Layout
 

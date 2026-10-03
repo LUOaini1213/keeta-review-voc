@@ -6,7 +6,7 @@ Meituan; no internal data. Every number below is generated from `results/` and c
 
 ## TL;DR
 
-1. **The written-review channel is a complaint channel.** In the {{ranked.n}} storefronts with enough
+1. **Written reviews are a self-selected channel.** In the {{ranked.n}} storefronts with enough
    data, {{neg_range|rng_pct0}} of written reviews are 1–2★ (mean
    {{written_mean_range|rng_f2}}★), while the same app's all-ratings store
    average is {{store_avg_range|rng_f2}}★. Read these reviews as a list of
@@ -14,32 +14,22 @@ Meituan; no internal data. Every number below is generated from `results/` and c
 2. **Customer service is the most-mentioned topic in 1–2★ reviews in {{rank1.customer_service.n}} of
    {{ranked.n}} markets** ({{rank1.customer_service.names}}); in the Gulf markets it appears in
    {{cs_gulf_range|rng_pct0}} of complaints.
-3. **It is mostly failed service recovery.** Of Gulf complaints that mention customer service,
+3. **Customer-service topic overlap.** Of Gulf complaints that mention customer service,
    {{cooc.gulf.customer_service.payment_refund.share_b_given_a|pct0}} also mention payment/refunds,
    {{cooc.gulf.customer_service.delivery_time.share_b_given_a|pct0}} delivery time and
    {{cooc.gulf.customer_service.order_fulfilment.share_b_given_a|pct0}} a missing/wrong/undelivered order.
-4. **UAE is different:** delivery time ({{pain.ae.delivery_time.share|pct0}}) and customer service
-   ({{pain.ae.customer_service.share|pct0}}) are statistically tied at the top, and rider behaviour is
-   raised in {{pain.ae.rider_behavior.share|pct0}} of complaints (Gulf-wide:
-   {{band.gulf.neg.rider_behavior.share|pct0}}).
-5. **UAE, {{recent.ae.recent_month}}:** the 1–2★ share of written reviews fell to
-   {{recent.ae.negative.recent|pct0}} from {{recent.ae.negative.base|pct0}} in the previous three months,
-   while mentions of prices/promos rose to {{recent.ae.labels.pricing_promos.recent|pct0}}
-   (from {{recent.ae.labels.pricing_promos.base|pct0}}). This data cannot say why (see below).
-6. **Hong Kong** (comparison market): pricing & promos is the second-most-mentioned complaint topic
-   ({{pain.hk.pricing_promos.share|pct0}} of 1–2★ reviews).
+4. {{words.uae_ranking}}
+5. {{words.uae_change}} This data cannot say why (see below).
+6. {{words.hk_ranking}}
 
-Method note: labels come from a keyword/rule labeler, which scored **higher** than a local LLM
-(qwen2.5:3b) against a {{q.n_reference}}-review reference set (micro-F1
-{{qo.rules.micro_f1|f2}} vs {{qo.llm.micro_f1|f2}}). Details and caveats at the end.
+Method note: {{words.quality}} Details and caveats at the end.
 
 ## 1. Market snapshot
 
 {{table:overview}}
 
-Oman has only {{ov.om.n_reviews}} written reviews in the feed and is not analysed on its own.
-Date ranges differ by market because Apple's feed only serves the latest 500 reviews: in Saudi
-Arabia those cover about two months, in Qatar more than a year.
+Oman has {{ov.om.n_reviews}} written reviews in the feed. Markets with fewer than {{min_neg}} negative
+reviews are not ranked on their own. Date ranges differ by market; see the observed windows above.
 
 ## 2. Top pain points per market
 
@@ -48,12 +38,11 @@ Share of each market's 1–2★ reviews that mention the issue; 95% bootstrap in
 
 {{table:pain}}
 
-Reading: customer service leads everywhere except the UAE; in the other Gulf markets its
-P(rank 1) is at least {{cs_rank1_gulf_pmin|floor2}}. In the UAE, delivery time and customer service swap
-places across resamples (P(rank 1) counts ties for both, so the column can sum to more than 1). The second place is contested between
-payment/refunds, delivery time and order fulfilment, whose intervals overlap.
+Observed first-place topics in eligible markets: {{words.rank1_primary_summary}}.
+P(rank 1) counts ties for both, so the column can sum to more than 1. Overlapping intervals or
+similar rank probabilities do not establish statistical equivalence between topics.
 
-Sensitivity check with the other labeler ({{sec_name}}, which scored lower on the reference set): the issue
+Sensitivity check with the other labeler ({{sec_name}}): the issue
 ranked first per market is {{rank1_sec_summary}} (a market with a tie is listed under both issues).
 
 ## 3. What a customer-service complaint is about
@@ -83,8 +72,9 @@ And several reviews make the same rider-related claim about proof of delivery:
 
 ## 4. What changed: UAE
 
-The UAE is the only market with enough recent reviews to compare the latest month with the three
-before it (at least {{m.recent_min_n}} reviews in each period). Rows shown are those whose 95% interval excludes zero:
+Eligible recent comparisons: {{words.recent_eligible}} (at least {{m.recent_min_n}} reviews in each period).
+The table below shows the UAE negative-review share whether or not its interval excludes zero;
+topic rows are shown only when their 95% difference interval excludes zero.
 
 {{table:recent_ae}}
 
@@ -92,12 +82,11 @@ By app version (versions with at least {{m.min_version_n}} reviews):
 
 {{table:versions_ae}}
 
-The shift is concentrated in the {{recent.ae.recent_month}} reviews and the newest app versions, and it
-comes with more short 4–5★ reviews that praise prices and vouchers (the same theme as in 4–5★
-reviews elsewhere, e.g. {{quote:daily_coupon}}). This data cannot separate the possible causes: a product change in the
-newer versions, a promotion campaign, or a change in who is prompted to leave a review. In Saudi
-Arabia, the other market with enough recent volume, the 1–2★ share did not move
-({{recent.sa.negative.recent|pct0}} in {{recent.sa.recent_month}} vs {{recent.sa.negative.base|pct0}} before).
+Month and app-version comparisons are descriptive. They cannot separate a product change from
+a promotion campaign or changes in who leaves a review. Excerpts illustrate individual reports,
+not prevalence estimates (e.g. {{quote:daily_coupon}}).
+
+{{words.sa_change}}
 
 ## 5. Recommendations (each tied to a metric that would show whether it worked)
 
@@ -120,9 +109,9 @@ metric this pipeline already produces, plus the internal metric that would be th
    confirmation) in the UAE first.** Review metric: rider-behaviour share of UAE 1–2★ reviews
    ({{pain.ae.rider_behavior.share|pct0}}). Internal metric: disputed-delivery rate and refunds for
    "not received" claims.
-5. **Watch promo dependence.** Prices and vouchers are what 4–5★ reviewers praise
-   ({{band.gulf.pos.pricing_promos.share|pct0}} of Gulf 4–5★ reviews mention them), and the UAE
-   improvement came with a promo-heavy review mix. Internal metric: retention and order frequency of
+5. **Test promo dependence.** {{band.gulf.pos.pricing_promos.share|pct0}} of Gulf 4–5★ reviews mention
+   pricing/promos. A topic label does not establish sentiment about that topic or a causal benefit.
+   Internal metric: retention and order frequency of
    promo-acquired users vs a holdout without the promotion.
 
 ## 6. Limitations: what this is not
@@ -133,10 +122,8 @@ metric this pipeline already produces, plus the internal metric that would be th
 - **Only the latest 500 reviews per market**, so windows differ by market; small n for Bahrain
   ({{ov.bh.n_reviews}}) and Oman ({{ov.om.n_reviews}}); month and version comparisons are only made where
   n allows.
-- **Label errors.** The rule labeler's per-label F1 against the reference ranges from
-  {{rules_f1_min.f1|f2}} ({{rules_f1_min.title}}) to {{rules_f1_max.f1|f2}} ({{rules_f1_max.title}}); shares
-  inherit those errors. Low-support labels (merchant availability, n = {{q.rules.per_label.merchant_availability.support}}
-  in the reference) are the least reliable.
+- **Label errors.** {{words.primary_quality}} Shares inherit label errors.
+  Low-support labels can have wide intervals; inspect the reference counts below.
 - **The reference labels are AI-assisted** (see README): they were made by the same AI assistant that
   wrote the rule keywords, so the comparison may favour the rules.
 - **Feed quirks.** Apple's feed returned empty pages at random; the snapshot is the union of
@@ -146,9 +133,12 @@ metric this pipeline already produces, plus the internal metric that would be th
 
 {{table:quality}}
 
-The LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained) scored **{{words.llm_vs_rules}}**
-than the rules overall. Labels where the LLM was better with a 95% interval above zero:
-{{words.llm_wins}}. Labels where it was clearly worse: {{words.llm_losses}}. Its outputs are kept in
-`data/labels/llm.csv` and every prompt/response in `data/labels/llm_log.jsonl`
+{{words.quality}}
+
+For the LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained), labels with a paired
+95% F1-difference interval wholly above zero: {{words.llm_wins}}; wholly below zero: {{words.llm_losses}}.
+These per-label intervals are unadjusted for multiple comparisons. Its outputs are kept in
+`data/labels/llm.csv` and selected response/status records in `data/labels/llm_log.jsonl`
 ({{q.llm_invalid_all}} invalid outputs out of {{q.llm_n_all|int}}, counted as "no label", not dropped; by type:
 {{words.llm_errors}}).
+Complete prompts and requests contain review text and remain only in the local, ignored log.

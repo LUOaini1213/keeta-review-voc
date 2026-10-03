@@ -1,18 +1,23 @@
 """Mutation-test the test suite: break the code on purpose, confirm the tests notice.
 
-Each mutation is an exact, single-occurrence text replacement in one source file. For each one
-the script (1) requires the selected tests to PASS on clean code, (2) applies the mutation and
-requires them to FAIL, (3) restores the file byte-for-byte (and verifies the restore).
-A mutation whose target text is not found exactly once is an error, not a silent skip.
+Each mutation runs in a temporary copy, leaving the working tree untouched. Clean tests must
+pass; only actual test failures kill a mutation. Syntax, collection, fixture, timeout and runner
+errors are inconclusive and fail this check. JUnit reports and logs are retained for inspection.
 
     python scripts/mutation_check.py            # all mutations, writes MUTATION.md
     python scripts/mutation_check.py --only M3  # one mutation, no MUTATION.md
 """
 import argparse
 import hashlib
+import json
+import os
+import shutil
+import signal
 import subprocess
 import sys
+import tempfile
 import time
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -88,60 +93,182 @@ EQUIVALENT = ("M0", "keeta_voc/stats.py", '    """Wilson score interval for a bi
               "equivalent edit (docstring only) - must SURVIVE", "tests/test_stats.py")
 
 
-def run_tests(tests: str) -> bool:
-    cmd = [sys.executable, "-m", "pytest", "-q", "-x", "-p", "no:cacheprovider", *tests.split()]
-    return subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True).returncode == 0
+def classify_report(returncode: int, report: Path) -> dict:
+    """A pytest exit code alone cannot distinguish a killed mutant from a broken runner."""
+    result = {"outcome": "error", "returncode": returncode,
+              "passed": 0, "failed": 0, "errors": 0, "skipped": 0}
+    try:
+        root = ET.parse(report).getroot()
+    except (OSError, ET.ParseError) as exc:
+        return {**result, "reason": f"missing or invalid JUnit report: {type(exc).__name__}"}
+    if root.tag not in ("testsuites", "testsuite"):
+        return {**result, "reason": "unexpected JUnit root"}
+    for case in root.iter("testcase"):
+        if case.find("error") is not None:
+            result["errors"] += 1
+        elif case.find("failure") is not None:
+            result["failed"] += 1
+        elif case.find("skipped") is not None:
+            result["skipped"] += 1
+        else:
+            result["passed"] += 1
+    if result["errors"]:
+        result["reason"] = "collection, setup or teardown error"
+    elif returncode == 0 and result["passed"] > 0 and result["failed"] == 0:
+        result["outcome"] = "passed"
+    elif returncode == 1 and result["failed"] > 0:
+        result["outcome"] = "failed"
+    else:
+        result["reason"] = "no executed tests or inconsistent pytest result"
+    return result
+
+
+def run_tests(tests: str, cwd: Path, evidence: Path, timeout: float) -> dict:
+    evidence.mkdir(parents=True, exist_ok=False)
+    report = evidence / "junit.xml"
+    cmd = [sys.executable, "-m", "pytest", "-q", "-x", "-p", "no:cacheprovider",
+           f"--junitxml={report}", *tests.split()]
+    env = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1", "PYTHONPATH": str(cwd)}
+    # Host add-ons must not change the meaning of this project's test run.
+    env["PYTEST_DISABLE_PLUGIN_AUTOLOAD"] = "1"
+    env.pop("PYTEST_ADDOPTS", None)
+    t0 = time.monotonic()
+    try:
+        group = ({"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP} if os.name == "nt"
+                 else {"start_new_session": True})
+        with subprocess.Popen(cmd, cwd=cwd, env=env, stdout=subprocess.PIPE,
+                              stderr=subprocess.PIPE, **group) as process:
+            try:
+                stdout, stderr = process.communicate(timeout=timeout)
+                result = classify_report(process.returncode, report)
+            except subprocess.TimeoutExpired:
+                # A Windows venv launcher has a child Python process. Killing only the
+                # launcher leaves pytest (and its children) alive in the temporary copy.
+                if os.name == "nt":
+                    subprocess.run(["taskkill", "/PID", str(process.pid), "/T", "/F"],
+                                   capture_output=True, timeout=15)
+                else:
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                stdout, stderr = process.communicate(timeout=15)
+                result = {"outcome": "error", "reason": "timeout", "returncode": None}
+        (evidence / "stdout.log").write_bytes(stdout)
+        (evidence / "stderr.log").write_bytes(stderr)
+    except OSError as exc:
+        result = {"outcome": "error", "reason": f"runner error: {type(exc).__name__}",
+                  "returncode": None}
+    result["seconds"] = round(time.monotonic() - t0, 3)
+    (evidence / "result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    return result
+
+
+def copy_snapshot(source: Path, target: Path, output_dir: Path) -> None:
+    def ignore(directory, names):
+        return [name for name in names if name in
+                {".git", "__pycache__", ".pytest_cache", ".venv", "venv", "node_modules",
+                 "mutation-artifacts", ".mutation_backup"}
+                or name.endswith(".pyc") or (Path(directory) / name).resolve() == output_dir.resolve()
+                or (Path(directory) == source / "data" and name in {"raw", "work"})]
+    shutil.copytree(source, target, ignore=ignore)
+
+
+def check_mutations(source: Path, mutations: list, equivalent: tuple,
+                    output_dir: Path, timeout: float = 120) -> dict:
+    """Run a frozen source copy and a fresh copy for every variant, even on interruption."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    # Separate run directories prevent stale XML from converting a runner error into a kill.
+    evidence = Path(tempfile.mkdtemp(prefix="run-", dir=output_dir)).resolve()
+    summary = {"schema_version": 2, "status": "failed", "equivalent": None,
+               "results": [], "source_sha256": {}}
+    with tempfile.TemporaryDirectory(prefix="keeta-mutations-") as tmp:
+        snapshot = Path(tmp) / "snapshot"
+        copy_snapshot(source, snapshot, output_dir)
+        for index, (mid, rel, old, new, desc, tests) in enumerate([equivalent] + mutations):
+            entry = {"id": mid, "file": rel, "description": desc, "tests": tests,
+                     "outcome": "error"}
+            original = (snapshot / rel).read_bytes()
+            summary["source_sha256"][rel] = hashlib.sha256(original).hexdigest()
+            code = original.decode("utf-8")
+            if code.count(old) != 1:
+                entry["reason"] = f"target found {code.count(old)} times (must be exactly 1)"
+            else:
+                variant = Path(tmp) / f"variant-{index}"
+                copy_snapshot(snapshot, variant, output_dir)
+                baseline = run_tests(tests, variant, evidence / f"{mid}-baseline", timeout)
+                entry["baseline"] = baseline
+                if baseline["outcome"] != "passed":
+                    entry["reason"] = "clean baseline did not pass"
+                else:
+                    changed = code.replace(old, new)
+                    try:
+                        if Path(rel).suffix == ".py":
+                            compile(changed, rel, "exec")
+                    except (SyntaxError, ValueError) as exc:
+                        entry["reason"] = f"invalid mutation: {type(exc).__name__}"
+                    else:
+                        (variant / rel).write_bytes(changed.encode("utf-8"))
+                        trial = run_tests(tests, variant, evidence / f"{mid}-mutation", timeout)
+                        entry["mutation"] = trial
+                        entry["outcome"] = {"passed": "survived", "failed": "killed",
+                                            "error": "error"}[trial["outcome"]]
+                        if trial["outcome"] == "error":
+                            entry["reason"] = trial["reason"]
+            print(f"{mid} {entry['outcome'].upper()}  {desc}", flush=True)
+            if index == 0:
+                summary["equivalent"] = entry
+                if entry["outcome"] != "survived":
+                    break
+            else:
+                summary["results"].append(entry)
+        summary["killed"] = sum(x["outcome"] == "killed" for x in summary["results"])
+        summary["requested"] = len(mutations)
+        if (summary["equivalent"]["outcome"] == "survived" and mutations
+                and summary["killed"] == len(mutations)):
+            summary["status"] = "passed"
+    (evidence / "manifest.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    print(f"{summary['killed']}/{len(mutations)} killed; evidence: {evidence}", flush=True)
+    return summary
+
+
+def report_markdown(summary: dict) -> str:
+    lines = ["# Mutation check", "",
+             "Generated by `python scripts/mutation_check.py`. Every mutation runs alone in a",
+             "temporary source copy after its selected tests pass on clean code. Only test-call",
+             "failures count as kills; syntax, collection, fixture, runner and timeout errors fail",
+             "the check. M0 is a docstring-only control and must survive. Working files are never mutated.", "",
+             f"**{summary['killed']}/{summary['requested']} killed; check {summary['status']}.**", "",
+             "JUnit, stdout, stderr, source hashes and a JSON manifest are saved under",
+             "`mutation-artifacts/run-*/`; CI uploads these files as an artifact.", "",
+             "History: the original 2026-09-27 run reported 26/27, followed by 27/27 after a",
+             "discriminating Han-character weighting test was added. That older harness treated",
+             "any nonzero pytest exit as a kill; the current run below uses the stricter classification.", "",
+             "| id | file | injected bug | tests | result |", "|---|---|---|---|---|"]
+    for entry in [summary["equivalent"]] + summary["results"]:
+        outcome = entry["outcome"]
+        if entry.get("reason"):
+            outcome += ": " + entry["reason"]
+        lines.append(f"| {entry['id']} | `{entry['file']}` | {entry['description']} | "
+                     f"`{entry['tests']}` | {outcome} |")
+    return "\n".join(lines) + "\n"
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", default=None)
+    ap.add_argument("--only", choices=[m[0] for m in MUTATIONS])
+    ap.add_argument("--output-dir", type=Path, default=ROOT / "mutation-artifacts")
+    ap.add_argument("--timeout", type=float, default=120)
+    ap.add_argument("--no-report", action="store_true", help="do not update MUTATION.md")
     args = ap.parse_args()
+    if args.timeout <= 0:
+        ap.error("--timeout must be positive")
     muts = [m for m in MUTATIONS if args.only in (None, m[0])]
-    results = []
-    for mid, rel, old, new, desc, tests in [EQUIVALENT] + muts:
-        path = ROOT / rel
-        original = path.read_bytes()
-        digest = hashlib.sha256(original).hexdigest()
-        text = original.decode("utf-8")
-        count = text.count(old)
-        if count != 1:
-            sys.exit(f"{mid}: target text found {count} times in {rel} (must be exactly 1)")
-        if not run_tests(tests):
-            sys.exit(f"{mid}: tests fail on CLEAN code: {tests}")
-        t0 = time.time()
-        try:
-            path.write_bytes(text.replace(old, new).encode("utf-8"))
-            killed = not run_tests(tests)
-        finally:
-            path.write_bytes(original)
-        if hashlib.sha256(path.read_bytes()).hexdigest() != digest:
-            sys.exit(f"{mid}: restore failed for {rel}")
-        print(f"{mid} {'KILLED' if killed else 'SURVIVED'}  {desc}", flush=True)
-        if mid == EQUIVALENT[0]:
-            if killed:
-                sys.exit("harness self-test failed: an equivalent (comment-only) edit was reported as killed")
-            continue
-        results.append((mid, rel, desc, tests, killed, time.time() - t0))
-    n_killed = sum(r[4] for r in results)
-    print(f"{n_killed}/{len(results)} mutations killed")
-    if args.only is None:
-        lines = ["# Mutation check", "",
-                 "Generated by `python scripts/mutation_check.py`. Each row is one deliberate bug, applied alone;",
-                 "the tests listed must pass on clean code and fail on the mutated code (\"killed\").",
-                 "Before the real mutations, the harness applies a behaviour-preserving edit (M0, a docstring change)",
-                 "and requires it to survive, so a harness that reports everything as killed would stop here.", "",
-                 f"**{n_killed}/{len(results)} killed.**", "",
-                 "History: the first full run (2026-09-27) killed 26/27. M2 survived because the only test of",
-                 "the Han-character weighting used a string that is classified the same way with or without the",
-                 "weight (a tie broken alphabetically). A discriminating case was added to tests/test_text.py and",
-                 "the table below is the re-run.", "",
-                 "| id | file | injected bug | tests | result |", "|---|---|---|---|---|"]
-        for mid, rel, desc, tests, killed, _ in results:
-            lines.append(f"| {mid} | `{rel}` | {desc} | `{tests}` | {'killed' if killed else '**SURVIVED**'} |")
-        (ROOT / "MUTATION.md").write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
-    sys.exit(0 if n_killed == len(results) else 1)
+    summary = check_mutations(ROOT, muts, EQUIVALENT, args.output_dir.resolve(), args.timeout)
+    if args.only is None and not args.no_report:
+        (ROOT / "MUTATION.md").write_text(report_markdown(summary), encoding="utf-8", newline="\n")
+    return 0 if summary["status"] == "passed" else 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
