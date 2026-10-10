@@ -173,6 +173,7 @@ def build_context() -> dict:
     ctx["recent"] = m["recent_change"][prim]
     ctx["lang"] = q["language_detection"]
     ctx["snapshot_date"] = man["fetched_at"][:10]
+    ctx["pages_url"] = "https://luoaini1213.github.io/keeta-review-voc/"
     ctx["n_labels"] = len(q["labels"])
     ctx["boot"] = q["n_boot"]
     ctx["n_quotes"] = len(build_quotes())

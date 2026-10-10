@@ -34,6 +34,9 @@ body { margin:0; background:var(--surface); color:var(--ink); font:14px/1.45 sys
 main { max-width: 1080px; margin: 0 auto; padding: 24px 16px 48px; }
 h1 { font-size: 22px; margin: 0 0 4px; } h2 { font-size: 16px; margin: 28px 0 8px; }
 p.sub { color: var(--ink2); margin: 0 0 16px; }
+.evidence { display:flex; flex-wrap:wrap; gap:8px 16px; margin:0 0 16px; }
+.evidence a { color:var(--bar); text-underline-offset:3px; }
+.evidence a:focus-visible { outline:2px solid var(--bar); outline-offset:4px; }
 .tiles { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
 .tile { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:12px; }
 .tile .k { color:var(--ink2); font-size:12px; } .tile .v { font-size:22px; font-weight:600; font-variant-numeric: tabular-nums; }
@@ -58,6 +61,11 @@ th { color: var(--ink2); font-weight: 600; font-size: 12px; } td.num { text-alig
 <main>
 <h1>Keeta App Store reviews: voice of customer</h1>
 <p class="sub" id="sub"></p>
+<nav class="evidence" aria-label="Project evidence">
+<a href="https://github.com/LUOaini1213/keeta-review-voc/blob/main/REPORT.md">Read the findings</a>
+<a href="https://github.com/LUOaini1213/keeta-review-voc/blob/main/docs/labeling_guide.md">Reference-label method</a>
+<a href="https://github.com/LUOaini1213/keeta-review-voc">Source and reproduction</a>
+</nav>
 <div class="tiles" id="tiles"></div>
 <h2>Pain points: share of 1&ndash;2&#9733; reviews mentioning each issue</h2>
 <p class="sub" id="painsub"></p>
