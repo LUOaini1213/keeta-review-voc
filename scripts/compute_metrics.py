@@ -19,7 +19,7 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from keeta_voc import metrics_pd  # noqa: E402
-from keeta_voc.dataset import DERIVED_DIR, LABEL_DIR, RESULTS_DIR, read_csv, read_labels  # noqa: E402
+from keeta_voc.dataset import DERIVED_DIR, LABEL_DIR, RESULTS_DIR, read_keyed_csv, read_labels  # noqa: E402
 from keeta_voc.db import connect, run  # noqa: E402
 from keeta_voc.frames import assert_frames_equal  # noqa: E402
 from keeta_voc.jsoncmp import assert_close  # noqa: E402
@@ -33,7 +33,7 @@ METHODS = ("rules", "llm")
 
 
 def load_reviews() -> pd.DataFrame:
-    df = pd.DataFrame(read_csv(DERIVED_DIR / "reviews_meta.csv"))
+    df = pd.DataFrame(read_keyed_csv(DERIVED_DIR / "reviews_meta.csv").values())
     return df.astype({"rating": int, "n_chars": int})
 
 
@@ -97,10 +97,12 @@ def recent_change(reviews: pd.DataFrame, lab: dict, min_n: int = RECENT_MIN_N) -
     with Newcombe 95% intervals for the difference. Storefronts where either period has fewer
     than `min_n` reviews are skipped (listed with the reason)."""
     out = {}
-    labelled = reviews[reviews["review_key"].map(lambda k: bool(lab.get(k)))]
-    for sf, g in labelled.groupby("storefront"):
-        months = sorted(g["month"].unique())
-        recent, base_months = months[-1], months[-4:-1]
+    for sf, all_reviews in reviews.groupby("storefront"):
+        # Anchor to the observed review calendar, even if the newest predictions are invalid.
+        month = pd.Period(all_reviews["month"].max(), freq="M")
+        recent = str(month)
+        base_months = [str(month - offset) for offset in (3, 2, 1)]
+        g = all_reviews[all_reviews["review_key"].map(lambda k: bool(lab.get(k)))]
         a, b = g[g["month"] == recent], g[g["month"].isin(base_months)]
         entry = {"recent_month": recent, "base_months": list(base_months), "n_recent": int(len(a)),
                  "n_base": int(len(b))}

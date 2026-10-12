@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 
 from .dataset import DERIVED_DIR, LABEL_DIR, RESULTS_DIR
 
@@ -34,7 +35,72 @@ def _fmt_ci(ci):
 
 
 def _f2(x):
-    return "n/a" if x is None else f"{x:.2f}"
+    return f"{x:.2f}" if _finite(x) else "n/a"
+
+
+def _finite(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
+
+
+def _valid_ci(ci):
+    return isinstance(ci, (list, tuple)) and len(ci) == 2 and all(_finite(x) for x in ci) and ci[0] <= ci[1]
+
+
+def _quality_words(q, primary):
+    r, l = (q[method]["overall"]["micro_f1"] for method in ("rules", "llm"))
+    if not (_finite(r) and _finite(l)):
+        comparison, zh = "The micro-F1 comparison cannot be estimated.", "micro-F1 无法完整估计，不能判定胜负。"
+    elif l == r:
+        comparison, zh = "The methods have equal micro-F1 point estimates; neither is a point-estimate winner.", "两者 micro-F1 点估计相同，不能称其中一方获胜。"
+    else:
+        direction, zh = ("higher", "LLM 点估计更高。") if l > r else ("lower", "规则点估计更高。")
+        comparison = f"LLM micro-F1 is {direction} than the keyword rules' point estimate."
+    d = q["llm_minus_rules"]["micro_f1"]
+    ci = d["ci"]
+    if not _valid_ci(ci):
+        uncertainty, zh_ci = "The paired difference interval is unavailable; no interval-based conclusion is possible.", "配对差异区间不可估计。"
+    elif ci[0] > 0 or ci[1] < 0:
+        direction = "higher" if ci[0] > 0 else "lower"
+        uncertainty = f"The paired 95% interval [{ci[0]:+.2f}, {ci[1]:+.2f}] supports {direction} LLM micro-F1."
+        zh_ci = f"配对差异的 95% 区间为 [{ci[0]:+.2f}, {ci[1]:+.2f}]，不含零。"
+    else:
+        uncertainty = (f"The paired 95% interval [{ci[0]:+.2f}, {ci[1]:+.2f}] includes zero; "
+                       "it does not establish a difference or equivalence.")
+        zh_ci = "配对差异区间包含零，不能据此认定存在差异或两者等效。"
+    summary = (f"Primary labeler recorded in metrics: **{primary}**. {comparison} "
+               f"Reference n = {q['n_reference']}; rules micro-F1 {_f2(r)}, LLM {_f2(l)}. "
+               f"LLM − rules difference: {_f2(d['diff'])}. {uncertainty}")
+    summary_zh = (f"参考集 n = {q['n_reference']}，micro-F1：规则 {_f2(r)}、LLM {_f2(l)}。"
+                  f"{zh}{zh_ci}主结果记录使用：{primary}。")
+    finite_f1s = [(v["f1"], lab) for lab, v in q[primary]["per_label"].items() if _finite(v["f1"])]
+    if finite_f1s:
+        lo, hi = min(finite_f1s), max(finite_f1s)
+        label_quality = (f"The primary labeler ({primary}) has estimable per-label F1 from {lo[0]:.2f} "
+                         f"({LABEL_TITLES[lo[1]]}) to {hi[0]:.2f} ({LABEL_TITLES[hi[1]]}).")
+    else:
+        label_quality = f"Per-label F1 is unavailable for the primary labeler ({primary})."
+    return summary, summary_zh, label_quality
+
+
+def _recent_summary(recent, sf):
+    e, name = recent.get(sf, {}), STOREFRONT_NAMES[sf]
+    if not e or e.get("skipped") or "negative" not in e:
+        return f"{name}: recent comparison unavailable ({e.get('skipped', 'no estimate')})."
+    v = e["negative"]
+    ci = v["diff_ci"]
+    interval = f"[{100 * ci[0]:+.0f}, {100 * ci[1]:+.0f}] pp" if _valid_ci(ci) else "unavailable"
+    return (f"{name}, {e['recent_month']}: 1–2★ share {_fmt_pct(v['recent'])} (n = {e['n_recent']}) "
+            f"versus {_fmt_pct(v['base'])} in {', '.join(e['base_months'])} (n = {e['n_base']}); "
+            f"difference {100 * v['diff']:+.0f} pp, 95% CI {interval}. This is a descriptive comparison.")
+
+
+def _ranking_summary(pains, sf):
+    rows = pains.get(sf, {}).get("top", [])
+    name = STOREFRONT_NAMES[sf]
+    if not rows or rows[0]["n_negative"] < MIN_STOREFRONT_NEG:
+        return f"{name}: too few 1–2★ reviews to rank (< {MIN_STOREFRONT_NEG})."
+    first = ", ".join(f"{r['title']} ({_fmt_pct(r['share'])})" for r in rows if r["rank"] == 1)
+    return f"{name}: largest observed complaint-topic share: {first}. Rank uncertainty is shown in the table."
 
 
 def build_context() -> dict:
@@ -61,17 +127,19 @@ def build_context() -> dict:
     ctx["min_neg"] = MIN_STOREFRONT_NEG
 
     # storefronts with enough 1-2 star reviews to rank, and where each issue ranks first
-    ranked = [sf for sf in pains[prim] if pains[prim][sf]["top"][0]["n_negative"] >= MIN_STOREFRONT_NEG]
+    ranked = [sf for sf in pains[prim] if pains[prim][sf]["top"] and pains[prim][sf]["top"][0]["n_negative"] >= MIN_STOREFRONT_NEG]
     ctx["ranked"] = {"n": len(ranked), "names": ", ".join(STOREFRONT_NAMES[s] for s in ranked)}
-    firsts = {}
+    firsts = {lab: [] for lab in LABEL_TITLES}
     for sf in ranked:
         for row in pains[prim][sf]["top"]:
             if row["rank"] == 1:
                 firsts.setdefault(row["label"], []).append(sf)
-    ctx["rank1"] = {lab: {"n": len(v), "names": ", ".join(STOREFRONT_NAMES[s] for s in v)} for lab, v in firsts.items()}
+    ctx["rank1"] = {lab: {"n": len(v), "names": ", ".join(STOREFRONT_NAMES[s] for s in v) or "none"} for lab, v in firsts.items()}
     sec = m["secondary_method"]
     firsts_sec = {}
-    for sf in ranked:
+    for sf in pains[sec]:
+        if not pains[sec][sf]["top"] or pains[sec][sf]["top"][0]["n_negative"] < MIN_STOREFRONT_NEG:
+            continue
         for row in pains[sec][sf]["top"]:
             if row["rank"] == 1:
                 firsts_sec.setdefault(row["label"], []).append(sf)
@@ -79,15 +147,15 @@ def build_context() -> dict:
     ctx["rank1_sec"] = {lab: {"n": len(v), "names": ", ".join(STOREFRONT_NAMES[s] for s in v)}
                         for lab, v in firsts_sec.items()}
     ctx["rank1_sec_summary"] = "; ".join(f"{LABEL_TITLES[lab]}: {v['names']}" for lab, v in sorted(
-        ctx["rank1_sec"].items(), key=lambda kv: -kv[1]["n"]))
+        ctx["rank1_sec"].items(), key=lambda kv: -kv[1]["n"])) or "no eligible markets"
     cs = [pains[prim][sf]["customer_service"]["share"] for sf in ranked if sf in GULF]
-    ctx["cs_gulf_range"] = [min(cs), max(cs)]
+    ctx["cs_gulf_range"] = [min(cs), max(cs)] if cs else None
     negs = [ov[s]["share_negative"] for s in ranked]
-    ctx["neg_range"] = [min(negs), max(negs)]
+    ctx["neg_range"] = [min(negs), max(negs)] if negs else None
     avg = [man["lookups"][s]["averageUserRating"] for s in ranked]
-    ctx["store_avg_range"] = [min(avg), max(avg)]
+    ctx["store_avg_range"] = [min(avg), max(avg)] if avg else None
     means = [ov[s]["mean_rating"] for s in ranked]
-    ctx["written_mean_range"] = [min(means), max(means)]
+    ctx["written_mean_range"] = [min(means), max(means)] if means else None
 
     # region x band shares, co-occurrence, per-version rows, recent change
     band = {}
@@ -105,20 +173,28 @@ def build_context() -> dict:
     ctx["recent"] = m["recent_change"][prim]
     ctx["lang"] = q["language_detection"]
     ctx["snapshot_date"] = man["fetched_at"][:10]
+    ctx["pages_url"] = "https://luoaini1213.github.io/keeta-review-voc/"
     ctx["n_labels"] = len(q["labels"])
     ctx["boot"] = q["n_boot"]
     ctx["n_quotes"] = len(build_quotes())
-    f1s = [(v["f1"], lab) for lab, v in q["rules"]["per_label"].items() if v["f1"] is not None]
-    lo, hi = min(f1s), max(f1s)
-    ctx["rules_f1_min"] = {"f1": lo[0], "title": LABEL_TITLES[lo[1]]}
-    ctx["rules_f1_max"] = {"f1": hi[0], "title": LABEL_TITLES[hi[1]]}
-    wins = [LABEL_TITLES[lab] for lab in q["labels"] if (q["llm_minus_rules"][lab]["ci"][0] or 0) > 0]
-    losses = [LABEL_TITLES[lab] for lab in q["labels"] if (q["llm_minus_rules"][lab]["ci"][1] or 0) < 0]
+    wins = [LABEL_TITLES[lab] for lab in q["labels"] if _valid_ci(q["llm_minus_rules"][lab]["ci"])
+            and q["llm_minus_rules"][lab]["ci"][0] > 0]
+    losses = [LABEL_TITLES[lab] for lab in q["labels"] if _valid_ci(q["llm_minus_rules"][lab]["ci"])
+              and q["llm_minus_rules"][lab]["ci"][1] < 0]
     clear_cs = [pains[prim][sf]["customer_service"]["p_rank1"] for sf in ranked
                 if pains[prim][sf]["customer_service"]["rank"] == 1 and sf in GULF]
     ctx["cs_rank1_gulf_pmin"] = min(clear_cs) if clear_cs else None
+    quality, quality_zh, primary_quality = _quality_words(q, prim)
     ctx["words"] = {
-        "llm_vs_rules": "lower" if q["llm"]["overall"]["micro_f1"] < q["rules"]["overall"]["micro_f1"] else "higher",
+        "quality": quality, "quality_zh": quality_zh, "primary_quality": primary_quality,
+        "uae_ranking": _ranking_summary(pains[prim], "ae"),
+        "hk_ranking": _ranking_summary(pains[prim], "hk"),
+        "uae_change": _recent_summary(ctx["recent"], "ae"),
+        "sa_change": _recent_summary(ctx["recent"], "sa"),
+        "recent_eligible": ", ".join(STOREFRONT_NAMES[s] for s, e in ctx["recent"].items()
+                                       if not e.get("skipped") and "negative" in e) or "none",
+        "rank1_primary_summary": "; ".join(f"{LABEL_TITLES[lab]}: {v['names']}" for lab, v in ctx["rank1"].items()
+                                             if v["n"]) or "no eligible markets",
         "llm_wins": ", ".join(wins) if wins else "none",
         "llm_errors": "; ".join(f"{v} × {k}" for k, v in q["llm_errors_all"].items()) or "none",
         "llm_losses": ", ".join(losses) if losses else "none",
@@ -156,17 +232,17 @@ def table_quality():
     rows = []
     for lab in q["labels"]:
         a, b, d = q["rules"]["per_label"][lab], q["llm"]["per_label"][lab], q["llm_minus_rules"][lab]
-        ci = lambda r, k: "" if r[k + "_ci"][0] is None else f"[{r[k + '_ci'][0]:.2f}–{r[k + '_ci'][1]:.2f}]"  # noqa: E731
-        dci = "" if d["ci"][0] is None else f"[{d['ci'][0]:+.2f}, {d['ci'][1]:+.2f}]"
+        ci = lambda r, k: "n/a" if not _valid_ci(r[k + "_ci"]) else f"[{r[k + '_ci'][0]:.2f}–{r[k + '_ci'][1]:.2f}]"  # noqa: E731
+        dci = "n/a" if not _valid_ci(d["ci"]) else f"[{d['ci'][0]:+.2f}, {d['ci'][1]:+.2f}]"
         rows.append([LABEL_TITLES[lab], a["support"],
                      f"{_f2(a['precision'])} / {_f2(a['recall'])}", f"{_f2(a['f1'])} {ci(a, 'f1')}", _f2(a["kappa"]),
                      f"{_f2(b['precision'])} / {_f2(b['recall'])}", f"{_f2(b['f1'])} {ci(b, 'f1')}", _f2(b["kappa"]),
-                     ("n/a" if d["diff"] is None else f"{d['diff']:+.2f}") + f" {dci}"])
+                     (f"{d['diff']:+.2f}" if _finite(d["diff"]) else "n/a") + f" {dci}"])
     oa, ob, dd = q["rules"]["overall"], q["llm"]["overall"], q["llm_minus_rules"]["micro_f1"]
-    rows.append(["**Micro-F1, all labels**", q["n_reference"], "", f"**{oa['micro_f1']:.2f}** "
-                 f"[{oa['micro_f1_ci'][0]:.2f}–{oa['micro_f1_ci'][1]:.2f}]", "", "",
-                 f"**{ob['micro_f1']:.2f}** [{ob['micro_f1_ci'][0]:.2f}–{ob['micro_f1_ci'][1]:.2f}]", "",
-                 f"{dd['diff']:+.2f} [{dd['ci'][0]:+.2f}, {dd['ci'][1]:+.2f}]"])
+    dci = f"[{dd['ci'][0]:+.2f}, {dd['ci'][1]:+.2f}]" if _valid_ci(dd["ci"]) else "n/a"
+    rows.append(["**Micro-F1, all labels**", q["n_reference"], "", f"**{_f2(oa['micro_f1'])}** {ci(oa, 'micro_f1')}", "", "",
+                 f"**{_f2(ob['micro_f1'])}** {ci(ob, 'micro_f1')}", "",
+                 f"{_f2(dd['diff'])} {dci}"])
     return _table(["Label", "Ref. n", "Rules P / R", "Rules F1 [95% CI]", "Rules κ", "LLM P / R", "LLM F1 [95% CI]",
                    "LLM κ", "LLM − rules F1 [95% CI]"], rows,
                   ["---", "---:", "---:", "---", "---:", "---:", "---", "---:", "---"])
@@ -179,7 +255,7 @@ def table_pain(method=None, min_neg=MIN_STOREFRONT_NEG, top=3):
     rows = []
     for sf, labs in m["pain_point_intervals"][method].items():
         ranked = sorted(labs.items(), key=lambda kv: (kv[1]["rank"], -kv[1]["share"], kv[0]))
-        n_neg = ranked[0][1]["n_negative"]
+        n_neg = ranked[0][1]["n_negative"] if ranked else 0
         if n_neg < min_neg:
             rows.append([STOREFRONT_NAMES[sf], n_neg, f"too few 1–2★ reviews to rank (< {min_neg})", "", ""])
             continue
@@ -202,12 +278,14 @@ def table_cooc(region="gulf", label_a="customer_service"):
 
 def table_recent(sf="ae"):
     ctx = build_context()
-    e = ctx["recent"][sf]
+    e = ctx["recent"].get(sf, {})
+    if not e or e.get("skipped") or "negative" not in e:
+        return _recent_summary(ctx["recent"], sf)
     rows = [["1–2★ reviews", _fmt_pct(e["negative"]["base"]), _fmt_pct(e["negative"]["recent"]),
              f"{100 * e['negative']['diff']:+.0f} pp [{100 * e['negative']['diff_ci'][0]:+.0f}, "
              f"{100 * e['negative']['diff_ci'][1]:+.0f}]"]]
     for lab, v in e["labels"].items():
-        if v["diff_ci"][0] > 0 or v["diff_ci"][1] < 0:
+        if _valid_ci(v["diff_ci"]) and (v["diff_ci"][0] > 0 or v["diff_ci"][1] < 0):
             rows.append([f"mentions {LABEL_TITLES[lab]}", _fmt_pct(v["base"]), _fmt_pct(v["recent"]),
                          f"{100 * v['diff']:+.0f} pp [{100 * v['diff_ci'][0]:+.0f}, {100 * v['diff_ci'][1]:+.0f}]"])
     base = ", ".join(e["base_months"])

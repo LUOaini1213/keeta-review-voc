@@ -1,0 +1,64 @@
+name: pages-preparation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the reviewed main-branch artifact after Pages activation
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install offline analysis dependencies
+        run: pip install -r requirements.txt
+      - name: Verify the committed aggregate snapshot and generated dashboard
+        run: |
+          python scripts/evaluate_labels.py --check
+          python scripts/compute_metrics.py --check
+          python scripts/check_numbers.py --check
+          python scripts/build_dashboard.py --check
+      - name: Stage the two allowed public files
+        run: python scripts/prepare_pages.py
+      - name: Upload isolated Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: build/pages
+
+  deploy:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish && vars.KEETA_PAGES_ENABLED == 'true' }}
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: keeta-pages-release
+      cancel-in-progress: false
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read the existing Pages configuration
+        uses: actions/configure-pages@v5
+        with:
+          enablement: false
+      - name: Publish the reviewed aggregate artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -76,11 +76,26 @@ def call_ollama(req: dict, timeout: float = 300.0) -> dict:
         return json.loads(resp.read().decode("utf-8"))
 
 
-def label_one(model: str, review_key: str, title: str, text: str, call=call_ollama) -> dict:
-    req = build_request(model, title, text)
+def request_sha256(req: dict) -> str:
+    """Identity of the actual model, options, schema and messages sent to Ollama.
+
+    A model tag is not an immutable model-weight digest; changing weights behind
+    the same tag cannot be detected without additional server provenance.
+    """
+    encoded = json.dumps(req, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    return hashlib.sha256(encoded.encode("utf-8")).hexdigest()
+
+
+def label_one(model: str, review_key: str, title: str, text: str, call=call_ollama, *, request=None) -> dict:
+    # A prepared request lets the resume check and the actual call use identical inputs.
+    req = json.loads(json.dumps(request if request is not None else build_request(model, title, text),
+                               ensure_ascii=False, allow_nan=False))
+    if req["model"] != model or req["messages"][1]["content"] != user_prompt(title, text):
+        raise ValueError("prepared request does not match the review/model")
+    identity = request_sha256(req)
     t0 = time.time()
     try:
-        resp = call(req)
+        resp = call(json.loads(json.dumps(req)))
         raw = resp.get("message", {}).get("content", "")
         err_http = None
     except Exception as exc:  # recorded, counted as invalid
@@ -90,6 +105,8 @@ def label_one(model: str, review_key: str, title: str, text: str, call=call_olla
     return {
         "review_key": review_key,
         "model": model,
+        "request": req,  # Private log only: messages contain review text.
+        "request_sha256": identity,
         "prompt_version": PROMPT_VERSION,
         "prompt_sha256": hashlib.sha256(prompt_text.encode("utf-8")).hexdigest(),
         "user_prompt": req["messages"][1]["content"],

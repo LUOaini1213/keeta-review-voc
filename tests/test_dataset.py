@@ -1,4 +1,5 @@
 from keeta_voc.dataset import clean_reviews
+import pytest
 
 
 def _r(key, text="Late again", title="", rating=2, sf="ae", updated="2026-09-25T20:46:41-07:00"):
@@ -24,3 +25,17 @@ def test_clean_reviews_fields():
 def test_language_falls_back_to_title_when_body_has_no_letters():
     rows, _ = clean_reviews([_r("a", title="التوصيل سريع", text="\U0001f44d")])
     assert rows[0]["lang"] == "ar"
+
+
+@pytest.mark.parametrize("rating", [True, False, 1.0, 4.9, float("nan"), float("inf"), None, "garbage", "2.0", "", [], {}])
+def test_invalid_rating_is_counted_without_coercion_or_crash(rating):
+    rows, dropped = clean_reviews([_r("bad", rating=rating), _r("good", rating=5)])
+    assert [r["review_key"] for r in rows] == ["good"]
+    assert dropped["bad_rating"] == 1
+
+
+@pytest.mark.parametrize("rating", [1, 5, "1", "5"])
+def test_integer_ratings_and_snapshot_integer_strings_remain_valid(rating):
+    rows, dropped = clean_reviews([_r("a", rating=rating)])
+    assert rows[0]["rating"] == int(rating)
+    assert dropped["bad_rating"] == 0
