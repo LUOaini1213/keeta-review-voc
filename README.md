@@ -10,8 +10,8 @@ AI-assisted, reproducible voice-of-customer (VOC) analysis of public App Store r
 **Read the findings: [REPORT.md](REPORT.md)** · interactive view: [docs/dashboard.html](docs/dashboard.html)
 (download and open locally; single self-contained file).
 
-**Hosted entry, pending publication:** [Keeta VOC dashboard](https://luoaini1213.github.io/keeta-review-voc/).
-The Pages deployment is prepared but has not been enabled or released. See
+**Live dashboard:** [Keeta VOC dashboard](https://luoaini1213.github.io/keeta-review-voc/).
+The [verified Pages release](https://github.com/LUOaini1213/keeta-review-voc/actions/runs/38193315517) completed successfully. See
 [local preview and publication instructions](docs/PAGES.md).
 
 ## What it does
