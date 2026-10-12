@@ -5,10 +5,14 @@ market-level counts, issue shares and label-quality estimates. It does not load
 individual reviews, reference rows, prompts or responses. Report, method and
 source links point to GitHub, so the site needs no other repository files.
 
-The intended hosted address is
-<https://luoaini1213.github.io/keeta-review-voc/>. It is **not published yet**.
-This change prepares the artifact and workflow; it does not enable Pages or
-release the current draft branch.
+The **live dashboard** is at
+<https://luoaini1213.github.io/keeta-review-voc/>.
+The [first verified Pages release](https://github.com/LUOaini1213/keeta-review-voc/actions/runs/38193315517)
+completed both build and deployment successfully on 2026-10-12, from reviewed
+main commit `d240b7914194b04ad67f98a67ac9a9809d83f18d`. The public page and all
+three navigation targets returned HTTP 200. Its 34,727-byte HTML matched the
+approved dashboard exactly, with SHA-256
+`5838506d55d5f0e16809e7ee61d644296f49cde35d2ac0303142cb0f164d5979`.
 
 ## Local preview
 
@@ -44,15 +48,13 @@ PR and push runs reproduce the committed snapshot and stage/upload this
 artifact with read-only repository permission. They never deploy. The release
 job alone receives Pages and OpenID Connect write permissions.
 
-## Release after review
+## Release a future update
 
-After reviewing and merging the draft PR, an owner with repository Pages
-configuration permission can:
+Initial activation is complete: Pages uses **GitHub Actions** as its publishing
+source, and the repository Actions variable `KEETA_PAGES_ENABLED` is `true`.
+For a future release:
 
-- In **Settings → Pages**, choose **GitHub Actions** as the publishing source.
-- Restrict the `github-pages` environment to `main` and add approval rules if
-  desired.
-- Set the repository Actions variable `KEETA_PAGES_ENABLED` to `true`.
+- Review and merge the intended changes into `main`.
 - Confirm the required `ci` checks succeeded for the intended main commit.
 - Run **pages-preparation** manually on **main**, selecting `publish: true`.
   The workflow repeats the offline reproduction checks and publishes only
