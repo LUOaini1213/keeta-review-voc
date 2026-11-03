@@ -7,6 +7,17 @@ AI-assisted, reproducible voice-of-customer (VOC) analysis of public App Store r
 > **Not affiliated with Keeta or Meituan. No internal data.** Nothing here measures or claims a
 > business impact for Keeta.
 
+**Findings at a glance** (every number rendered from `results/` and checked in CI):
+
+- **Built:** a text-free, reproducible pipeline over {{m.n_reviews|int}} public reviews from {{n_storefronts}} storefronts:
+  keyword rules and a local 3B LLM label issues; SQL metrics are cross-checked against pandas.
+- **Customer service** is the most-mentioned topic in 1–2★ reviews in {{rank1.customer_service.n}} of the {{ranked.n}}
+  markets with enough data; in the Gulf markets it appears in {{cs_gulf_range|rng_pct0}} of complaints.
+- **Written reviews skew negative:** {{neg_range|rng_pct0}} are 1–2★, while store averages are {{store_avg_range|rng_f2}}★.
+- **Labelling:** {{words.quality_headline}}, scored against AI-assisted reference labels made by the
+  same assistant that wrote the rule keywords; no human-labelled check yet, so the gap may favour the rules.
+- **Limits:** public App Store reviews only (latest 500 per storefront), a self-selected sample, no causal claims.
+
 **Read the findings: [REPORT.md](REPORT.md)** · interactive view: [docs/dashboard.html](docs/dashboard.html)
 (download and open locally; single self-contained file).
 
@@ -21,7 +32,7 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
   → frozen snapshot, reviewer identity dropped  ── data/raw/ (local) + data/derived/ (committed, text-free)
   → clean + language tag (en / ar / zh / other) ── keeta_voc/text.py
   → issue labels, two methods                   ── rules: keeta_voc/rules.py   LLM: keeta_voc/llm.py
-  → scored against a blind reference set        ── scripts/evaluate_labels.py
+  → scored against an AI-assisted reference set ── scripts/evaluate_labels.py
   → SQLite + committed SQL (sql/*.sql)          ── scripts/compute_metrics.py  (each query re-implemented in pandas and compared)
   → REPORT.md / README.md / dashboard           ── every number rendered from results/ and checked in CI
 ```
@@ -99,6 +110,8 @@ The language detector agreed with the reference language tag on {{lang.accuracy|
 
 {{table:pain}}
 
+P(rank 1) counts ties for both, so the column can sum to more than 1.
+
 See [REPORT.md](REPORT.md) for what the complaints are about, what changed, and recommendations.
 
 ## Limitations (这不是什么)
@@ -119,6 +132,9 @@ See [REPORT.md](REPORT.md) for what the complaints are about, what changed, and 
 ## Reproduce
 
 From the committed, text-free data (what CI runs; no network, no LLM):
+
+Requirements: Python 3.11 (the version CI tests on Windows and Linux) and, for the dashboard tests,
+Node.js on PATH (CI uses Node 22). Without Node those tests are skipped locally; in CI they fail instead.
 
 ```bash
 pip install -r requirements.txt

@@ -32,6 +32,8 @@ ALLOWED_LITERALS = {
     "2026": "project date / snapshot year",
     "09": "project month (2026-09)",
     "3.10": "minimum Python version",
+    "3.11": "Python version tested in CI",
+    "22": "Node.js major version used in CI",
     "2.5": "model tag qwen2.5",
     "10": "Apple's RSS feed serves at most 10 pages per storefront",
     "50": "Apple's RSS feed serves 50 reviews per page",

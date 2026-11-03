@@ -22,7 +22,7 @@ Meituan; no internal data. Every number below is generated from `results/` and c
 5. UAE, 2026-09: 1–2★ share 56% (n = 93) versus 93% in 2026-06, 2026-07, 2026-08 (n = 386); difference -37 pp, 95% CI [-47, -27] pp. This is a descriptive comparison. This data cannot say why (see below).
 6. Hong Kong: largest observed complaint-topic share: Customer service (34%). Rank uncertainty is shown in the table.
 
-Method note: Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1. Details and caveats at the end.
+Method note: Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1 against this AI-assisted reference; no human-labelled check of the reference exists yet. Details and caveats at the end.
 
 ## 1. Market snapshot
 
@@ -103,7 +103,8 @@ Some delivery-time complaints question the ETA itself, not only the lateness:
 - “They just keep pushing your delivery schedule further” (UAE, 3★)
 - “بعد مايتأخر التوصيل تحصل الوقت الي كان موجود متعدل وزايد ومايجيك تعويض” — *once the delivery is late you find the promised time has been edited upwards, and no compensation comes* (Saudi Arabia, 3★)
 
-And several reviews make the same rider-related claim about proof of delivery:
+One review makes a rider-related claim about proof of delivery. This is an example, not a
+prevalence estimate: the committed, text-free data cannot count how many reviews make this claim.
 
 - “مندوب جاب طلبيه صورها مع الباب وسرقها” — *a courier brought the order, photographed it at the door and took it away* (Oman, 1★)
 
@@ -166,9 +167,9 @@ metric this pipeline already produces, plus the internal metric that would be th
    Review metric: delivery-time share of UAE 1–2★ reviews (45%).
    Internal metric: share of orders delivered after the *first* promised ETA, and ETA revisions per order.
 4. **Tighten proof of delivery for "left at the door" orders (geo-stamped photo plus customer
-   confirmation) in the UAE first.** Review metric: rider-behaviour share of UAE 1–2★ reviews
-   (26%). Internal metric: disputed-delivery rate and refunds for
-   "not received" claims.
+   confirmation), starting with the UAE storefront**, the ranked market where rider behaviour has the largest
+   share of 1–2★ reviews (26%). Review metric: that share. Internal metric:
+   disputed-delivery rate and refunds for "not received" claims.
 5. **Test promo dependence.** 34% of Gulf 4–5★ reviews mention
    pricing/promos. A topic label does not establish sentiment about that topic or a causal benefit.
    Internal metric: retention and order frequency of
@@ -206,7 +207,7 @@ metric this pipeline already produces, plus the internal metric that would be th
 | Other | 17 | 0.67 / 0.71 | 0.69 [0.48–0.84] | 0.65 | 0.75 / 0.35 | 0.48 [0.19–0.70] | 0.45 | -0.21 [-0.44, +0.00] |
 | **Micro-F1, all labels** | 180 |  | **0.81** [0.78–0.84] |  |  | **0.70** [0.66–0.74] |  | -0.11 [-0.16, -0.07] |
 
-Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1.
+Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1 against this AI-assisted reference; no human-labelled check of the reference exists yet.
 
 For the LLM (qwen2.5:3b, CPU, temperature 0, JSON-schema constrained), labels with a paired
 95% F1-difference interval wholly above zero: none; wholly below zero: Rider behaviour, Merchant/menu availability, Payment & refunds.
