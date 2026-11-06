@@ -246,4 +246,5 @@ results/     label_quality.json, metrics.json
 docs/        templates for README/REPORT, labelling guide, dashboard.html
 ```
 
-License: MIT for code and the author's labels and write-ups. Review texts belong to their authors.
+License: [MIT](LICENSE) for code and the author's labels and write-ups. Review texts belong to their authors;
+see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
