@@ -2,6 +2,8 @@
 import copy
 import importlib.util
 import json
+import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -122,6 +124,10 @@ def test_skipped_recent_period_and_reversed_trend_do_not_keep_old_findings(resul
 
 def dashboard_dom(html):
     # Execute the generated JavaScript, keeping just the DOM in memory.
+    if shutil.which('node') is None:
+        if os.environ.get('CI'):
+            pytest.fail('Node.js is required in CI for the dashboard JavaScript tests')
+        pytest.skip('Node.js is not on PATH; the dashboard JavaScript tests need it')
     program = r'''
 const fs = require('node:fs'), vm = require('node:vm');
 const html = fs.readFileSync(0, 'utf8');
@@ -174,3 +180,41 @@ def test_templates_keep_numeric_claims_as_placeholders():
         text = (ROOT / template).read_text(encoding='utf-8')
         assert [(line, number) for line, number in check.literal_numbers(text)
                 if number not in check.ALLOWED_LITERALS] == []
+
+
+def test_difference_claim_names_the_ai_assisted_reference(results):
+    results['quality']['llm_minus_rules']['micro_f1'] = {'diff': -.1, 'ci': [-.2, -.05]}
+    docs = script('check_numbers').render_all()
+    for text in docs.values():
+        assert 'supports lower LLM micro-F1 against this AI-assisted reference' in text
+    readme = docs['README.md']
+    assert 'blind reference' not in readme
+
+
+def test_readme_first_screen_states_findings_and_limits():
+    readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+    head = readme[:readme.index('## What it does')]
+    q = facts.load_results()['quality']
+    assert '**Findings at a glance**' in head
+    assert f"rules micro-F1 {q['rules']['overall']['micro_f1']:.2f} vs LLM {q['llm']['overall']['micro_f1']:.2f}" in head
+    assert 'Customer service' in head and 'AI-assisted reference' in head and '**Limits:**' in head
+
+
+def test_readme_explains_rank1_probability_column():
+    readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+    after_table = readme[readme.index('### Top pain points'):readme.index('## Limitations')]
+    assert 'P(rank 1) counts ties for both' in after_table
+
+
+def test_proof_of_delivery_recommendation_follows_the_largest_rider_share(results):
+    pains = results['metrics']['pain_point_intervals']['rules']
+    ctx = facts.build_context()
+    shares = {sf: pains[sf]['rider_behavior']['share'] for sf in pains
+              if pains[sf]['rider_behavior']['n_negative'] >= facts.MIN_STOREFRONT_NEG}
+    assert ctx['rider_top']['sf'] == max(shares, key=shares.get)
+    target = min(shares, key=shares.get)
+    pains[target]['rider_behavior']['share'] = .99
+    report = script('check_numbers').render_all()['REPORT.md']
+    assert f'starting with the {facts.STOREFRONT_NAMES[target]} storefront' in report
+    assert 'share of 1–2★ reviews (99%)' in report
+    assert 'several reviews' not in report

@@ -61,7 +61,8 @@ def _quality_words(q, primary):
         uncertainty, zh_ci = "The paired difference interval is unavailable; no interval-based conclusion is possible.", "配对差异区间不可估计。"
     elif ci[0] > 0 or ci[1] < 0:
         direction = "higher" if ci[0] > 0 else "lower"
-        uncertainty = f"The paired 95% interval [{ci[0]:+.2f}, {ci[1]:+.2f}] supports {direction} LLM micro-F1."
+        uncertainty = (f"The paired 95% interval [{ci[0]:+.2f}, {ci[1]:+.2f}] supports {direction} LLM micro-F1 "
+                       "against this AI-assisted reference; no human-labelled check of the reference exists yet.")
         zh_ci = f"配对差异的 95% 区间为 [{ci[0]:+.2f}, {ci[1]:+.2f}]，不含零。"
     else:
         uncertainty = (f"The paired 95% interval [{ci[0]:+.2f}, {ci[1]:+.2f}] includes zero; "
@@ -79,7 +80,22 @@ def _quality_words(q, primary):
                          f"({LABEL_TITLES[lo[1]]}) to {hi[0]:.2f} ({LABEL_TITLES[hi[1]]}).")
     else:
         label_quality = f"Per-label F1 is unavailable for the primary labeler ({primary})."
-    return summary, summary_zh, label_quality
+    if _valid_ci(ci):
+        headline = (f"rules micro-F1 {_f2(r)} vs LLM {_f2(l)}, paired difference interval "
+                    f"[{ci[0]:+.2f}, {ci[1]:+.2f}]")
+    else:
+        headline = f"rules micro-F1 {_f2(r)} vs LLM {_f2(l)}, paired difference interval unavailable"
+    return summary, summary_zh, label_quality, headline
+
+
+def _rider_top(pains, ranked):
+    """Ranked market where rider behaviour has the largest share of 1-2 star reviews."""
+    rows = [(pains[sf]["rider_behavior"]["share"], sf) for sf in ranked
+            if "rider_behavior" in pains[sf] and _finite(pains[sf]["rider_behavior"]["share"])]
+    if not rows:
+        return {"sf": None, "name": "n/a", "share": None}
+    share, sf = max(rows)
+    return {"sf": sf, "name": STOREFRONT_NAMES[sf], "share": share}
 
 
 def _recent_summary(recent, sf):
@@ -185,9 +201,11 @@ def build_context() -> dict:
     clear_cs = [pains[prim][sf]["customer_service"]["p_rank1"] for sf in ranked
                 if pains[prim][sf]["customer_service"]["rank"] == 1 and sf in GULF]
     ctx["cs_rank1_gulf_pmin"] = min(clear_cs) if clear_cs else None
-    quality, quality_zh, primary_quality = _quality_words(q, prim)
+    ctx["rider_top"] = _rider_top(pains[prim], ranked)
+    quality, quality_zh, primary_quality, quality_headline = _quality_words(q, prim)
     ctx["words"] = {
         "quality": quality, "quality_zh": quality_zh, "primary_quality": primary_quality,
+        "quality_headline": quality_headline,
         "uae_ranking": _ranking_summary(pains[prim], "ae"),
         "hk_ranking": _ranking_summary(pains[prim], "hk"),
         "uae_change": _recent_summary(ctx["recent"], "ae"),
