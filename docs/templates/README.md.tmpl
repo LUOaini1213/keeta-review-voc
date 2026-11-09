@@ -134,7 +134,7 @@ See [REPORT.md](REPORT.md) for what the complaints are about, what changed, and 
 From the committed, text-free data (what CI runs; no network, no LLM):
 
 Requirements: Python 3.11 (the version CI tests on Windows and Linux) and, for the dashboard tests,
-Node.js on PATH (CI uses Node 22). Without Node those tests are skipped locally; in CI they fail instead.
+Node.js on PATH (CI installs it with actions/setup-node). Without Node those tests are skipped locally; in CI they fail instead.
 
 ```bash
 pip install -r requirements.txt
