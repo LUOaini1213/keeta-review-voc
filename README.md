@@ -7,6 +7,17 @@ AI-assisted, reproducible voice-of-customer (VOC) analysis of public App Store r
 > **Not affiliated with Keeta or Meituan. No internal data.** Nothing here measures or claims a
 > business impact for Keeta.
 
+**Findings at a glance** (every number rendered from `results/` and checked in CI):
+
+- **Built:** a text-free, reproducible pipeline over 2,572 public reviews from 7 storefronts:
+  keyword rules and a local 3B LLM label issues; SQL metrics are cross-checked against pandas.
+- **Customer service** is the most-mentioned topic in 1–2★ reviews in 5 of the 6
+  markets with enough data; in the Gulf markets it appears in 41–48% of complaints.
+- **Written reviews skew negative:** 76–91% are 1–2★, while store averages are 3.15–4.74★.
+- **Labelling:** rules micro-F1 0.81 vs LLM 0.70, paired difference interval [-0.16, -0.07], scored against AI-assisted reference labels made by the
+  same assistant that wrote the rule keywords; no human-labelled check yet, so the gap may favour the rules.
+- **Limits:** public App Store reviews only (latest 500 per storefront), a self-selected sample, no causal claims.
+
 **Read the findings: [REPORT.md](REPORT.md)** · interactive view: [docs/dashboard.html](docs/dashboard.html)
 (download and open locally; single self-contained file).
 
@@ -21,7 +32,7 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
   → frozen snapshot, reviewer identity dropped  ── data/raw/ (local) + data/derived/ (committed, text-free)
   → clean + language tag (en / ar / zh / other) ── keeta_voc/text.py
   → issue labels, two methods                   ── rules: keeta_voc/rules.py   LLM: keeta_voc/llm.py
-  → scored against a blind reference set        ── scripts/evaluate_labels.py
+  → scored against an AI-assisted reference set ── scripts/evaluate_labels.py
   → SQLite + committed SQL (sql/*.sql)          ── scripts/compute_metrics.py  (each query re-implemented in pandas and compared)
   → REPORT.md / README.md / dashboard           ── every number rendered from results/ and checked in CI
 ```
@@ -97,7 +108,7 @@ Apple customer-reviews RSS (public)            ── scripts/fetch_reviews.py  
 | Other | 17 | 0.67 / 0.71 | 0.69 [0.48–0.84] | 0.65 | 0.75 / 0.35 | 0.48 [0.19–0.70] | 0.45 | -0.21 [-0.44, +0.00] |
 | **Micro-F1, all labels** | 180 |  | **0.81** [0.78–0.84] |  |  | **0.70** [0.66–0.74] |  | -0.11 [-0.16, -0.07] |
 
-Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1.
+Primary labeler recorded in metrics: **rules**. LLM micro-F1 is lower than the keyword rules' point estimate. Reference n = 180; rules micro-F1 0.81, LLM 0.70. LLM − rules difference: -0.11. The paired 95% interval [-0.16, -0.07] supports lower LLM micro-F1 against this AI-assisted reference; no human-labelled check of the reference exists yet.
 
 Labels with a paired 95% F1-difference interval wholly below zero: Rider behaviour, Merchant/menu availability, Payment & refunds;
 wholly above zero: none. These per-label intervals are unadjusted for multiple comparisons.
@@ -140,6 +151,8 @@ The language detector agreed with the reference language tag on 98.9% of the
 |  |  | 2. Payment & refunds | 26% [22–30%] | 0.00 |
 |  |  | 3. Order fulfilment | 24% [21–28%] | 0.00 |
 
+P(rank 1) counts ties for both, so the column can sum to more than 1.
+
 See [REPORT.md](REPORT.md) for what the complaints are about, what changed, and recommendations.
 
 ## Limitations (这不是什么)
@@ -160,6 +173,9 @@ See [REPORT.md](REPORT.md) for what the complaints are about, what changed, and 
 ## Reproduce
 
 From the committed, text-free data (what CI runs; no network, no LLM):
+
+Requirements: Python 3.11 (the version CI tests on Windows and Linux) and, for the dashboard tests,
+Node.js on PATH (CI installs it with actions/setup-node). Without Node those tests are skipped locally; in CI they fail instead.
 
 ```bash
 pip install -r requirements.txt
@@ -230,4 +246,5 @@ results/     label_quality.json, metrics.json
 docs/        templates for README/REPORT, labelling guide, dashboard.html
 ```
 
-License: MIT for code and the author's labels and write-ups. Review texts belong to their authors.
+License: [MIT](LICENSE) for code and the author's labels and write-ups. Review texts belong to their authors;
+see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
